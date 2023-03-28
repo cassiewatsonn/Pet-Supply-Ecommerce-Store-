@@ -1,0 +1,26 @@
+{
+  "name": "pet-supply-ecommerce-store-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cassiewatsonn/Pet-Supply-Ecommerce-Store-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cassiewatsonn/Pet-Supply-Ecommerce-Store-/issues"
+  },
+  "homepage": "https://github.com/cassiewatsonn/Pet-Supply-Ecommerce-Store-#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "dependencies": {
+    "jwt-decode": "^3.1.2",
+    "react-router-dom": "^6.9.0"
+  }
+}
