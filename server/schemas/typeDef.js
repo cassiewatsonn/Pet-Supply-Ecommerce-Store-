@@ -33,6 +33,7 @@ type Order {
     status: String!
     orderId: INT!
     address: [Address]
+    user: [User]
 }
 
   type Address {
