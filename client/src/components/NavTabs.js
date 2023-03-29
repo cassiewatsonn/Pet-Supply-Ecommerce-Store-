@@ -1,57 +1,40 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function NavTabs({ currentPage, handlePageChange }) {
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <a
-        id="navs"
-          href="#AboutUs"
-          onClick={() => handlePageChange('AboutUs')}
-          className= {currentPage === 'AboutUs' ? 'nav-link active' : 'nav-link'}
-        >
-          About Us
-        </a>
+      <Link to="/AboutUs">
+              AboutUs
+            </Link>
       </li>
       <li className="nav-item">
-        <a id="navs"
-          href="#Toys"
-          onClick={() => handlePageChange('Toys')}
-          className={currentPage === 'Toys' ? 'nav-link active' : 'nav-link'}
-        >
-          Toys
-        </a>
+      <Link to="/Toys">
+              Toys
+            </Link>
       </li>
       <li className="nav-item">
-        <a
-        id="navs"
-          href="#Treats"
-          onClick={() => handlePageChange('Treats')}
-          className={currentPage === 'Treats' ? 'nav-link active' : 'nav-link'}
-        >
-          Treats
-        </a>
+      <Link to="/Treats">
+              Treats
+            </Link>
       </li>
       <li className="nav-item">
-        <a
-        id="navs"
-          href="#Cart"
-          onClick={() => handlePageChange('Cart')}
-          className={currentPage === 'Cart' ? 'nav-link active' : 'nav-link'}
-        >
-          Cart
-        </a>
+      <Link to="/Cart">
+              Cart
+            </Link>
       </li>
 
       <button>
-      <a
-        id="navs"
-          href="#SignIn"
-          onClick={() => handlePageChange('SignIn')}
-          className={currentPage === 'SignIn' ? 'nav-link active' : 'nav-link'}
-        > 
-        Sign In
-        </a>
+      <Link to="/SignIn">
+              SignIn
+            </Link>
+      </button>
+
+      <button>
+      <Link to="/SignUp">
+              SignUp
+            </Link>
       </button>
     </ul>
   );

@@ -7,7 +7,6 @@ type User {
     email: String!
     firstName: String!
     lastName: String!
-    username: String!
     password: String!
     phone: String!
     address: [Address]!
@@ -72,7 +71,7 @@ type Query {
 }
 
 type Mutation {
-  addUser(firstName: String!, lastName: String!, email: String!, password: String!, userName: String!, accessLvl: Int!): User
+  addUser(firstName: String!, lastName: String!, email: String!, password: String!, accessLvl: Int!): User
   updateUser(id: ID!, firstName: String!, lastName: String!, email: String!, password: String!, phone: String!): User
   removeUser(id: ID!): User
   addAddress(id: ID!, number: String!, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressId: Int!): User
