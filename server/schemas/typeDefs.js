@@ -12,7 +12,7 @@ type User {
     phone: String!
     address: [Address]!
     accessLvl: Int!
-    orders: [Orders]
+    orders: [Order]
 }
 
 type Product {
@@ -24,69 +24,67 @@ type Product {
     category: [Category]
     image: String
     description: String
-
     stockCount: Int!
 
 }
 
 type Order {
     products: [Product]
-    orderDate: Date!
+    orderDate: String!
     orderPrice: Float!
     status: String!
-    orderId: INT!
+    orderId: Int!
     address: [Address]
     user: [User]
 }
 
-  type Address {
-    number: String! # Street number (could include apt. number/letter)
-    streetName: String! 
-    province: String!
-    country: String!
-    postalCode: String!
-    deliveryNotes: String! # I.e. "Ring doorbell" or "phone when arrived"
-    primary: boolean!
-    addressId: Int! # will be array indicator for update/delete
-  }
+type Address {
+  number: String! # Street number (could include apt. number/letter)
+  streetName: String! 
+  province: String!
+  country: String!
+  postalCode: String!
+  deliveryNotes: String! # I.e. "Ring doorbell" or "phone when arrived"
+  primary: Boolean!
+  addressId: Int! # will be array indicator for update/delete
+}
 
 type Auth {
     token: ID
     user: User
   }
 
-  type Category{
-    name: String!
-  }
+type Category{
+  name: String!
+}
 
-  type Checkout {
-    session: ID
-  }
+type Checkout {
+  session: ID
+}
 
-  type Query {
-    orders: [Order]!
-    order(orderId: INT!)
-    products: [Products]
-    product(productId: Int!)
-    users: [User]!
-    user(_Id: ID!)
-  }
+type Query {
+  orders: [Order]!
+  order(orderId: Int!): Order
+  products: [Product]
+  product(productId: Int!): Product
+  users: [User]!
+  user(_Id: ID!): User
+}
 
-  type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!, userName: String!, accessLvl: Int!): User
-    updateUser(id: ID!, firstName: String!, lastName: String!, email: String!, password: String!, phone: String!): User
-    removeUser(id: ID!): User
-    addAddress(id: ID!, number: String!, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressId: Int!): User
-    updateAddress(id: ID!, number: String, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressNo:Int!): User
-    removeAddress(id: ID!, addressId: Int!): User
-    addProduct(productId: String!, name: String! price: Float!, category: [Category]): Product
-    updateProduct(productId: String!, name: String, price: Float, tags:[String], category: [Category], image: String, description: String, stockCount: Int!): Product
-    removeProduct(productId: String!): Product
-    # addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
-    # updateOrder(): Order
-    # removeOrder(orderId: Int!): Order
+type Mutation {
+  addUser(firstName: String!, lastName: String!, email: String!, password: String!, userName: String!, accessLvl: Int!): User
+  updateUser(id: ID!, firstName: String!, lastName: String!, email: String!, password: String!, phone: String!): User
+  removeUser(id: ID!): User
+  addAddress(id: ID!, number: String!, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressId: Int!): User
+  updateAddress(id: ID!, number: String, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressNo:Int!): User
+  removeAddress(id: ID!, addressId: Int!): User
+  addProduct(productId: String!, name: String! price: Float!, category: [String]): Product
+  updateProduct(productId: String!, name: String, price: Float, tags:[String], category: [String], image: String, description: String, stockCount: Int!): Product
+  removeProduct(productId: String!): Product
+  # addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
+  # updateOrder(): Order
+  # removeOrder(orderId: Int!): Order
 
-  }
-`
+}`
 
 module.exports = typeDefs;
