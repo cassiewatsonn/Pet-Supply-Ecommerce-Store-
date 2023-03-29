@@ -24,11 +24,14 @@ type Product {
     category: [Category]
     image: String
     description: String
+
+    stockCount: Int!
+
 }
 
 type Order {
     products: [Product]
-    orderDate: Date
+    orderDate: Date!
     orderPrice: Float!
     status: String!
     orderId: INT!
@@ -43,6 +46,8 @@ type Order {
     country: String!
     postalCode: String!
     deliveryNotes: String! # I.e. "Ring doorbell" or "phone when arrived"
+    primary: boolean!
+    addressId: Int! # will be array indicator for update/delete
   }
 
 type Auth {
@@ -71,15 +76,16 @@ type Auth {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!, userName: String!, accessLvl: Int!): User
     updateUser(id: ID!, firstName: String!, lastName: String!, email: String!, password: String!, phone: String!): User
     removeUser(id: ID!): User
-    addAddress(): User
-    updateAddress(): User
-    removeAddress(): User
+    addAddress(id: ID!, number: String!, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressId: Int!): User
+    updateAddress(id: ID!, number: String, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressNo:Int!): User
+    removeAddress(id: ID!, addressId: Int!): User
     addProduct(productId: String!, name: String! price: Float!, category: [Category]): Product
-    updateProduct(): Product
+    updateProduct(productId: String!, name: String, price: Float, tags:[String], category: [Category], image: String, description: String, stockCount: Int!): Product
     removeProduct(productId: String!): Product
-    addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
-    updateOrder(): Order
-    removeOrder(orderId: Int!): Order
+    # addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
+    # updateOrder(): Order
+    # removeOrder(orderId: Int!): Order
+
   }
 `
 

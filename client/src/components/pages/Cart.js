@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CartItem from '../CartItem';
 
 export default function Cart (){
@@ -19,5 +20,6 @@ export default function Cart (){
             {/* TODO: ADD total price of all items together */}
 
         </div>
+
     )
 }
