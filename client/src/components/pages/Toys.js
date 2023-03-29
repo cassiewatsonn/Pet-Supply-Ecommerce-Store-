@@ -3,7 +3,7 @@ import ToyCard from '../ToyCard'
 
 //TODO: Import the json data Toy
 
-export default function Portfolio() {
+export default function Toys() {
     return (
         <div>
             <h2 className='toys-title'>Toys</h2>

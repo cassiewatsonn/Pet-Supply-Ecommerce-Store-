@@ -26,10 +26,6 @@ export default function ToyCard({
                         </div>
 
                         <div>
-                            <strong>Ingredients:</strong> {toy.used}
-                        </div>
-
-                        <div>
                             <strong>Add to Cart</strong>
                         </div>
                     </ul>
