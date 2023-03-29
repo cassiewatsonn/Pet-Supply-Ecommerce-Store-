@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import ToyCard from '../ToyCard'
-import Cart from './Cart';
+import ToyCard from '../ToyCard';
+import Cart from './Cart'; 
 
-export default function Toys() {
-    const [cartItems, setCartItems] = useState([]);
+export default function Toys() { 
+  
+    const [cartItems, setCartItems] = useState([]); 
 
     const toysArray = [
-        {
+        { 
             "id": 1, 
-            "name": "Tug Toy!",
+            "name": "Tug Toy!", 
             "image": "/images/tug-toy.png", 
-            "description": "Rope tug toy with a extra durable ball on the end and a handle.",
+            "description": "Rope tug toy with a extra durable ball on the end and a handle.", 
             "height": "100%", 
             "width": "100%", 
-            "price": "$10.99"
+            "price": "$10.99" 
         }
     ]
 
@@ -31,16 +32,4 @@ export default function Toys() {
           <Cart cartItems={cartItems} />
         </div>
       );
-    // return (
-    //     <div>
-    //         <h2 className='toys-title'>Toys</h2>
-    //         <div className="card-wrap">
-    //             {
-    //                 toysArray.map(toy => {
-    //                     return (<ToyCard toy={toy} />)
-    //                 })
-    //             }
-    //         </div>
-    //     </div>
-    // )
 }
