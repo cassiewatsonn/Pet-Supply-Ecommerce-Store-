@@ -1,31 +1,36 @@
-import React from 'react';
-import TreatCard from '../TreatCard'
+import React, { useState } from 'react';
+import TreatCard from '../TreatCard';
+import Cart from './Cart';
 
 export default function Treats() {
+  const [cartItems, setCartItems] = useState([]);
 
-    const treatsArray = [
-        {
-            "id": 1, 
-            "name": "Peanut Butter Banana Cookies!",
-            "image": "/images/pb-cookies.png", 
-            "description": "Rope tug toy with a extra durable ball on the end and a handle.",
-            "ingredients": "Natural peanut butter, banana, oats", 
-            "height": "100%", 
-            "width": "100%", 
-            "price": "$8.99"
-        }
-    ]
+  const treatsArray = [
+    {
+      "id": 1, 
+      "name": "Peanut Butter Banana Cookies!",
+      "image": "/images/pb-cookies.png", 
+      "description": "Rope tug toy with a extra durable ball on the end and a handle.",
+      "ingredients": "Natural peanut butter, banana, oats", 
+      "height": "100%", 
+      "width": "100%", 
+      "price": "$8.99"
+    }
+  ];
 
-    return (
-        <div>
-            <h2 className='toys-title'>Toys</h2>
-            <div className="card-wrap">
-                {
-                    treatsArray.map(treat => {
-                        return (<TreatCard treat={treat} />)
-                    })
-                }
-            </div>
-        </div>
-    )
+  const addToCart = (treat) => {
+    setCartItems([...cartItems, treat]);
+  };
+
+  return (
+    <div>
+      <h2 className='treats-title'>Treats</h2>
+      <div className="card-wrap">
+        {treatsArray.map((treat) => (
+          <TreatCard key={treat.id} treat={treat} addToCart={addToCart} />
+        ))}
+      </div>
+      <Cart cartItems={cartItems} />
+    </div>
+  );
 }

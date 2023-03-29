@@ -1,7 +1,7 @@
 import React from 'react'; 
 
 export default function ToyCard({
-    toy
+    toy, addToCart
 }){
     return(
 
@@ -27,7 +27,7 @@ export default function ToyCard({
                         </div>
 
                         <div>
-                            <strong>Add to Cart</strong>
+                            <button onClick={() => addToCart(toy)}>Add to Cart</button>
                         </div>
                     </ul>
                 </div>
