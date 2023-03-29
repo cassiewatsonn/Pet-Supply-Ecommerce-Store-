@@ -6,7 +6,7 @@ export default function Header(props) {
             <div className="businessName">
                 <h1>Pet Supply</h1>
             </div>
-                 {/* {props.children} */}
+                 {props.children}
         </header>
    )
 }
