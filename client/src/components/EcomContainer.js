@@ -4,6 +4,7 @@ import AboutUs from './pages/AboutUs';
 import Toys from './pages/Toys';
 import Treats from './pages/Treats';
 import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp'
 import Cart from './pages/Cart';
 import Header from './Header';
 import Footer from './Footer';
@@ -23,6 +24,9 @@ export default function EcomContainer() {
       }
       if (currentPage === 'SignIn') {
         return <SignIn />;
+      }
+      if (currentPage === 'SignUp') {
+        return <SignUp />;
       }
       return <Cart />;
     };
