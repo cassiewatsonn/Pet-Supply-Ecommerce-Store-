@@ -42,6 +42,17 @@ export default function NavTabs({ currentPage, handlePageChange }) {
           Cart
         </a>
       </li>
+
+      <button>
+      <a
+        id="navs"
+          href="#SignIn"
+          onClick={() => handlePageChange('SignIn')}
+          className={currentPage === 'SignIn' ? 'nav-link active' : 'nav-link'}
+        > 
+        Sign In
+        </a>
+      </button>
     </ul>
   );
 }
