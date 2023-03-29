@@ -24,7 +24,9 @@ type Product {
     category: [Category]
     image: String
     description: String
+
     stockCount: Int!
+
 }
 
 type Order {
@@ -83,6 +85,7 @@ type Auth {
     # addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
     # updateOrder(): Order
     # removeOrder(orderId: Int!): Order
+
   }
 `
 
