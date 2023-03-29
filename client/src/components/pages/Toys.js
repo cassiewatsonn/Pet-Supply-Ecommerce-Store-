@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ToyCard from '../ToyCard'
+import Cart from './Cart';
 
 export default function Toys() {
+    const [cartItems, setCartItems] = useState([]);
 
     const toysArray = [
         {
@@ -15,16 +17,30 @@ export default function Toys() {
         }
     ]
 
-    return (
+    const addToCart = (toy) => {
+        setCartItems([...cartItems, toy]);
+      };
+      return (
         <div>
-            <h2 className='toys-title'>Toys</h2>
-            <div className="card-wrap">
-                {
-                    toysArray.map(toy => {
-                        return (<ToyCard toy={toy} />)
-                    })
-                }
-            </div>
+          <h2 className='toys-title'>Toys</h2>
+          <div className="card-wrap">
+            {toysArray.map((toy) => (
+              <ToyCard key={toy.id} toy={toy} addToCart={addToCart} />
+            ))}
+          </div>
+          <Cart cartItems={cartItems} />
         </div>
-    )
+      );
+    // return (
+    //     <div>
+    //         <h2 className='toys-title'>Toys</h2>
+    //         <div className="card-wrap">
+    //             {
+    //                 toysArray.map(toy => {
+    //                     return (<ToyCard toy={toy} />)
+    //                 })
+    //             }
+    //         </div>
+    //     </div>
+    // )
 }

@@ -1,7 +1,7 @@
 import React from 'react'; 
 
 export default function TreatCard({
-    treat
+    treat, addToCart
 }){
     return(
 
@@ -9,7 +9,7 @@ export default function TreatCard({
             <div className='background'>
 
                 <div className="img-container"> 
-                    <img className='card-image' width={treat.width} height={treat.height} alt={treat.name} src={process.env.PUBLIC_URL+treat.image}/>
+                    <img className='card-image' width={treat.width} height={treat.height} alt={treat.name} src={treat.image}/>
                 </div>
 
                 <div className="content">
@@ -31,7 +31,7 @@ export default function TreatCard({
                         </div>
 
                         <div>
-                            <strong>Add to Cart</strong>
+                            <button onClick={() => addToCart(treat)}>Add to Cart</button>
                         </div>
                     </ul>
                 </div>
