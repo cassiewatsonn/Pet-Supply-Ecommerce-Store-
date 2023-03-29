@@ -11,65 +11,70 @@ import SignUp from './components/pages/SignUp'
 import SignIn from './components/pages/SignIn'
 import Toys from './components/pages/Toys'
 import Treats from './components/pages/Treats'
+import Cart from './components/pages/Cart'
 import {
     ApolloClient,
     InMemoryCache,
     ApolloProvider,
     createHttpLink,
-  } from '@apollo/client';
-  const httpLink = createHttpLink({
+} from '@apollo/client';
+const httpLink = createHttpLink({
     uri: '/graphql',
-  });
-  
-  const authLink = setContext((_, { headers }) => {
+});
+
+const authLink = setContext((_, { headers }) => {
     const token = localStorage.getItem('id_token');
     return {
-      headers: {
-        ...headers,
-        authorization: token ? `Bearer ${token}` : '',
-      },
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : '',
+        },
     };
-  });
-  
-  const client = new ApolloClient({
+});
+
+const client = new ApolloClient({
     link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
-  });
+});
 
 
-const App = () =>{
+const App = () => {
     return (
         <ApolloProvider client={client}>
-        <Router>
-            <> 
-            <Header/>
-        <NavTabs/>
-        <Routes>
-        <Route
-            path="/Toys"
-            element={<Toys/>}
-            />
-        <Route
-            path="/Treats"
-            element={<Treats/>}
-            />
-        <Route
-            path="/SignIn"
-            element={<SignIn/>}
-            />
-        <Route
-            path="/SignUp"
-            element={<SignUp/>}
-            />
-            <Route
-            path="/AboutUs"
-            element={<AboutUs/>}
-            />
-        </Routes>
-        <Footer/>
-            </>
-        </Router>
-            </ApolloProvider>
+            <Router>
+                <>
+                    <Header />
+                    <NavTabs />
+                    <Routes>
+                        <Route
+                            path="/Toys"
+                            element={<Toys />}
+                        />
+                        <Route
+                            path="/Treats"
+                            element={<Treats />}
+                        />
+                        <Route
+                            path="/SignIn"
+                            element={<SignIn />}
+                        />
+                        <Route
+                            path="/SignUp"
+                            element={<SignUp />}
+                        />
+                        <Route
+                            path="/AboutUs"
+                            element={<AboutUs />}
+                        />
+                        <Route
+                            path="/Cart"
+                            element={<Cart />}
+                        />
+                    </Routes>
+                    <Footer />
+                </>
+            </Router>
+        </ApolloProvider>
     )
 };
 
