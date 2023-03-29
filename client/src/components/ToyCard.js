@@ -1,10 +1,7 @@
 import React from 'react'; 
 
-// will need to make json data for cards 
-// TODO: Import json data (toy)
-
 export default function ToyCard({
-    toy 
+    toy
 }){
     return(
 
@@ -23,6 +20,10 @@ export default function ToyCard({
 
                         <div>
                             <strong>Description:</strong> {toy.description}
+                        </div>
+
+                        <div>
+                            <strong>Price:</strong> {toy.price}
                         </div>
 
                         <div>

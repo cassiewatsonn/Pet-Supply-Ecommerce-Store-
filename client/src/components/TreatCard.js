@@ -1,8 +1,5 @@
 import React from 'react'; 
 
-// will need to make json data for cards 
-// TODO: Import json data (treat)
-
 export default function TreatCard({
     treat
 }){
@@ -26,7 +23,11 @@ export default function TreatCard({
                         </div>
 
                         <div>
-                            <strong>Ingredients:</strong> {treat.used}
+                            <strong>Ingredients:</strong> {treat.ingredients}
+                        </div>
+
+                        <div>
+                            <strong>Price:</strong> {treat.price}
                         </div>
 
                         <div>
