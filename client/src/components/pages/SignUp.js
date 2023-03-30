@@ -6,7 +6,16 @@ import { ADD_USER } from '../../utils/mutations';
 
 function SignUp(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [addUser] = useMutation(ADD_USER);
+//   const [addUser] = useMutation(ADD_USER);
+const [addUser] = useMutation(ADD_USER, {
+    variables: {
+        "firstName": "Bob",
+        "lastName": "Bart",
+        "email": "bob123@gmail.com",
+        "password": "secret123",
+        "accessLvl": 1
+      },
+  });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();

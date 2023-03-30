@@ -5,7 +5,7 @@ export default function ToyCard({
 }){
     return(
 
-        <div className="card" >
+        <div className="card toy-card" >
             <div className='background'>
 
                 <div className="img-container"> 
@@ -26,7 +26,7 @@ export default function ToyCard({
                             <strong>Price:</strong> {toy.price}
                         </div>
 
-                        <div>
+                        <div className='addtocart'>
                             <button onClick={() => addToCart(toy)}>Add to Cart</button>
                         </div>
                     </ul>
