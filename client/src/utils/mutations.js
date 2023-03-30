@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 
 export const ADD_USER = gql`
-mutation Mutation($firstName: String!, $lastName: String!, $email: String!, $password: String!, $accessLvl: Int!) {
+mutation addUser($firstName: String!, $lastName: String!, $email: String!, $password: String!, $accessLvl: Int!) {
     addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password, accessLvl: $accessLvl) {
       accessLvl
       firstName
@@ -71,9 +71,9 @@ export const ADD_PRODUCT = gql`
       name: $name
       price: $price
       category: $category
-      tags: $$tags
+      tags: $tags
       stockCount: $stockCount
-      image: $$image
+      image: $image
       description: $description
     )
   }
