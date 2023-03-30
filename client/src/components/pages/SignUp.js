@@ -25,8 +25,8 @@ export default function SignUp(props) {
         accessLvl: formState.accessLvl,
         firstName: formState.firstName,
         lastName: formState.lastName,
-        email: formState.email,
-        password: formState.password,
+        email: formState.email
+        // password: formState.password,
       },
     });
     const token = mutationResponse.data.addUser.token;
