@@ -37,6 +37,7 @@ type Order {
     user: [User]
 }
 
+
 type Address {
     number: String! # Street number (could include apt. number/letter)
     streetName: String! 
@@ -49,8 +50,8 @@ type Address {
 }
 
 type Auth {
-    token: ID
-    user: User
+    token: ID!
+    user: [User]
   }
 
 type Checkout {
@@ -63,13 +64,14 @@ type Query {
   products: [Product]
   product(productId: Int!): Product
   users: [User]!
-  user(_Id: ID!): User
+  user(userId: ID!): User
 }
 
 type Mutation {
   addUser(firstName: String!, lastName: String!, email: String!, password: String!, accessLvl: Int!): User
   updateUser(userId: ID!, firstName: String!, lastName: String!, email: String!, phone: String!): User
   removeUser(userId: ID!): User
+  login(email: String!, password: String!): Auth
   updatePassword(userId: ID!, password:String!): User
   addAddress(userId: ID!, number: String!, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressId: Int!): User
   updateAddress(id: ID!, number: String, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressNo:Int!): User
