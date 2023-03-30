@@ -33,7 +33,9 @@ const resolvers = {
                 lastName: args.lastName, 
                 email: args.email, 
                 password: args.password, 
-                accessLvl: args.accessLvl});
+                accessLvl: args.accessLvl
+            }
+            );
         },
         updateUser: async (parent, args) => {
             return User.findByIdAndUpdate({_id: args.userId},
