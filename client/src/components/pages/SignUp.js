@@ -2,29 +2,31 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
+// import { Link } from 'react-router-dom
 
 
-function SignUp(props) {
+export default function SignUp(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
-//   const [addUser] = useMutation(ADD_USER);
-const [addUser] = useMutation(ADD_USER, {
-    variables: {
-        "firstName": "Bob",
-        "lastName": "Bart",
-        "email": "bob123@gmail.com",
-        "password": "secret123",
-        "accessLvl": 1
-      },
-  });
+  const [addUser] = useMutation(ADD_USER);
+// const [addUser] = useMutation(ADD_USER, {
+//     variables: {
+//         "firstName": "Bob",
+//         "lastName": "Bart",
+//         "email": "bob123@gmail.com",
+//         "password": "secret123",
+//         "accessLvl": 1
+//       },
+//   });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     const mutationResponse = await addUser({
       variables: {
-        email: formState.email,
-        password: formState.password,
+        accessLvl: formState.accessLvl,
         firstName: formState.firstName,
         lastName: formState.lastName,
+        email: formState.email,
+        password: formState.password,
       },
     });
     const token = mutationResponse.data.addUser.token;
@@ -68,7 +70,7 @@ const [addUser] = useMutation(ADD_USER, {
         <div className="flex-row space-between my-2">
           <label htmlFor="email">Email:</label>
           <input
-            placeholder="youremail@test.com"
+            placeholder="example@domain.com"
             name="email"
             type="email"
             id="email"
@@ -78,7 +80,7 @@ const [addUser] = useMutation(ADD_USER, {
         <div className="flex-row space-between my-2">
           <label htmlFor="pwd">Password:</label>
           <input
-            placeholder="******"
+            placeholder="*******"
             name="password"
             type="password"
             id="pwd"
@@ -93,4 +95,3 @@ const [addUser] = useMutation(ADD_USER, {
   );
 }
 
-export default SignUp;

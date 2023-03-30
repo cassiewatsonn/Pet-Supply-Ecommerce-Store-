@@ -6,10 +6,10 @@ import Auth from '../../utils/auth';
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  // const [login, { error }] = useMutation(LOGIN);
-  const [login, { error }] = useMutation(LOGIN, {
-    variables: { email: 'sam@abc.com', password: 'sam123' },
-  });
+  const [login, { error }] = useMutation(LOGIN);
+  // const [login, { error }] = useMutation(LOGIN, {
+  //   variables: { email: 'sam@abc.com', password: 'sam123' },
+  // });
 
 
   const handleFormSubmit = async (event) => {
@@ -43,7 +43,7 @@ function Login(props) {
           <div className="email-input">
             <label htmlFor="email">Email address: </label>
             <input
-              placeholder="example@domain.com"
+              placeholder="Enter your email"
               name="email"
               type="email"
               id="email"
@@ -53,7 +53,7 @@ function Login(props) {
           <div className="password-input">
             <label htmlFor="pwd">Password: </label>
             <input
-              placeholder="password"
+              placeholder="Enter your password"
               name="password"
               type="password"
               id="pwd"
