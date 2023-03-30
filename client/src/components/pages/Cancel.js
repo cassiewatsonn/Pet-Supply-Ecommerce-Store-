@@ -1,7 +1,5 @@
-
-
-export function Cancel() {
+export default function Cancel() {
     return(
-        <h1>Sorry to see you cancelled your payment</h1>
+        <h1>Sorry to see you cancelled your order! </h1>
     )
 }

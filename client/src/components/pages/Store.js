@@ -1,10 +1,10 @@
 import { Row, Col } from 'react-bootstrap';
-import { productsArray } from '../productStore';
-import ProductCard from '../components/ProductCard';
+import { productsArray } from '../../productStore';
+import ProductCard from '../ProductCard';
 
 
 
-export function Store() {
+export default function Store() {
     return (
         <>
             <h1 algin="center" className='p-3'>Welcome to the store</h1>

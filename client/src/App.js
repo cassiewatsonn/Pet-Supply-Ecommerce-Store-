@@ -1,17 +1,27 @@
 import React from "react";
 // import EcomContainer from "./components/EcomContainer";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Container } from "react-bootstrap";
 import "./App.css";
 import { setContext } from '@apollo/client/link/context';
-import NavTabs from './components/NavTabs'
-import AboutUs from './components/pages/AboutUs'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import SignUp from './components/pages/SignUp'
-import SignIn from './components/pages/Login'
-import Toys from './components/pages/Toys'
-import Treats from './components/pages/Treats'
-import Cart from './components/pages/Cart'
+
+import NavTabs from './components/NavTabs';
+import AboutUs from './components/pages/AboutUs';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import SignUp from './components/pages/SignUp';
+import SignIn from './components/pages/Login';
+import Cancel from './components/pages/Cancel';
+import Success from './components/pages/Success';
+import Store from './components/pages/Store';
+import NavBarComponent from './components/navbar';
+
+// import Toys from './components/pages/Toys';
+// import Treats from './components/pages/Treats';
+// import Cart from './components/pages/Cart'
+
+import CartProvider from './CartContext';
+
 import {
     ApolloClient,
     InMemoryCache,
@@ -41,39 +51,57 @@ const client = new ApolloClient({
 const App = () => {
     return (
         <ApolloProvider client={client}>
-            <Router>
-                <>
-                    <Header />
-                    <NavTabs />
-                    <Routes>
-                        <Route
+            <CartProvider>
+                {/* <Container> */}
+                {/* <NavBarComponent> </NavBarComponent> */}
+                    <Router>
+                        <>
+                            <Header />
+                            <NavTabs />
+                            <Routes>
+                                {/* <Route
                             path="/Toys"
                             element={<Toys />}
                         />
                         <Route
                             path="/Treats"
                             element={<Treats />}
-                        />
-                        <Route
-                            path="/SignIn"
-                            element={<SignIn />}
-                        />
-                        <Route
-                            path="/SignUp"
-                            element={<SignUp />}
-                        />
-                        <Route
-                            path="/AboutUs"
-                            element={<AboutUs />}
-                        />
-                        <Route
+                        /> */}
+                                <Route
+                                    path="/Products"
+                                    element={<Store />}
+                                />
+                                <Route
+                                    path="/SignIn"
+                                    element={<SignIn />}
+                                />
+                                <Route
+                                    path="/SignUp"
+                                    element={<SignUp />}
+                                />
+                                <Route
+                                    path="/AboutUs"
+                                    element={<AboutUs />}
+                                />
+                                <Route
+                                    path="/Success"
+                                    element={<Success />}
+                                />
+                                <Route
+                                    path="/Cancel"
+                                    element={<Cancel />}
+                                />
+                                {/* <Route
                             path="/Cart"
                             element={<Cart />}
-                        />
-                    </Routes>
-                    <Footer />
-                </>
-            </Router>
+                        /> */}
+                            </Routes>
+                            <Footer />
+                        </>
+                    </Router>
+                {/* </Container> */}
+            </CartProvider>
+
         </ApolloProvider>
     )
 };
