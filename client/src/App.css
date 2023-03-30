@@ -1,38 +1,252 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Edu+NSW+ACT+Foundation:wght@500&family=Lobster&display=swap');
+/* FONTS: Lobster - TITLE 
+        EDNU - Subtitle 
+        Dosis - text */
+        /* font-family: 'Dosis', sans-serif;
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-family: 'Lobster', cursive; */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* TODO: HEADER  */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.businessName{
+  font-family: 'Lobster', cursive;
+  margin-left: 5%;
+}
+.nav-tabs{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  margin: 15px;
+}
+.nav-item{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+}
+.signin-btn{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+}
+.signup-btn{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+
+/* TODO: FOOTER  */
+.footer{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 10%;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* TODO ABOUT US  */
+.about-title{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  text-align: center;
+  margin-top: 50px;
+}
+.about-info{
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* TODO TOYS  */
+.toys-title{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  text-align: center;
+  margin-top: 50px;
+}
+.toy-card{
+  width: 350px;
+  flex-wrap:wrap;
+  margin: 15px;
+  /* background-color: #bbddf9; */
+}
+.card-wrap{
+  display: flex; 
+  flex-wrap: wrap;
+  margin-right: 20%;
+  margin-left:20%;
+  width: 60%;
+  justify-content: center;
+}
+.content{
+  font-family: 'Dosis', sans-serif;
+}
+.card-title{
+  text-align: center;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+.addtocart{
+  margin-top: 15px;
+}
+
+
+/* TODO TREATS */
+.treats-title{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  text-align: center;
+  margin-top: 50px;
+}
+
+
+/* TODO LOGIN  */
+.login-title{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  text-align: center;
+  margin-top: 50px;
+}
+.login-card{
+display: flex;
+justify-content: center;
+}
+.email-input{
+  margin: 15px;
+}
+.password-input{
+  margin: 15px;
+}
+.signup-instead{
+  margin: 15px;
+}
+.login-btn{
+  margin:15px 20px;
+}
+.error-text{
+  background-color: yellow
+}
+
+
+/* TODO SIGN OUT */
+
+
+
+.Navigation-bar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #748bfe;
+}
+
+/* .Navigation-bar > .navs {
+  font-weight: 700;
+  font-size: 21px;
+  margin: 15px;
+  color: #ffffff;
+} */
+
+.Navigation-bar > .nav-items > a {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 15px;
+  position: relative;
+  opacity: 0.9;
+}
+
+.Navigation-bar > .nav-items > a:hover {
+  opacity: 1;
+}
+
+.Navigation-bar > .nav-items > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: all 0.45s;
+}
+
+.Navigation-bar > .nav-items > a:hover::before {
+  width: 100%;
+}
+
+.Navigation-bar > .nav-toggle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .Navigation-bar > .nav-items {
+    position: absolute;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    background: #3b4da7;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    /* transition: all .45s; */
   }
-  to {
-    transform: rotate(360deg);
+/* This makes a moving line when hovering over nav items in small screen 
+cannot decide if i want it or not... */
+
+  /* .Navigation-bar > .nav-items > a::before {
+      background: transparent;
+  } */
+
+  .Navigation-bar > .nav-items.open {
+      transform: translateX(0);
   }
+
+  .Navigation-bar > .nav-toggle {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .nav-toggle > .bar {
+    position: relative;
+    width: 32px;
+    height: 2px;
+    background: #ffffff;
+    transition: all 0.45s ease-in-out;
+  }
+
+  .nav-toggle > .bar::before,
+  .nav-toggle > .bar::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.45s ease-in-out;
+  }
+
+  .nav-toggle > .bar::before {
+    width: 25px;
+    transform: translateY(-8px);
+    right: 0;
+  }
+
+  .nav-toggle > .bar::after {
+    width: 32px;
+    transform: translateY(8px);
+  }
+
+  .nav-toggle.open > .bar {
+      transform: translateX(-40px);
+      background: transparent;
+  }
+
+  .nav-toggle.open > .bar::before {
+      width: 32px;
+      transform: rotate(45deg) translate(26px, -26px);
+  }
+
+  .nav-toggle.open > .bar::after {
+    transform: rotate(-45deg) translate(26px, 26px);
+  }
+
+
 }
