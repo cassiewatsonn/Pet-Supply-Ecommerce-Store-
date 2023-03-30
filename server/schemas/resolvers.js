@@ -122,6 +122,7 @@ const resolvers = {
            
             const user = await User.findOne({email});
             console.log(user)
+            
             const token = signToken(user)
             return{
                 user, token
