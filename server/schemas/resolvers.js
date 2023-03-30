@@ -24,7 +24,7 @@ const resolvers = {
         },
         order: async (parent, { orderDate }) => {
             return Order.findOne({orderDate: orderDate});
-        },
+        }
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -33,7 +33,9 @@ const resolvers = {
                 lastName: args.lastName, 
                 email: args.email, 
                 password: args.password, 
-                accessLvl: args.accessLvl});
+                accessLvl: args.accessLvl
+            }
+            );
         },
         updateUser: async (parent, args) => {
             return User.findByIdAndUpdate({_id: args.userId},
@@ -110,6 +112,9 @@ const resolvers = {
         },
         removeProduct: async(parent, {productId}) => {
             return Product.delete(productId = productId)
+        },
+        login: async (parent, args) => {
+            return User.findOne({email: args.email});
         }
         // addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
         // updateOrder(): Order
