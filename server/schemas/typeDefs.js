@@ -51,7 +51,7 @@ type Address {
 
 type Auth {
     token: ID!
-    user: [User]
+    user: User
   }
 
 type Checkout {
@@ -64,11 +64,11 @@ type Query {
   products: [Product]
   product(productId: Int!): Product
   users: [User]!
-  user(userId: ID!): User
+  user: User
 }
 
 type Mutation {
-  addUser(firstName: String!, lastName: String!, email: String!, password: String!, accessLvl: Int!): User
+  addUser(firstName: String!, lastName: String!, email: String!, password: String!, accessLvl: Int!): Auth
   updateUser(userId: ID!, firstName: String!, lastName: String!, email: String!, phone: String!): User
   removeUser(userId: ID!): User
   login(email: String!, password: String!): Auth
