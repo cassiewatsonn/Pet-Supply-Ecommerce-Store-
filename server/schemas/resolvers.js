@@ -28,8 +28,8 @@ const resolvers = {
         },
     },
     Mutation: {
-        addUser: async (parent, {firstName, lastName, email, password, userName, accessLvl}) => {
-            return User.create({firstName, lastName, email, password, userName, accessLvl});
+        addUser: async (parent, {firstName, lastName, email, password, accessLvl}) => {
+            return User.create({firstName, lastName, email, password, accessLvl});
         },
         updateUser: async (parent, {id, firstName, lastName, email, password, phone, address}) => {
             return User.findByIdAndUpdate({id},

@@ -3,4 +3,4 @@ const Product = require('./Product');
 const Address = require('./Address');
 const Order = require('./Order');
 
-module.exports = { User, Product, Address, Order };
+module.exports = { Address, User, Product, Order };
