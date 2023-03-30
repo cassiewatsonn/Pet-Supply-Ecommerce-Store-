@@ -63,7 +63,7 @@ export const ADD_PRODUCT = gql`
     $tags: [String],
     $stockCount: Int!,
     $image: String,
-    $description: String,
+    $description: String
   ) {
     addProduct(
       productId: $productId
@@ -78,11 +78,11 @@ export const ADD_PRODUCT = gql`
   }
 `
 
-export const UPDATE_PRODUCT = gql`
-  mutation updateProduct(
+// export const UPDATE_PRODUCT = gql`
+//   mutation updateProduct(
 
-  )
-`
+//   )
+// `
 
 export const REMOVE_PRODUCT = gql`
     mutation removeProduct(
