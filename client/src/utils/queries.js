@@ -33,8 +33,8 @@ query user($id: ID!) {
 }
 `;
 
-export const QUERY_PRODUCTS = gql`
- query products($productId: Int!) {
+export const QUERY_PRODUCT = gql`
+ query product($productId: Int!) {
   product(productId: $productId) {
     _id
     name
@@ -49,9 +49,9 @@ export const QUERY_PRODUCTS = gql`
 }
 `;
 
-export const QUERY_PRODUCT = gql`
-query product {
-  products {
+export const QUERY_PRODUCTS = gql`
+query products {
+  product {
     _id
     productId
     name

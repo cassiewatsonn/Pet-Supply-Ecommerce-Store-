@@ -8,7 +8,7 @@ const Address = require('./Address');
 const userSchema = new Schema({
     _id: {
       type: mongoose.Types.ObjectId,
-      required: true,
+      // required: true,
     },
     firstName: {
         type: String, 

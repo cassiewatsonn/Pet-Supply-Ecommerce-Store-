@@ -15,13 +15,26 @@ const addressSchema = new Schema({
         type: String,
         required: true
     },
+    country: {
+        type: String,
+        required: true
+    },
     postalCode: {
         type: String,
         required: true,
     },
     deliveryNotes: {
         type: String
-    }
+    },
+    primary: {
+        type: Boolean,
+        required: true
+    },
+    addressId: {
+        type: Number,
+        required: true
+    },
+
 });
 
    

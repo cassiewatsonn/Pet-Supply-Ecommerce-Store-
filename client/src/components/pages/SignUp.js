@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-// import Auth from '../../utils/auth';
+import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
 
 
@@ -27,8 +27,8 @@ const [addUser] = useMutation(ADD_USER, {
         lastName: formState.lastName,
       },
     });
-    // const token = mutationResponse.data.addUser.token;
-    // Auth.login(token);
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
   };
 
   const handleChange = (event) => {
