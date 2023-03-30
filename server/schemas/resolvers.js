@@ -1,14 +1,13 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Order, Address } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
-// const {User, Product, Order, Address} = require('./typeDefs');
 
 const resolvers = {
     Query: {
         // for admin access
         users: async () => {
-            return User.find().sort({ _id });
+            return User.find();
         },
         // for user/admin access
         user: async (parent, { userId }) => {
@@ -28,22 +27,48 @@ const resolvers = {
         },
     },
     Mutation: {
-        addUser: async (parent, {firstName, lastName, email, password, userName, accessLvl}) => {
-            return User.create({firstName, lastName, email, password, userName, accessLvl});
+        addUser: async (parent, args) => {
+            return User.create({firstName, lastName, email, password, accessLvl});
         },
-        updateUser: async (parent, {id, firstName, lastName, email, password, phone, address}) => {
-            return User.findByIdAndUpdate({id},
-                {firstName, lastName, email, password, phone, address}
-                )
+        updateUser: async (parent, args) => {
+            return User.findByIdAndUpdate({_id: args.id},
+                {
+                    firstName: args.firstName, 
+                    lastName: args.lastName, 
+                    email: args.email, 
+                    phone: args.phone
+                }
+            )
         },
         removeUser: async (parent, { userId }) => {
             return User.findOneAndDelete({ _id: userId})
-        },   
-        addAddress: async(parent, {}) => {
-            return User.findByIdAndUpdate({})
+        },
+        updatePassword: async(parent, {userId, password}) => {
+            return User.findOneAndUpdate({ _id: userId},
+                {password: password}
+                )},
+
+        addAddress: async(parent, args) => {
+            console.log(args);
+            return User.findByIdAndUpdate({_id: args.userId},
+                {
+                    $addToSet: {
+                        address: {
+                            number: args.number,
+                            streetName: args.streetName,
+                            province: args.province,
+                            country: args.country,
+                            postalCode: args.postalCode,
+                            deliveryNotes: args.deliveryNotes,
+                            primary: args.primary,
+                            addressId: args.addressId
+                        }  
+                    }
+                },
+                { new: true })
         },
         updateAddress: async(parent, { userId, addressId, number, streetName, province, country, postalCode, deliveryNotes,primary }) => {
-            return User.findByIdAndUpdate({_id: userId},
+            return User.findByIdAndUpdate({userId},
                 { filter: {addressId: addressId}},
                 {
                     $addToSet: {
