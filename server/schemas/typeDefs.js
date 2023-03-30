@@ -8,7 +8,7 @@ type User {
     firstName: String!
     lastName: String!
     password: String!
-    phone: String!
+    phone: String
     address: [Address]!
     accessLvl: Int!
     orders: [Order]
@@ -20,7 +20,7 @@ type Product {
     name: String
     price: Float!
     tags: [String]
-    category: [Category]
+    category: String!
     image: String
     description: String
     stockCount: Int!
@@ -53,10 +53,6 @@ type Auth {
     user: User
   }
 
-type Category{
-  name: String!
-}
-
 type Checkout {
   session: ID
 }
@@ -77,7 +73,7 @@ type Mutation {
   addAddress(id: ID!, number: String!, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressId: Int!): User
   updateAddress(id: ID!, number: String, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressNo:Int!): User
   removeAddress(id: ID!, addressId: Int!): User
-  addProduct(productId: String!, name: String! price: Float!, category: [String]): Product
+  addProduct(productId: String!, name: String! price: Float!, category: String): Product
   updateProduct(productId: String!, name: String, price: Float, tags:[String], category: [String], image: String, description: String, stockCount: Int!): Product
   removeProduct(productId: String!): Product
   # addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order

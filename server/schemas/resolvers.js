@@ -1,14 +1,13 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Order, Address } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
-// const {User, Product, Order, Address} = require('./typeDefs');
 
 const resolvers = {
     Query: {
         // for admin access
         users: async () => {
-            return User.find().sort({ _id });
+            return User.find();
         },
         // for user/admin access
         user: async (parent, { userId }) => {
@@ -39,11 +38,26 @@ const resolvers = {
         removeUser: async (parent, { userId }) => {
             return User.findOneAndDelete({ _id: userId})
         },   
-        addAddress: async(parent, {}) => {
-            return User.findByIdAndUpdate({})
+        addAddress: async(parent, { userId, addressId, number, streetName, province, country, postalCode, deliveryNotes, primary  }) => {
+            return User.findByIdAndUpdate({ userId},
+                {
+                    $addToSet: {
+                        address: {
+                            number: number,
+                            streetName: streetName,
+                            province: province,
+                            country: country,
+                            postalCode: postalCode,
+                            deliveryNotes: deliveryNotes,
+                            primary: primary,
+                            addressId: addressId
+                        }  
+                    }
+                },
+                { new: true })
         },
         updateAddress: async(parent, { userId, addressId, number, streetName, province, country, postalCode, deliveryNotes,primary }) => {
-            return User.findByIdAndUpdate({_id: userId},
+            return User.findByIdAndUpdate({userId},
                 { filter: {addressId: addressId}},
                 {
                     $addToSet: {
