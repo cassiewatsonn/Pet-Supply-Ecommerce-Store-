@@ -1,27 +1,18 @@
 import { gql } from '@apollo/client';
 
 export const ADD_USER = gql`
-mutation addUser(
-  $firstName: String!,
-  $lastName: String!,
-  $email: String!,
-  $password: String!,
-  $accessLvl: Int!
-  ) {
-    addUser(
-      firstName: $firstName,
-      lastName: $lastName,
-      email: $email,
-      password: $password,
-      accessLvl: $accessLvl
-      ) {
-        accessLvl
-        firstName
-        lastName
-        email
-        password
+mutation AddUser($firstName: String!, $lastName: String!, $email: String!, $password: String!, $accessLvl: Int!) {
+  addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password, accessLvl: $accessLvl) {
+    token
+    user {
+      accessLvl
+      email
+      firstName
+      lastName
+      password
     }
   }
+}
 `;
 export const UPDATE_USER = gql`
   mutation updateUser(
