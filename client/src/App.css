@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Edu+NSW+ACT+Foundation:wght@500&family=Lobster&display=swap');
+/* FONTS: Lobster - TITLE 
+        EDNU - Subtitle 
+        Dosis - text */
+        /* font-family: 'Dosis', sans-serif;
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-family: 'Lobster', cursive; */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* TODO: HEADER  */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.businessName{
+  font-family: 'Lobster', cursive;
+  margin-left: 5%;
+}
+.nav-tabs{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  margin: 15px;
+}
+.nav-item{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+}
+.signin-btn{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+}
+.signup-btn{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+
+/* TODO: FOOTER  */
+.footer{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 10%;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* TODO ABOUT US  */
+.about-title{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  text-align: center;
+  margin-top: 50px;
+}
+.about-info{
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* TODO TOYS  */
+.toys-title{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  text-align: center;
+  margin-top: 50px;
 }
+.toy-card{
+  width: 350px;
+  flex-wrap:wrap;
+  margin: 15px;
+  /* background-color: #bbddf9; */
+}
+.card-wrap{
+  display: flex; 
+  flex-wrap: wrap;
+  margin-right: 20%;
+  margin-left:20%;
+  width: 60%;
+  justify-content: center;
+}
+.content{
+  font-family: 'Dosis', sans-serif;
+}
+.card-title{
+  text-align: center;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+.addtocart{
+  margin-top: 15px;
+}
+
+
+/* TODO TREATS */
+.treats-title{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  text-align: center;
+  margin-top: 50px;
+}
+
+
+/* TODO LOGIN  */
+.login-title{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  text-align: center;
+  margin-top: 50px;
+}
+.login-card{
+display: flex;
+justify-content: center;
+}
+.email-input{
+  margin: 15px;
+}
+.password-input{
+  margin: 15px;
+}
+.signup-instead{
+  margin: 15px;
+}
+.login-btn{
+  margin:15px 20px;
+}
+.error-text{
+  background-color: yellow
+}
+
+
+/* TODO SIGN OUT */
