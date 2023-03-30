@@ -10,8 +10,9 @@ const resolvers = {
             return User.find();
         },
         // for user/admin access
-        user: async (parent, { userId }) => {
-            return User.findOne({ _id: userId });
+        user: async (parent, args, context) => {
+            console.log(context.user)
+            return await User.findOne({ _id: context.user._id });
         },
         products: async () => {
             return Product.find();
@@ -28,7 +29,7 @@ const resolvers = {
     },
     Mutation: {
         addUser: async (parent, args) => {
-            return User.create({
+            const user = User.create({
                 firstName: args.firstName, 
                 lastName: args.lastName, 
                 email: args.email, 
@@ -36,6 +37,10 @@ const resolvers = {
                 accessLvl: args.accessLvl
             }
             );
+            const token = signToken(user)
+            return {
+                token, user 
+            }
         },
         updateUser: async (parent, args) => {
             return User.findByIdAndUpdate({_id: args.userId},
@@ -113,8 +118,14 @@ const resolvers = {
         removeProduct: async(parent, {productId}) => {
             return Product.delete(productId = productId)
         },
-        login: async (parent, args) => {
-            return User.findOne({email: args.email});
+        login: async (parent, {email}) => {
+           
+            const user = await User.findOne({email});
+            console.log(user)
+            const token = signToken(user)
+            return{
+                user, token
+            }
         }
         // addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
         // updateOrder(): Order
