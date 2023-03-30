@@ -27,17 +27,27 @@ const resolvers = {
         },
     },
     Mutation: {
-        addUser: async (parent, {firstName, lastName, email, password, accessLvl}) => {
+        addUser: async (parent, args) => {
             return User.create({firstName, lastName, email, password, accessLvl});
         },
-        updateUser: async (parent, {id, firstName, lastName, email, password, phone, address}) => {
-            return User.findByIdAndUpdate({id},
-                {firstName, lastName, email, password, phone, address}
-                )
+        updateUser: async (parent, args) => {
+            return User.findByIdAndUpdate({_id: args.id},
+                {
+                    firstName: args.firstName, 
+                    lastName: args.lastName, 
+                    email: args.email, 
+                    phone: args.phone
+                }
+            )
         },
         removeUser: async (parent, { userId }) => {
             return User.findOneAndDelete({ _id: userId})
-        },   
+        },
+        updatePassword: async(parent, {userId, password}) => {
+            return User.findOneAndUpdate({ _id: userId},
+                {password: password}
+                )},
+
         addAddress: async(parent, args) => {
             console.log(args);
             return User.findByIdAndUpdate({_id: args.userId},

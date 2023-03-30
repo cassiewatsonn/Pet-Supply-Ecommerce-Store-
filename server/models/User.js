@@ -37,8 +37,6 @@ const userSchema = new Schema({
       },
       orders: [Order.schema],
       address: [Address.schema],
-
-
 });
 
 
