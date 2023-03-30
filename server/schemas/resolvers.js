@@ -31,7 +31,7 @@ const resolvers = {
             return User.create({firstName, lastName, email, password, accessLvl});
         },
         updateUser: async (parent, args) => {
-            return User.findByIdAndUpdate({_id: args.id},
+            return User.findByIdAndUpdate({_id: args.userId},
                 {
                     firstName: args.firstName, 
                     lastName: args.lastName, 

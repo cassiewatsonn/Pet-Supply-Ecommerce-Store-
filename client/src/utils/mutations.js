@@ -1,8 +1,7 @@
 import { gql } from '@apollo/client';
 
-
 export const ADD_USER = gql`
-mutation Mutation($firstName: String!, $lastName: String!, $email: String!, $password: String!, $accessLvl: Int!) {
+mutation addUser($firstName: String!, $lastName: String!, $email: String!, $password: String!, $accessLvl: Int!) {
     addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password, accessLvl: $accessLvl) {
       accessLvl
       firstName
@@ -15,14 +14,14 @@ mutation Mutation($firstName: String!, $lastName: String!, $email: String!, $pas
 `;
 export const UPDATE_USER = gql`
   mutation updateUser(
-    $userId: ID!
-    $firstName: String
-    $lastName: String
-    $email: String
-    $phone: String
+    $userId: ID!,
+    $firstName: String,
+    $lastName: String,
+    $email: String,
+    $phone: String,
    ) {
     updateUser(
-      id: $updateUserId
+      id: $userId
       firstName: $firstName
       lastName: $lastName
       email: $email
@@ -34,8 +33,8 @@ export const UPDATE_USER = gql`
 
 export const UPDATE_PASSWORD = gql`
   mutation updatePassword(
-    $userId: ID!
-    $password: password
+    $userId: ID!,
+    $password: password,
   ) {
     updateUser(
       id: $userId
@@ -57,34 +56,47 @@ export const REMOVE_USER = gql`
 `
 export const ADD_PRODUCT = gql`
   mutation addProduct(
-    $productId: String!
-    $name: String!
-    $price: Float!
-    $category: String
-    $tags: [String]
-    $stockCount: Int!
-    $image: String
-    $description: String
+    $productId: String!,
+    $name: String!,
+    $price: Float!,
+    $category: String,
+    $tags: [String],
+    $stockCount: Int!,
+    $image: String,
+    $description: String,
   ) {
     addProduct(
       productId: $productId
       name: $name
       price: $price
       category: $category
-      tags: $$tags
+      tags: $tags
       stockCount: $stockCount
-      image: $$image
+      image: $image
       description: $description
     )
   }
 `
 
+export const UPDATE_PRODUCT = gql`
+  mutation updateProduct(
 
-// export const UPDATE_USER = gql``
+  )
+`
+
+export const REMOVE_PRODUCT = gql`
+    mutation removeProduct(
+      $productId:String
+    ) {
+      removeProduct(
+        productId: $productId
+      )
+    }
+`
+
 // updateAddress(id: ID!, number: String, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressNo:Int!): User
 // removeAddress(id: ID!, addressId: Int!): User
 // updateProduct(productId: String!, name: String, price: Float, tags:[String], category: [String], image: String, description: String, stockCount: Int!): Product
-// removeProduct(productId: String!): Product
 
 export const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -101,14 +113,3 @@ export const LOGIN = gql`
     }
   }
 `;
-
-// export const LOGIN = gql`
-//   mutation login($email: String!, $password: String!) {
-//     login(email: $email, password: $password) {
-//       token
-//       user {
-//         _id
-//       }
-//     }
-//   }
-// `;
