@@ -14,8 +14,8 @@ query users($id: ID!) {
 `;
 
 export const SINGLE_USER = gql`
-query user($id: ID!) {
-  user(_Id: $id) {
+query user($userId: ID!) {
+  user(_Id: $userId) {
     _id
     firstName
     lastName
@@ -107,5 +107,22 @@ query Order($orderId: Int!) {
    }
 }
 `;
+
+
+// export const LOGIN = gql`
+//   query login($email: String!, $password: String!) {
+//     login(email: $email, password: $password) {
+//       token
+//       user {
+//         _id
+//         firstName
+//         lastName
+//         email
+//         accessLvl
+//         phoneNumber
+//       }
+//     }
+//   }
+// `;
 
 

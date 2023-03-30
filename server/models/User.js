@@ -6,14 +6,10 @@ const Order = require('./Order');
 const Address = require('./Address');
 
 const userSchema = new Schema({
-    // _id: {
-    //   type: Schema.Types.ObjectId,
-    //   required: true
-    // },
     firstName: {
         type: String, 
         required: true, 
-        trimt: true
+        trim: true
     },
     lastName: {
         type: String,
@@ -34,6 +30,10 @@ const userSchema = new Schema({
       accessLvl: {
         type: Number,
         require: true
+      },
+      phone: {
+        type: String,
+        require: false
       },
       orders: [Order.schema],
       address: [Address.schema],
