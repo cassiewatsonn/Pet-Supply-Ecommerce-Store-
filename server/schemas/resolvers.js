@@ -38,19 +38,20 @@ const resolvers = {
         removeUser: async (parent, { userId }) => {
             return User.findOneAndDelete({ _id: userId})
         },   
-        addAddress: async(parent, { userId, addressId, number, streetName, province, country, postalCode, deliveryNotes, primary  }) => {
-            return User.findByIdAndUpdate({ userId},
+        addAddress: async(parent, args) => {
+            console.log(args);
+            return User.findByIdAndUpdate({_id: args.userId},
                 {
                     $addToSet: {
                         address: {
-                            number: number,
-                            streetName: streetName,
-                            province: province,
-                            country: country,
-                            postalCode: postalCode,
-                            deliveryNotes: deliveryNotes,
-                            primary: primary,
-                            addressId: addressId
+                            number: args.number,
+                            streetName: args.streetName,
+                            province: args.province,
+                            country: args.country,
+                            postalCode: args.postalCode,
+                            deliveryNotes: args.deliveryNotes,
+                            primary: args.primary,
+                            addressId: args.addressId
                         }  
                     }
                 },
