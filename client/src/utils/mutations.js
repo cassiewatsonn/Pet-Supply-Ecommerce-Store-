@@ -53,7 +53,6 @@ export const UPDATE_PASSWORD = gql`
     }
   }
 `
-
 export const REMOVE_USER = gql`
   mutation removeUser(
     $userId: ID!
@@ -65,13 +64,34 @@ export const REMOVE_USER = gql`
     }
   }
 `
+export const ADD_PRODUCT = gql`
+  mutation addProduct(
+    $productId: String!
+    $name: String!
+    $price: Float!
+    $category: String
+    $tags: [String]
+    $stockCount: Int!
+    $image: String
+    $description: String
+  ) {
+    addProduct(
+      productId: $productId
+      name: $name
+      price: $price
+      category: $category
+      tags: $$tags
+      stockCount: $stockCount
+      image: $$image
+      description: $description
+    )
+  }
+`
+
 
 // export const UPDATE_USER = gql``
-// removeUser(id: ID!): User
-// addAddress(id: ID!, number: String!, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressId: Int!): User
 // updateAddress(id: ID!, number: String, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressNo:Int!): User
 // removeAddress(id: ID!, addressId: Int!): User
-// addProduct(productId: String!, name: String! price: Float!, category: [String]): Product
 // updateProduct(productId: String!, name: String, price: Float, tags:[String], category: [String], image: String, description: String, stockCount: Int!): Product
 // removeProduct(productId: String!): Product
 
