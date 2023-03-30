@@ -6,10 +6,10 @@ const Order = require('./Order');
 const Address = require('./Address');
 
 const userSchema = new Schema({
-    _id: {
-      type: mongoose.Types.ObjectId,
-      // required: true,
-    },
+    // _id: {
+    //   type: Schema.Types.ObjectId,
+    //   required: true
+    // },
     firstName: {
         type: String, 
         required: true, 
