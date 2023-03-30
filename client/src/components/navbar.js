@@ -1,4 +1,4 @@
-import { Button, Container, Navbar, Modal } from 'react-bootstrap'
+import { Button, Navbar, Modal } from 'react-bootstrap'
 import { useState, useContext } from 'react';
 import { CartContext } from '../CartContext';
 import CartProduct from './CartProduct';
@@ -9,21 +9,21 @@ export default function  NavBarComponent() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const checkout = async () => {
-        await fetch('http://localhost:4000/checkout', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({items: cart.items})
-        }).then((response) => {
-            return response.json();
-        }).then((response) => {
-            if(response.url) {
-                window.location.assign(response.url);
-            }
-        })
-    }
+    // const checkout = async () => {
+    //     await fetch('http://localhost:4000/checkout', {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({items: cart.items})
+    //     }).then((response) => {
+    //         return response.json();
+    //     }).then((response) => {
+    //         if(response.url) {
+    //             window.location.assign(response.url);
+    //         }
+    //     })
+    // }
     const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
 
     return (
@@ -48,8 +48,8 @@ export default function  NavBarComponent() {
                        <CartProduct key={index} id={currentProduct.id} quantity={currentProduct.quantity}></CartProduct>
                     ))}
                     <h2>Total: ${cart.getTotalCost().toFixed(2)}</h2>
-
-                    <Button variant="primary" onClick={checkout}>
+                    {/* <Button variant="primary" onClick={checkout}> */}
+                    <Button variant="primary">
                         Purchase!
                     </Button>
                 </>
