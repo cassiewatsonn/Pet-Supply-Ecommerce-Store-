@@ -53,7 +53,7 @@ export function CartProvider({ children }) {
     function removeOneFromCart(id) {
         const quantity = getProductQuantity(id);
 
-        if (quantity == 1) {
+        if (quantity === 1) {
             deleteFromCart(id);
         } else {
             setCartProducts(
@@ -72,7 +72,7 @@ export function CartProvider({ children }) {
         setCartProducts(
             cartProducts => 
             cartProducts.filter(currentProduct => {
-                return currentProduct.id != id;
+                return currentProduct.id !== id;
             })  
         )
     }
@@ -104,6 +104,3 @@ export function CartProvider({ children }) {
 
 
 export default CartProvider;
-
-//Context (cart, addToCart, removeCart)
-//Provider => gives your React app access to all the things in your context. 
