@@ -63,7 +63,7 @@ type Query {
   order(orderId: Int!): Order
   products: [Product]
   product(productId: Int!): Product
-  users: [User]!
+  users: [User]
   user: User
 }
 
