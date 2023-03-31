@@ -7,11 +7,11 @@ const resolvers = {
     Query: {
         // for admin access
         users: async () => {
+            console.log("We're doing this");
             return User.find();
         },
         // for user/admin access
         user: async (parent, args, context) => {
-            console.log(context.user)
             return await User.findOne({ _id: context.user._id });
         },
         products: async () => {

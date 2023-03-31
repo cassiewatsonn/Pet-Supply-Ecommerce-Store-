@@ -1,12 +1,11 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_USERS = gql`
-query users {
-  user {
+query getUsers {
+  users {
     _id
     firstName
     lastName
-    username
     email
     accessLvl
   }
@@ -14,7 +13,7 @@ query users {
 `;
 
 export const SINGLE_USER = gql`
-query user($userId: ID!) {
+query getUser($userId: ID!) {
   user(_Id: $userId) {
     _id
     firstName

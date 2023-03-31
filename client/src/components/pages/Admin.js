@@ -5,12 +5,6 @@ import UsersAdmin from './admin-panels/users.js'
 
 export default function Admin() {
     let user = localStorage.getItem('accessLvl');
-    console.log(user);
-    // let user = {
-    //     email: "cassie123@gmail.com", 
-    //     accessLvl: 1, 
-
-    // }
     return(
         <>
         {user == 1 ?(
