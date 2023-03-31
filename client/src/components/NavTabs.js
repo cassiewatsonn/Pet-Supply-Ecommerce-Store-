@@ -12,19 +12,10 @@ export default function NavTabs() {
           <Link to="/aboutus">
             About Us
           </Link>
-
-          <Link to="/toys">
-            Toys
-          </Link>
-        
+      
           <Link to="/products">
             Products
           </Link>
-
-          <Link to="/treats">
-            Treats
-          </Link>
-        
 
           <Link to="/cart">
             Cart

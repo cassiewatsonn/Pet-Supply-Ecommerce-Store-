@@ -64,7 +64,7 @@ type Query {
   products: [Product]
   product(productId: Int!): Product
   users: [User]
-  user: User
+  user(id: ID!): User
 }
 
 type Mutation {

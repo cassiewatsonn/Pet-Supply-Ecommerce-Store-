@@ -8,11 +8,11 @@ const resolvers = {
         // for admin access
         users: async () => {
             console.log("We're doing this");
-            return User.find();
+            return User.find({});
         },
         // for user/admin access
         user: async (parent, args, context) => {
-            return await User.findOne({ _id: context.user._id });
+            return await User.findOne({ userId: args.userId });
         },
         products: async () => {
             return Product.find();
