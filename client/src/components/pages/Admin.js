@@ -8,7 +8,7 @@ export default function Admin() {
     return(
         <>
         {user == 1 ?(
-            <Tab.Container defaultActiveKey="orders" id="left-tabs">
+            <Tab.Container defaultActiveKey="users" id="left-tabs">
                 <Row>
                     <Col sm={3}>
                         <Nav variant="pills" className="flex-column">
