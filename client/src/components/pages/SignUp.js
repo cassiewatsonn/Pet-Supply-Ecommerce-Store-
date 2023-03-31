@@ -22,11 +22,11 @@ export default function SignUp(props) {
     event.preventDefault();
     const mutationResponse = await addUser({
       variables: {
-        accessLvl: formState.accessLvl,
+        accessLvl: 1,
         firstName: formState.firstName,
         lastName: formState.lastName,
-        email: formState.email
-        // password: formState.password,
+        email: formState.email,
+        password: formState.password,
       },
     });
     const token = mutationResponse.data.addUser.token;

@@ -98,7 +98,12 @@ export const LOGIN = gql`
          password: $password
          ) {
         token
-        user
+        user {
+      accessLvl
+      email
+      firstName
+      lastName
+    }
     }
   }
 `;
