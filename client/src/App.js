@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Container } from "react-bootstrap";
 import "./App.css";
 import { setContext } from '@apollo/client/link/context';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavTabs from './components/NavTabs';
 import AboutUs from './components/pages/AboutUs';
@@ -15,6 +16,7 @@ import Cancel from './components/pages/Cancel';
 import Success from './components/pages/Success';
 import Store from './components/pages/Store';
 import NavBarComponent from './components/navbar';
+import Admin from './components/pages/Admin';
 
 // import Toys from './components/pages/Toys';
 // import Treats from './components/pages/Treats';
@@ -68,29 +70,37 @@ const App = () => {
                             element={<Treats />}
                         /> */}
                                 <Route
-                                    path="/Products"
-                                    element={<Store />}
-                                />
-                                <Route
-                                    path="/SignIn"
-                                    element={<SignIn />}
-                                />
-                                <Route
-                                    path="/SignUp"
-                                    element={<SignUp />}
-                                />
-                                <Route
-                                    path="/AboutUs"
+                                    path="/"
                                     element={<AboutUs />}
                                 />
                                 <Route
-                                    path="/Success"
+                                    path="/products"
+                                    element={<Store />}
+                                />
+                                <Route
+                                    path="/signin"
+                                    element={<SignIn />}
+                                />
+                                <Route
+                                    path="/signup"
+                                    element={<SignUp />}
+                                />
+                                <Route
+                                    path="/aboutus"
+                                    element={<AboutUs />}
+                                />
+                                <Route
+                                    path="/success"
                                     element={<Success />}
                                 />
                                 <Route
-                                    path="/Cancel"
+                                    path="/cancel"
                                     element={<Cancel />}
                                 />
+                                <Route
+                                    path="/admin"
+                                    element={<Admin />}
+                                    />
                                 {/* <Route
                             path="/Cart"
                             element={<Cart />}
