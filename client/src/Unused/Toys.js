@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ToyCard from '../ToyCard';
-import Cart from '../../Unused/Cart';
+import ToyCard from '../components/ToyCard';
+import Cart from './Cart';
 
 export default function Toys() {
 
