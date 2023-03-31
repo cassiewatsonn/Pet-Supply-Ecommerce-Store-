@@ -9,23 +9,37 @@ export default function NavTabs() {
       <span className="navs"></span>
       <div className={`nav-items ${isOpen && "open"}`}>
         
-          <Link to="/AboutUs">
+          <Link to="/aboutus">
             About Us
           </Link>
+
+          <Link to="/toys">
+            Toys
+          </Link>
         
-          <Link to="/Products">
+          <Link to="/products">
             Products
+          </Link>
+
+          <Link to="/treats">
+            Treats
           </Link>
         
 
-          <Link to="/SignIn">
+          <Link to="/cart">
+            Cart
+
+          </Link>
+        
+          <Link to="/signin">
             Sign In
           </Link>
        
 
-          <Link to="/SignUp">
+          <Link to="/signup">
             Sign Up
           </Link>
+        
 
       </div>
       <div

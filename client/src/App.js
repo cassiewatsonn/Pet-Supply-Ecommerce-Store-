@@ -16,6 +16,10 @@ import Cancel from './components/pages/Cancel';
 import Success from './components/pages/Success';
 import Store from './components/pages/Store';
 
+import NavBarComponent from './components/navbar';
+import Admin from './components/pages/Admin';
+
+
 // import Toys from './components/pages/Toys';
 // import Treats from './components/pages/Treats';
 // import Cart from './components/pages/Cart'
@@ -52,40 +56,56 @@ const App = () => {
     return (
         <ApolloProvider client={client}>
             <CartProvider>
-                <Router>
-                    <>
-                        <Header />
-                        <NavTabs />
-                        <Routes>
-                         <Route
-                                path="/"
-                                element={<AboutUs />}
-                            />
-                            <Route
-                                path="/Products"
-                                element={<Store />}
-                            />
-                            <Route
-                                path="/SignIn"
-                                element={<SignIn />}
-                            />
-                            <Route
-                                path="/SignUp"
-                                element={<SignUp />}
-                            />
-                            <Route
-                                path="/AboutUs"
-                                element={<AboutUs />}
-                            />
-                            <Route
-                                path="/Success"
-                                element={<Success />}
-                            />
-                            <Route
-                                path="/Cancel"
-                                element={<Cancel />}
-                            />
-                            {/* <Route
+
+                {/* <Container> */}
+                {/* <NavBarComponent> </NavBarComponent> */}
+                    <Router>
+                        <>
+                            <Header />
+                            <NavTabs />
+                            <Routes>
+                                {/* <Route
+                            path="/Toys"
+                            element={<Toys />}
+                        />
+                        <Route
+                            path="/Treats"
+                            element={<Treats />}
+                        /> */}
+                                <Route
+                                    path="/"
+                                    element={<AboutUs />}
+                                />
+                                <Route
+                                    path="/products"
+                                    element={<Store />}
+                                />
+                                <Route
+                                    path="/signin"
+                                    element={<SignIn />}
+                                />
+                                <Route
+                                    path="/signup"
+                                    element={<SignUp />}
+                                />
+                                <Route
+                                    path="/aboutus"
+                                    element={<AboutUs />}
+                                />
+                                <Route
+                                    path="/success"
+                                    element={<Success />}
+                                />
+                                <Route
+                                    path="/cancel"
+                                    element={<Cancel />}
+                                />
+                                <Route
+                                    path="/admin"
+                                    element={<Admin />}
+                                    />
+                                {/* <Route
+
                             path="/Cart"
                             element={<Cart />}
                         /> */}

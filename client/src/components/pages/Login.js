@@ -25,8 +25,9 @@ function Login(props) {
       });
       
       const token = mutationResponse.data.login.token;
+      const accessLvl = mutationResponse.data.login.user.accessLvl;
 
-      Auth.login(token);
+      Auth.login(token, accessLvl);
     } catch (e) {
       console.log(e);
     }

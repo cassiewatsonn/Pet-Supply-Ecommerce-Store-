@@ -121,7 +121,7 @@ const resolvers = {
         login: async (parent, args) => {
            console.log( args.email )
             const user = await User.findOne({email: args.email});
-            if(!user) throw new AuthenticationError("Incorrect credentials");
+            if(!user) throw new AuthenticationError("Incorrect email");
             const correctPw = await user.isCorrectPassword(args.password); 
 
             if(!correctPw) throw new AuthenticationError("Incorrect password");
