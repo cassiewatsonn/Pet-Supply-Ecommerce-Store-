@@ -6,8 +6,6 @@ import "./App.css";
 import { setContext } from '@apollo/client/link/context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 import NavTabs from './components/NavTabs';
 import AboutUs from './components/pages/AboutUs';
 import Footer from './components/Footer';
