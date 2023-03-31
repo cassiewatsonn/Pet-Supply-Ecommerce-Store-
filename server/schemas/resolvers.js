@@ -118,16 +118,18 @@ const resolvers = {
         removeProduct: async(parent, {productId}) => {
             return Product.delete(productId = productId)
         },
-        login: async (parent, {email}) => {
-           
-            const user = await User.findOne({email});
-            console.log(user)
-            
+        login: async (parent, args) => {
+           console.log( args.email )
+            const user = await User.findOne({email: args.email});
+            if(!user) throw new AuthenticationError("Incorrect credentials");
+            const correctPw = await user.isCorrectPassword(args.password); 
+
+            if(!correctPw) throw new AuthenticationError("Incorrect password");
             const token = signToken(user)
-            return{
-                user, token
+                return{user, token} 
+
+                
             }
-        }
         // addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
         // updateOrder(): Order
         // removeOrder(orderId: Int!): Order
