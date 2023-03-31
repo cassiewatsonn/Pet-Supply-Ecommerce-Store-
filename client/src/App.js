@@ -51,13 +51,12 @@ const App = () => {
     return (
         <ApolloProvider client={client}>
             <CartProvider>
-                
-                    <Router>
-                        <>
-                            <Header />
-                            <NavTabs />
-                            <Routes>
-                                {/* <Route
+                <Router>
+                    <>
+                        <Header />
+                        <NavTabs />
+                        <Routes>
+                            {/* <Route
                             path="/Toys"
                             element={<Toys />}
                         />
@@ -65,39 +64,43 @@ const App = () => {
                             path="/Treats"
                             element={<Treats />}
                         /> */}
-                                <Route
-                                    path="/Products"
-                                    element={<Store />}
-                                />
-                                <Route
-                                    path="/SignIn"
-                                    element={<SignIn />}
-                                />
-                                <Route
-                                    path="/SignUp"
-                                    element={<SignUp />}
-                                />
-                                <Route
-                                    path="/AboutUs"
-                                    element={<AboutUs />}
-                                />
-                                <Route
-                                    path="/Success"
-                                    element={<Success />}
-                                />
-                                <Route
-                                    path="/Cancel"
-                                    element={<Cancel />}
-                                />
-                                {/* <Route
+                         <Route
+                                path="/"
+                                element={<AboutUs />}
+                            />
+                            <Route
+                                path="/Products"
+                                element={<Store />}
+                            />
+                            <Route
+                                path="/SignIn"
+                                element={<SignIn />}
+                            />
+                            <Route
+                                path="/SignUp"
+                                element={<SignUp />}
+                            />
+                            <Route
+                                path="/AboutUs"
+                                element={<AboutUs />}
+                            />
+                            <Route
+                                path="/Success"
+                                element={<Success />}
+                            />
+                            <Route
+                                path="/Cancel"
+                                element={<Cancel />}
+                            />
+                            {/* <Route
                             path="/Cart"
                             element={<Cart />}
                         /> */}
-                            </Routes>
-                            <Footer />
-                        </>
-                    </Router>
-          
+                        </Routes>
+                        <Footer />
+                    </>
+                </Router>
+
             </CartProvider>
 
         </ApolloProvider>

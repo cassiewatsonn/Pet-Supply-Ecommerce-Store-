@@ -24,11 +24,12 @@ const productsArray = [
 
 function getProductData(id) {
     let productData = productsArray.find(product => product.id === id )
-    if (productData == undefined) {
+    if (productData === undefined) {
         console.log("product data does not exist" + id);
         return undefined;
     }
     return productData;
 }
+
 
 export { productsArray, getProductData} ;
