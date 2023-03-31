@@ -6,20 +6,18 @@ query getUsers {
     _id
     firstName
     lastName
-    email
-    accessLvl
+    accessLvl  
   }
 }
 `;
 
 export const SINGLE_USER = gql`
 query getUser($userId: ID!) {
-  user(_Id: $userId) {
-    _id
+  user(id: $userId) {
     firstName
     lastName
-    username
     phone
+    email
     password
     address {
       number
