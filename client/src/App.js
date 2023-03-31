@@ -1,7 +1,7 @@
 import React from "react";
 // import EcomContainer from "./components/EcomContainer";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import "./App.css";
 import { setContext } from '@apollo/client/link/context';
 
@@ -14,7 +14,6 @@ import SignIn from './components/pages/Login';
 import Cancel from './components/pages/Cancel';
 import Success from './components/pages/Success';
 import Store from './components/pages/Store';
-import NavBarComponent from './components/navbar';
 
 // import Toys from './components/pages/Toys';
 // import Treats from './components/pages/Treats';
@@ -52,8 +51,7 @@ const App = () => {
     return (
         <ApolloProvider client={client}>
             <CartProvider>
-                {/* <Container> */}
-                {/* <NavBarComponent> </NavBarComponent> */}
+                
                     <Router>
                         <>
                             <Header />
@@ -99,7 +97,7 @@ const App = () => {
                             <Footer />
                         </>
                     </Router>
-                {/* </Container> */}
+          
             </CartProvider>
 
         </ApolloProvider>

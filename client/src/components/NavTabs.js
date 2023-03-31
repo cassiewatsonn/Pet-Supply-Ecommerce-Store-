@@ -14,7 +14,7 @@ export default function NavTabs() {
           </Link>
         
 
-          <Link to="/Toys">
+          {/* <Link to="/Toys">
             Toys
           </Link>
         
@@ -22,10 +22,10 @@ export default function NavTabs() {
           <Link to="/Treats">
             Treats
           </Link>
-        
+         */}
 
-          <Link to="/Cart">
-            Cart
+          <Link to="/Products">
+            Products
           </Link>
         
 
