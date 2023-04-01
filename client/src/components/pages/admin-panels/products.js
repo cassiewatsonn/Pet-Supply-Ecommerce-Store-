@@ -36,6 +36,19 @@ function EditProductBox({ productData, setProductData }) {
     const [updateProduct] = useMutation(UPDATE_PRODUCT);
     const handleSubmit = async (event) => {
         event.preventDefault();  
+        const mutationResponse = await updateProduct({
+            variables: {
+                name: productData.name,
+                productId: productData.productId,
+                price: Number(productData.price),
+                category: productData.category,
+                tags: productData.tags,
+                stockCount: Number(productData.stockCount),
+                image: productData.image,
+                description: productData.description
+            },
+            })
+            console.log(mutationResponse);
     }
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -55,6 +68,12 @@ function EditProductBox({ productData, setProductData }) {
             <Form.Control type="text" name="price" value={productData.price} onChange={handleChange}/>
             <Form.Label>Description</Form.Label>
             <Form.Control type="text" name="description" value={productData.description} onChange={handleChange}/>
+            <Form.Label>Choose category</Form.Label>
+            <Form.Select aria-label="Default select example">
+                <option value="toys">Toys</option>
+                <option value="treats">Treats</option>
+                <option value="products">Assorted</option>
+          </Form.Select>
             <Form.Label>Stock</Form.Label>
             <Form.Control type="text" name="stockCount" value={productData.stockCount} onChange={handleChange}/>
         </Form.Group>
