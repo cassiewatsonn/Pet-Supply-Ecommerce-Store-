@@ -16,6 +16,7 @@ export default function UsersAdmin() {
             setFormData(data.user)
         }
     }
+
     return (
         <>
             <ListGroup>
@@ -28,11 +29,9 @@ export default function UsersAdmin() {
 }
 
 function EditBox({ formData, setFormData }) {
-
     const [updateUser] = useMutation(UPDATE_USER);
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        console.log(formData);  
+        event.preventDefault();  
         const mutationResponse = await updateUser({
             variables: {
                 userId: formData._id,
@@ -46,7 +45,6 @@ function EditBox({ formData, setFormData }) {
             })
             console.log(mutationResponse);
         }
-
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData({
@@ -72,7 +70,7 @@ function EditBox({ formData, setFormData }) {
             <Form.Control type="text" name="phone" defaultValue={formData.phone} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
-            <Form.Check type="check" name="accessLvl" id="accessLvl" label="Grant Admin access?" />
+            <Form.Check type="switch" name="accessLvl" id="accessLvl" label="Grant Admin access?"/>
         </Form.Group>
         <Button type="primary" value="submit">Submit</Button>
     </Form>

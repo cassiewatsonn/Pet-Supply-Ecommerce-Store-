@@ -71,6 +71,20 @@ export const ADD_PRODUCT = gql`
     )
   }
 `
+
+export const UPDATE_PRODUCT = gql`
+  mutation UpdateProduct($productId: String!, $name: String, $price: Float, $tags: [String], $category: String, $description: String, $stockCount: Int) {
+  updateProduct(productId: $productId, name: $name, price: $price, tags: $tags, category: $category, description: $description, stockCount: $stockCount) {
+    category
+    description
+    name
+    price
+    productId
+    stockCount
+  }
+}
+`
+
 export const REMOVE_PRODUCT = gql`
     mutation removeProduct(
       $productId:String
