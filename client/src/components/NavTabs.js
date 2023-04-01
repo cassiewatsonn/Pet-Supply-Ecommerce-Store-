@@ -4,12 +4,12 @@ import Auth from "../utils/auth";
 
 export default function NavTabs() {
   const [isOpen, setIsOpen] = useState(false);
-  const accessLvl = localStorage.getItem('accessLvl');
-
+  var accessLvl = localStorage.getItem('accessLvl');
   if (Auth.loggedIn()) {
+
     function UserControls() {
-      // console.log(accessLvl);
-      if (accessLvl == true) {
+      console.log(accessLvl);
+      if (accessLvl === 'true') {
         return (
           <Link to="/admin">
             Admin
@@ -22,7 +22,6 @@ export default function NavTabs() {
         </Link>
         )
       }
-      
     }
     return (
       <div className="Navigation-bar">
@@ -41,7 +40,7 @@ export default function NavTabs() {
             Logout
           </Link>
 
-          <UserControls accessLvl = {accessLvl} />
+          <UserControls />
 
         </div>
 
