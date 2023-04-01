@@ -8,7 +8,7 @@ export default function Admin() {
     let user = localStorage.getItem('accessLvl');
     return(
         <>
-        {user == true ?(
+        {user === 'true' ?(
             <Tab.Container defaultActiveKey="users" id="left-tabs">
                 <Row>
                     <Col sm={3}>

@@ -4,7 +4,7 @@ import { QUERY_USERS, SINGLE_USER } from '../../../utils/queries';
 import { useQuery, useLazyQuery } from '@apollo/client';
 
 export default function UsersAdmin() {
-    const [userData, setUserData] = useState();
+    const [formData, setFormData] = useState();
     const { data: usersQuery } = useQuery(QUERY_USERS);
     const [getUser] = useLazyQuery(SINGLE_USER);
     const users = usersQuery?.users || [];
@@ -12,7 +12,7 @@ export default function UsersAdmin() {
     async function handleUserData(e) {
         const { called, data } = await getUser({ variables: { userId: e } })
         if (called && data) {
-            setUserData(data.user)
+            setFormData(data.user)
         }
     }
     return (
@@ -21,13 +21,13 @@ export default function UsersAdmin() {
                 {users.map((user) => (<ListGroup.Item key={user._id} action onClick={() => handleUserData(user._id)}>{user.firstName} {user.lastName}</ListGroup.Item>))}
             </ListGroup>
 
-            <EditBox userData={userData} />
+            <EditBox formData={formData} setFormData={setFormData} />
         </>
     )
 }
 
-function EditBox({ userData }) {
-    const [formData, setFormData] = useState();
+function EditBox({ formData, setFormData }) {
+    // const [formData, setFormData] = useState();
     
     const handleSubmit = async (event) => {
         event.preventDefault();  
@@ -40,21 +40,21 @@ function EditBox({ userData }) {
         });
       };
 
-    return userData ? (
+    return formData ? (
     <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="editUser.ControlEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" name="email" placeholder="name@example.com" defaultValue={userData.email} onChange={handleChange}/>
+            <Form.Control type="email" name="email" placeholder="name@example.com" value={formData.email} onChange={handleChange}/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="editUser.ControlName">
             <Form.Label>First Name</Form.Label>
-            <Form.Control type="text" name="firstName" defaultValue={userData.firstName} onChange={handleChange}/>
+            <Form.Control type="text" name="firstName" defaultValue={formData.firstName} onChange={handleChange}/>
             <Form.Label>Last Name</Form.Label>
-            <Form.Control type="text" name="lastName" defaultValue={userData.lastName} onChange={handleChange} />
+            <Form.Control type="text" name="lastName" defaultValue={formData.lastName} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
             <Form.Label>Phone Number</Form.Label>
-            <Form.Control type="text" name="phone" defaultValue={userData.phone} onChange={handleChange} />
+            <Form.Control type="text" name="phone" defaultValue={formData.phone} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
             <Form.Check type="check" id="accessLvl" label="Grant Admin access?" />
