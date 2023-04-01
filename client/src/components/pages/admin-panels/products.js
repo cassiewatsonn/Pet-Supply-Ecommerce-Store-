@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Nav, Row, Col, ListGroup, Form, Button } from 'react-bootstrap';
+import { ListGroup, Form, Button } from 'react-bootstrap';
 import { QUERY_PRODUCT, QUERY_PRODUCTS } from '../../../utils/queries';
 import { useQuery, useLazyQuery } from '@apollo/client';
 // import { productsArray } from '../../../productStore';
@@ -22,7 +22,7 @@ export default function ProductsAdmin() {
             <ListGroup>
 
                 {products.map((product) => (<ListGroup.Item key={product._id} action onClick={() => handleProductData(product._id)}>{product.name} {product.price} {product.description} {product.stockCount}</ListGroup.Item>))}
-                
+
             </ListGroup>
 
 
