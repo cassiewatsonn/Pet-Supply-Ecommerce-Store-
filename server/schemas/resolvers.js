@@ -18,7 +18,7 @@ const resolvers = {
             return Product.find();
         },
         product: async (parent, { productId }) => {
-            return Product.findOne({ productId: productId});
+            return Product.findOne({ _id: productId});
         },
         orders: async () => {
             return Order.find().sort({ orderDate});

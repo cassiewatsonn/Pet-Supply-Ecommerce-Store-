@@ -31,35 +31,31 @@ query getUser($userId: ID!) {
 `;
 
 export const QUERY_PRODUCT = gql`
- query product($productId: Int!) {
+ query product($productId: String!) {
   product(productId: $productId) {
-    _id
-    name
-    price
     description
-    stockCount
+    name
+    _id
     image
-    category {
-      name
-    }
+    price
+    stockCount
+    productId
+    tags
   }
 }
 `;
 
 export const QUERY_PRODUCTS = gql`
-query products {
-  product {
-    _id
-    productId
-    name
+query Product {
+  products {
     description
+    name
+    _id
+    image
     price
     stockCount
-    image
+    productId
     tags
-    category {
-      name
-    }
   }
 }
 `;

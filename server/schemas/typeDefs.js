@@ -16,14 +16,13 @@ type User {
 
 type Product {
     _id: ID!
-    productId: String! # Make string, can be product SKU, so custom strings if needed
+    productId: String # Make string, can be product SKU, so custom strings if needed
     name: String
     price: Float!
     tags: [String]
-    category: String!
     image: String
     description: String
-    stockCount: Int!
+    stockCount: Int
 
 }
 
@@ -62,7 +61,7 @@ type Query {
   orders: [Order]!
   order(orderId: Int!): Order
   products: [Product]
-  product(productId: Int!): Product
+  product(productId: String!): Product
   users: [User]
   user(id: ID!): User
 }

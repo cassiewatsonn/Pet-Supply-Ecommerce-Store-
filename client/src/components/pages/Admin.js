@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { Nav, Row, Col} from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
+import ProductsAdmin from './admin-panels/products.js';
 import UsersAdmin from './admin-panels/users.js'
 
 export default function Admin() {
@@ -26,7 +27,7 @@ export default function Admin() {
                     <Col sm={9}>
                         <Tab.Content>
                         <Tab.Pane eventKey="products">
-                            This is some products
+                            <ProductsAdmin />
                         </Tab.Pane>
                         <Tab.Pane eventKey="users">
                             <UsersAdmin />
