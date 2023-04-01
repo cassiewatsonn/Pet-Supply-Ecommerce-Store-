@@ -54,7 +54,7 @@ export default function  NavBarComponent() {
                     </Button>
                 </>
                 :
-                <h2> The cart contains no items!</h2>
+                <h2> The cart contains no pup treats!</h2>
             }
             </Modal.Body>
         </Modal>
