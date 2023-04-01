@@ -48,11 +48,6 @@ export default function NavTabs() {
             Products
           </Link>
 
-          <Link to="/cart">
-            Cart
-
-          </Link>
-
           <Link to="/signin">
             Sign In
           </Link>

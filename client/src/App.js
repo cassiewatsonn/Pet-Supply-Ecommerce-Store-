@@ -65,14 +65,6 @@ const App = () => {
                             <Header />
                             <NavTabs />
                             <Routes>
-                                {/* <Route
-                            path="/Toys"
-                            element={<Toys />}
-                        />
-                        <Route
-                            path="/Treats"
-                            element={<Treats />}
-                        /> */}
                                 <Route
                                     path="/"
                                     element={<Home />}

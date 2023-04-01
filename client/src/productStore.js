@@ -6,7 +6,7 @@ const productsArray = [
         price: "8.99",
         description: "Crunchy treats with all natural Peanut Butter!"
     },
-        {
+    {
         id: "price_1MrOePIqV8JHGIHuoKnknyof",
         title: "Pork Treat",
         price: "12.99",
