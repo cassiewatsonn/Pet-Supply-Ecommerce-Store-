@@ -20,8 +20,11 @@ export default function ProductsAdmin() {
     return (
         <>
             <ListGroup>
+
                 {products.map((product) => (<ListGroup.Item key={product._id} action onClick={() => handleProductData(product._id)}>{product.name} {product.price} {product.description} {product.stockCount}</ListGroup.Item>))}
+                
             </ListGroup>
+
 
             <EditProductBox productData={productData} />
         </>
