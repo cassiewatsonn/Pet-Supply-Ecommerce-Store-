@@ -17,7 +17,7 @@ import Success from './components/pages/Success';
 import Store from './components/pages/Store';
 import Home from './components/pages/Home';
 
-import NavBarComponent from './components/navbar';
+// import NavBarComponent from './components/navbar';
 import Admin from './components/pages/Admin';
 
 
