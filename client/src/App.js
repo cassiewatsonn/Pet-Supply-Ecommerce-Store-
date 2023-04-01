@@ -16,7 +16,7 @@ import Cancel from './components/pages/Cancel';
 import Success from './components/pages/Success';
 import Store from './components/pages/Store';
 
-import NavBarComponent from './components/navbar';
+// import NavBarComponent from './components/navbar';
 import Admin from './components/pages/Admin';
 
 

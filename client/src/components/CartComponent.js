@@ -1,4 +1,4 @@
-import { Button, Navbar, Modal } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap'
 import { useState, useContext } from 'react';
 import { CartContext } from '../CartContext';
 import CartProduct from './CartProduct';
@@ -10,7 +10,7 @@ export default function CartComponent() {
     const handleShow = () => setShow(true);
 
     const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
-
+ 
     return (
         <>
             <Button onClick={handleShow}>Cart ({productsCount} Items)</Button>
