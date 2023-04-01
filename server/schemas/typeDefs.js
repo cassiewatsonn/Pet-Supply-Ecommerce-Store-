@@ -10,20 +10,19 @@ type User {
     password: String!
     phone: String
     address: [Address]!
-    accessLvl: Int!
+    accessLvl: Boolean!
     orders: [Order]
 }
 
 type Product {
     _id: ID!
-    productId: String! # Make string, can be product SKU, so custom strings if needed
+    productId: String # Make string, can be product SKU, so custom strings if needed
     name: String
     price: Float!
     tags: [String]
-    category: String!
     image: String
     description: String
-    stockCount: Int!
+    stockCount: Int
 
 }
 
@@ -62,14 +61,14 @@ type Query {
   orders: [Order]!
   order(orderId: Int!): Order
   products: [Product]
-  product(productId: Int!): Product
+  product(productId: String!): Product
   users: [User]
   user(id: ID!): User
 }
 
 type Mutation {
-  addUser(firstName: String!, lastName: String!, email: String!, password: String!, accessLvl: Int!): Auth
-  updateUser(userId: ID!, firstName: String!, lastName: String!, email: String!, phone: String!): User
+  addUser(firstName: String!, lastName: String!, email: String!, password: String!, accessLvl: Boolean!): Auth
+  updateUser(userId: ID!, firstName: String!, lastName: String!, email: String!, phone: String!, accessLvl: Boolean): User
   removeUser(userId: ID!): User
   login(email: String!, password: String!): Auth
   updatePassword(userId: ID!, password:String!): User

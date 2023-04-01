@@ -21,6 +21,7 @@ export const UPDATE_USER = gql`
     $lastName: String,
     $email: String,
     $phone: String,
+    $accessLvl: Boolean,
    ) {
     updateUser(
       id: $userId

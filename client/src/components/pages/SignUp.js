@@ -8,21 +8,12 @@ import { ADD_USER } from '../../utils/mutations';
 export default function SignUp(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
-// const [addUser] = useMutation(ADD_USER, {
-//     variables: {
-//         "firstName": "Bob",
-//         "lastName": "Bart",
-//         "email": "bob123@gmail.com",
-//         "password": "secret123",
-//         "accessLvl": 1
-//       },
-//   });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     const mutationResponse = await addUser({
       variables: {
-        accessLvl: 1,
+        accessLvl: false,
         firstName: formState.firstName,
         lastName: formState.lastName,
         email: formState.email,
@@ -30,7 +21,8 @@ export default function SignUp(props) {
       },
     });
     const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
+    const accessLvl = mutationResponse.data.addUser.accessLvl;
+    Auth.login(token, accessLvl);
   };
 
   const handleChange = (event) => {

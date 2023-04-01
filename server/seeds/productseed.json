@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Peanut Butter Biscuits",
+        "price": 8.99,
+        "description": "Crunchy treats with all natural Peanut Butter!", 
+        "image": "images/pb-biscuits.jpg"
+    },
+  
+    {
+        "name": "All In One",
+        "price": 10.99,
+        "description": "An assortment of all our dog biscuits in one bag!", 
+        "image": "images/all-in-one.jpg"
+    },
+    {
+        
+        "name": "Banana Biscuits",
+        "price": 8.99,
+        "description": "Crunchy treats with the delicious taste of bananas!",
+        "image": "images/banana.jpg"
+    },
+    {
+        "name": "Chicken & Beef Bones",
+        "price": 10.99,
+        "description": "Bone shaped treats flavoured with real chicken & beef.  Sure to be a favourite!",
+        "image": "images/chicken-beef.jpg"
+    },
+    {
+        "name": "Pumpkin Treats",
+        "price": 12.99,
+        "description": "Pumpkin flavoured bones drizzled with orange & white pumpkin icing!",
+        "image": "images/pumpkin.jpg"
+    },
+    {
+        "name": "Cheese Bones",
+        "price": 9.99,
+        "description": "Bone shaped biscuits with real Canadian cheddar cheese baked in!",
+        "image": "images/cheesebones.jpg"
+    },
+    {
+        "name": "Raspberry Lollipup",
+        "price": 6.99,
+        "description": "A raspberry lollipup swirled with vanilla yogurt to make a sweet, crunchy treat for your pup!",
+        "image": "images/lollipup.jpg"
+    },
+    {
+        "name": "Peanut Butter Pupcakes",
+        "price": 19.99,
+        "description": "Six of our peanut butter cupcakes topped with one of our peanut butter biscuits in a matching icing!",
+        "image": "images/peanutbutter-pupcake.jpg"
+    },
+    {
+        "name": "Raspberry Pupcakes",
+        "price": 19.99,
+        "description": "Six of our pupcakes are baked with love and raspberry, topped with a raspberry cream cheese icing!",
+        "image": "images/raspberry-pupcake.jpg"
+    }
+]
