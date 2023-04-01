@@ -16,6 +16,7 @@ import Cancel from './components/pages/Cancel';
 import Success from './components/pages/Success';
 import Store from './components/pages/Store';
 import Home from './components/pages/Home';
+import Settings from './components/pages/settings';
 
 // import NavBarComponent from './components/navbar';
 import Admin from './components/pages/Admin';
@@ -96,7 +97,11 @@ const App = () => {
                                 <Route
                                     path="/admin"
                                     element={<Admin />}
-                                    />
+                                />
+                                <Route
+                                    path="/settings"
+                                    element={<Settings />}
+                                />                                    
                                 {/* <Route
 
                             path="/Cart"
