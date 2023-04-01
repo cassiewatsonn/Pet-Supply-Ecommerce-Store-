@@ -10,7 +10,7 @@ type User {
     password: String!
     phone: String
     address: [Address]!
-    accessLvl: Int!
+    accessLvl: Boolean!
     orders: [Order]
 }
 
@@ -67,8 +67,8 @@ type Query {
 }
 
 type Mutation {
-  addUser(firstName: String!, lastName: String!, email: String!, password: String!, accessLvl: Int!): Auth
-  updateUser(userId: ID!, firstName: String!, lastName: String!, email: String!, phone: String!): User
+  addUser(firstName: String!, lastName: String!, email: String!, password: String!, accessLvl: Boolean!): Auth
+  updateUser(userId: ID!, firstName: String!, lastName: String!, email: String!, phone: String!, accessLvl: Boolean): User
   removeUser(userId: ID!): User
   login(email: String!, password: String!): Auth
   updatePassword(userId: ID!, password:String!): User

@@ -29,7 +29,7 @@ const userSchema = new Schema({
         
       },
       accessLvl: {
-        type: Number,
+        type: Boolean,
         require: true
       },
       phone: {

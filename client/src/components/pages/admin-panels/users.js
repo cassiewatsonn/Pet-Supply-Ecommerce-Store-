@@ -40,7 +40,8 @@ function EditBox({ userData }) {
         });
       };
 
-    return userData ? (<Form onSubmit={handleSubmit}>
+    return userData ? (
+    <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="editUser.ControlEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" name="email" placeholder="name@example.com" defaultValue={userData.email} onChange={handleChange}/>
@@ -49,11 +50,14 @@ function EditBox({ userData }) {
             <Form.Label>First Name</Form.Label>
             <Form.Control type="text" name="firstName" defaultValue={userData.firstName} onChange={handleChange}/>
             <Form.Label>Last Name</Form.Label>
-            <Form.Control type="text" name="lastName" defaultValue={userData.lastName} onChange={handleChange}/>
+            <Form.Control type="text" name="lastName" defaultValue={userData.lastName} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
             <Form.Label>Phone Number</Form.Label>
-            <Form.Control type="text" name="phone" defaultValue={userData.phone} onChange={handleChange}/>
+            <Form.Control type="text" name="phone" defaultValue={userData.phone} onChange={handleChange} />
+        </Form.Group>
+        <Form.Group>
+            <Form.Check type="check" id="accessLvl" label="Grant Admin access?" />
         </Form.Group>
         <Button type="primary" value="submit">Submit</Button>
     </Form>

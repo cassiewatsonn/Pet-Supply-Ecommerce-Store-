@@ -9,20 +9,19 @@ export default function NavTabs() {
   if (Auth.loggedIn()) {
     function UserControls() {
       // console.log(accessLvl);
-      if (accessLvl == 1) {
+      if (accessLvl == true) {
         return (
           <Link to="/admin">
             Admin
           </Link>
         )
-      } else if (accessLvl == 2) {
+      } else {
         return (
         <Link to="/user">
           Settings
         </Link>
         )
       }
-      return
       
     }
     return (
