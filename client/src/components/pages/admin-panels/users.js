@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Nav, Row, Col, ListGroup, Form, Button } from 'react-bootstrap';
 import { QUERY_USERS, SINGLE_USER } from '../../../utils/queries';
-import { useQuery, useLazyQuery } from '@apollo/client';
+import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
+import { UPDATE_USER } from '../../../utils/mutations';
 
 export default function UsersAdmin() {
     const [formData, setFormData] = useState();
@@ -27,11 +28,25 @@ export default function UsersAdmin() {
 }
 
 function EditBox({ formData, setFormData }) {
-    // const [formData, setFormData] = useState();
-    
+
+    const [updateUser] = useMutation(UPDATE_USER);
     const handleSubmit = async (event) => {
-        event.preventDefault();  
-    }
+        event.preventDefault();
+        console.log(formData);  
+        const mutationResponse = await updateUser({
+            variables: {
+                userId: formData._id,
+                accessLvl: formData.accessLvl,
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                email: formData.email,
+                password: formData.password,
+                phone: formData.phone
+            },
+            })
+            console.log(mutationResponse);
+        }
+
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData({
