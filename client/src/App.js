@@ -15,6 +15,7 @@ import SignIn from './components/pages/Login';
 import Cancel from './components/pages/Cancel';
 import Success from './components/pages/Success';
 import Store from './components/pages/Store';
+import Home from './components/pages/Home';
 
 import NavBarComponent from './components/navbar';
 import Admin from './components/pages/Admin';
@@ -74,7 +75,7 @@ const App = () => {
                         /> */}
                                 <Route
                                     path="/"
-                                    element={<AboutUs />}
+                                    element={<Home />}
                                 />
                                 <Route
                                     path="/products"

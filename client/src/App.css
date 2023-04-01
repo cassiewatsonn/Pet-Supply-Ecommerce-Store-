@@ -39,6 +39,18 @@
   font-size: 20px;
 }
 
+/* TODO HOME  */
+.home-title{
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  margin: 15px;
+  text-align: center;
+}
+.home-description{ 
+  font-family: 'Dosis', sans-serif;
+  margin: 15px;
+  text-align: center;
+}
+
 
 /* TODO ABOUT US  */
 .about-title{
