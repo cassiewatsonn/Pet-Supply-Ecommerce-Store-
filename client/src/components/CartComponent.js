@@ -3,6 +3,8 @@ import { useState, useContext } from 'react';
 import { CartContext } from '../CartContext';
 import CartProduct from './CartProduct';
 
+
+//Cart Modal for customer's orders
 export default function CartComponent() {
     const cart = useContext(CartContext);
     const [show, setShow] = useState(false);

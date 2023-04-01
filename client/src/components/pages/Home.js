@@ -1,5 +1,6 @@
 import React from 'react'; 
 
+//Homepage 
 export default function AboutUs (){ 
     return (
 <div>
