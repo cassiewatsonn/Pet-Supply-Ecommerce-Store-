@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Nav, Row, Col, ListGroup, Form, Button } from 'react-bootstrap';
 import { QUERY_USERS, SINGLE_USER } from '../../../utils/queries';
-import { useQuery, useLazyQuery } from '@apollo/client';
+import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
+import { UPDATE_USER } from '../../../utils/mutations';
 
 export default function UsersAdmin() {
-    const [userData, setUserData] = useState();
+    const [formData, setFormData] = useState();
     const { data: usersQuery } = useQuery(QUERY_USERS);
     const [getUser] = useLazyQuery(SINGLE_USER);
     const users = usersQuery?.users || [];
@@ -12,7 +13,7 @@ export default function UsersAdmin() {
     async function handleUserData(e) {
         const { called, data } = await getUser({ variables: { userId: e } })
         if (called && data) {
-            setUserData(data.user)
+            setFormData(data.user)
         }
     }
     return (
@@ -21,17 +22,31 @@ export default function UsersAdmin() {
                 {users.map((user) => (<ListGroup.Item key={user._id} action onClick={() => handleUserData(user._id)}>{user.firstName} {user.lastName}</ListGroup.Item>))}
             </ListGroup>
 
-            <EditBox userData={userData} />
+            <EditBox formData={formData} setFormData={setFormData} />
         </>
     )
 }
 
-function EditBox({ userData }) {
-    const [formData, setFormData] = useState();
-    
+function EditBox({ formData, setFormData }) {
+
+    const [updateUser] = useMutation(UPDATE_USER);
     const handleSubmit = async (event) => {
-        event.preventDefault();  
-    }
+        event.preventDefault();
+        console.log(formData);  
+        const mutationResponse = await updateUser({
+            variables: {
+                userId: formData._id,
+                accessLvl: formData.accessLvl,
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                email: formData.email,
+                password: formData.password,
+                phone: formData.phone
+            },
+            })
+            console.log(mutationResponse);
+        }
+
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData({
@@ -40,24 +55,24 @@ function EditBox({ userData }) {
         });
       };
 
-    return userData ? (
+    return formData ? (
     <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="editUser.ControlEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" name="email" placeholder="name@example.com" defaultValue={userData.email} onChange={handleChange}/>
+            <Form.Control type="email" name="email" placeholder="name@example.com" value={formData.email} onChange={handleChange}/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="editUser.ControlName">
             <Form.Label>First Name</Form.Label>
-            <Form.Control type="text" name="firstName" defaultValue={userData.firstName} onChange={handleChange}/>
+            <Form.Control type="text" name="firstName" value={formData.firstName} onChange={handleChange}/>
             <Form.Label>Last Name</Form.Label>
-            <Form.Control type="text" name="lastName" defaultValue={userData.lastName} onChange={handleChange} />
+            <Form.Control type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
             <Form.Label>Phone Number</Form.Label>
-            <Form.Control type="text" name="phone" defaultValue={userData.phone} onChange={handleChange} />
+            <Form.Control type="text" name="phone" defaultValue={formData.phone} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
-            <Form.Check type="check" id="accessLvl" label="Grant Admin access?" />
+            <Form.Check type="check" name="accessLvl" id="accessLvl" label="Grant Admin access?" />
         </Form.Group>
         <Button type="primary" value="submit">Submit</Button>
     </Form>

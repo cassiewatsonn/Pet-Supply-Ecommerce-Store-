@@ -15,23 +15,14 @@ mutation AddUser($firstName: String!, $lastName: String!, $email: String!, $pass
 }
 `;
 export const UPDATE_USER = gql`
-  mutation updateUser(
-    $userId: ID!,
-    $firstName: String,
-    $lastName: String,
-    $email: String,
-    $phone: String,
-    $accessLvl: Boolean,
-   ) {
-    updateUser(
-      id: $userId
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-      phone: $phone
-    ) {
-      user
-    }
+  mutation UpdateUser($userId: ID!, $accessLvl: Boolean, $firstName: String!, $lastName: String!, $email: String!, $phone: String!) {
+  updateUser(userId: $userId, accessLvl: $accessLvl, firstName: $firstName, lastName: $lastName, email: $email, phone: $phone) {
+    accessLvl
+    firstName
+    lastName
+    email
+    phone
+  }
 }`;
 
 export const UPDATE_PASSWORD = gql`
