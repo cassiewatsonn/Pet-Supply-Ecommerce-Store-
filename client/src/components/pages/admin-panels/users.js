@@ -28,6 +28,7 @@ export default function UsersAdmin() {
 
 function EditBox({ userData }) {
     const [formData, setFormData] = useState();
+    
     const handleSubmit = async (event) => {
         event.preventDefault();  
     }

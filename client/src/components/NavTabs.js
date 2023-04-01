@@ -4,9 +4,27 @@ import Auth from "../utils/auth";
 
 export default function NavTabs() {
   const [isOpen, setIsOpen] = useState(false);
+  const accessLvl = localStorage.getItem('accessLvl');
 
-//Navbar to display when user is logged in
   if (Auth.loggedIn()) {
+    function UserControls() {
+      // console.log(accessLvl);
+      if (accessLvl == 1) {
+        return (
+          <Link to="/admin">
+            Admin
+          </Link>
+        )
+      } else if (accessLvl == 2) {
+        return (
+        <Link to="/user">
+          Settings
+        </Link>
+        )
+      }
+      return
+      
+    }
     return (
       <div className="Navigation-bar">
         <span className="navs"></span>
@@ -20,9 +38,12 @@ export default function NavTabs() {
             Products
           </Link>
 
-          <a href="/" onClick={() => Auth.logout()}>
+          <Link to="/" onClick={() => Auth.logout()}>
             Logout
-          </a>
+          </Link>
+
+          <UserControls accessLvl = {accessLvl} />
+
         </div>
 
         <div
