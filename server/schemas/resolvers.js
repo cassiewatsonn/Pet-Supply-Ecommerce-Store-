@@ -2,6 +2,7 @@ const { AuthenticationError } = require('apollo-server-express');
 const { User, Product, Order, Address } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const {Types} = require('mongoose');
 
 const resolvers = {
     Query: {
@@ -11,8 +12,9 @@ const resolvers = {
             return User.find({});
         },
         // for user/admin access
-        user: async (parent, args, context) => {
-            return await User.findOne({ userId: args.userId });
+        user: async (parent, userId, context) => {
+            const id = new Types.ObjectId(userId);
+            return await User.findById(id);
         },
         products: async () => {
             return Product.find();

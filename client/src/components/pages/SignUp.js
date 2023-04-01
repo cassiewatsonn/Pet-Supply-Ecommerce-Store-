@@ -22,7 +22,7 @@ export default function SignUp(props) {
     event.preventDefault();
     const mutationResponse = await addUser({
       variables: {
-        accessLvl: 1,
+        accessLvl: 2,
         firstName: formState.firstName,
         lastName: formState.lastName,
         email: formState.email,
@@ -30,7 +30,8 @@ export default function SignUp(props) {
       },
     });
     const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
+    const accessLvl = mutationResponse.data.addUser.accessLvl;
+    Auth.login(token, accessLvl);
   };
 
   const handleChange = (event) => {

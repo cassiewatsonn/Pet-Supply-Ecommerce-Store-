@@ -14,6 +14,7 @@ query getUsers {
 export const SINGLE_USER = gql`
 query getUser($userId: ID!) {
   user(id: $userId) {
+    _id
     firstName
     lastName
     phone
