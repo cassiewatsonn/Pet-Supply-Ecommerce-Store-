@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Nav, Row, Col, ListGroup, Form, Button } from 'react-bootstrap';
 import { QUERY_PRODUCT, QUERY_PRODUCTS } from '../../../utils/queries';
-import { useQuery, useLazyQuery } from '@apollo/client';
+import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
+import { UPDATE_PRODUCT } from '../../../utils/mutations';
 // import { productsArray } from '../../../productStore';
 
 export default function ProductsAdmin() {
@@ -26,21 +27,20 @@ export default function ProductsAdmin() {
             </ListGroup>
 
 
-            <EditProductBox productData={productData} />
+            <EditProductBox productData={productData} setProductData={setProductData} />
         </>
     )
 }
 
-function EditProductBox({ productData }) {
-
-    const [formData, setFormData] = useState();
+function EditProductBox({ productData, setProductData }) {
+    const [updateProduct] = useMutation(UPDATE_PRODUCT);
     const handleSubmit = async (event) => {
         event.preventDefault();  
     }
     const handleChange = (event) => {
         const { name, value } = event.target;
-        setFormData({
-          ...formData,
+        setProductData({
+          ...productData,
           [name]: value,
         });
       };
@@ -48,15 +48,15 @@ function EditProductBox({ productData }) {
     return productData ? (<Form onSubmit={handleSubmit}> 
         <Form.Group className="mb-3" controlId="editProduct.ControlProduct">
             <Form.Label>Product</Form.Label>
-            <Form.Control type="product" placeholder="Product Name here" value={productData.name} onChange={handleChange}/>
+            <Form.Control type="product" name="name" placeholder="Product Name here" value={productData.name} onChange={handleChange}/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="editProduct.ControlProductData">
             <Form.Label>Price</Form.Label>
-            <Form.Control value={productData.price} onChange={handleChange}/>
+            <Form.Control type="text" name="price" value={productData.price} onChange={handleChange}/>
             <Form.Label>Description</Form.Label>
-            <Form.Control value={productData.description} onChange={handleChange}/>
+            <Form.Control type="text" name="description" value={productData.description} onChange={handleChange}/>
             <Form.Label>Stock</Form.Label>
-            <Form.Control value={productData.stockCount} onChange={handleChange}/>
+            <Form.Control type="text" name="stockCount" value={productData.stockCount} onChange={handleChange}/>
         </Form.Group>
         <Button type="primary" value="submit">Submit</Button>
     </Form>
