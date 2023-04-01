@@ -65,7 +65,7 @@
   font-size: 18px;
 }
 
-/* TODO TOYS  */
+TODO TOYS 
 .toys-title{
   font-family: 'Edu NSW ACT Foundation', cursive;
   text-align: center;
@@ -97,9 +97,18 @@
   margin-top: 15px;
 }
 
-.card-model{
-  margin-bottom: 10%;
+/* CASSIE!!  This one is to keep, it is part of the Store.js*/
+.cart-modal{
+  padding-bottom: 10%;
 }
+
+/*CASSIE!! This is to keep, it is part of the ProductCard.js */
+.treatImage{
+  height: auto;
+  max-height: 225px;
+  width: auto;
+}
+
 
 /* TODO TREATS */
 .treats-title{
@@ -201,7 +210,7 @@ justify-content: center;
     /* transition: all .45s; */
   }
 /* This makes a moving line when hovering over nav items in small screen 
-cannot decide if i want it or not... */
+cannot decide if i want it or not...  I SAY KEEP IT!!!*/
 
   /* .Navigation-bar > .nav-items > a::before {
       background: transparent;

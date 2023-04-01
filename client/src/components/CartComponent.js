@@ -35,7 +35,7 @@ export default function CartComponent() {
                             </Button>
                         </>
                         :
-                        <h5 align="center"> The cart contains no items!</h5>
+                        <h5 align="center"> The cart contains no pup treats!</h5>
                     }
                 </Modal.Body>
             </Modal>
