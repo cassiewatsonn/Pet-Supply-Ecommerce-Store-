@@ -48,16 +48,16 @@ function EditBox({ formData, setFormData }) {
         </Form.Group>
         <Form.Group className="mb-3" controlId="editUser.ControlName">
             <Form.Label>First Name</Form.Label>
-            <Form.Control type="text" name="firstName" defaultValue={formData.firstName} onChange={handleChange}/>
+            <Form.Control type="text" name="firstName" value={formData.firstName} onChange={handleChange}/>
             <Form.Label>Last Name</Form.Label>
-            <Form.Control type="text" name="lastName" defaultValue={formData.lastName} onChange={handleChange} />
+            <Form.Control type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
             <Form.Label>Phone Number</Form.Label>
             <Form.Control type="text" name="phone" defaultValue={formData.phone} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
-            <Form.Check type="check" id="accessLvl" label="Grant Admin access?" />
+            <Form.Check type="check" name="accessLvl" id="accessLvl" label="Grant Admin access?" />
         </Form.Group>
         <Button type="primary" value="submit">Submit</Button>
     </Form>
