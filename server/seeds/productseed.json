@@ -15,7 +15,7 @@
     {
         
         "name": "Banana Biscuits",
-        "price": 8.99,
+        "price": 8.99, 
         "description": "Crunchy treats with the delicious taste of bananas!",
         "image": "images/banana.jpg"
     },
