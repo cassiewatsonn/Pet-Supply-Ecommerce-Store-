@@ -3,7 +3,7 @@ import { productsArray } from '../../productStore';
 import ProductCard from '../ProductCard';
 import CartComponent from '../CartComponent';
 
-
+//Store to map Product Cards 
 export default function Store() {
     console.log(productsArray);
     return (

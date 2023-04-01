@@ -4,9 +4,9 @@ import Auth from "../utils/auth";
 
 export default function NavTabs() {
   const [isOpen, setIsOpen] = useState(false);
+
+//Navbar to display when user is logged in
   if (Auth.loggedIn()) {
-
-
     return (
       <div className="Navigation-bar">
         <span className="navs"></span>
@@ -20,24 +20,11 @@ export default function NavTabs() {
             Products
           </Link>
 
-          <Link to="/cart">
-            Cart
-          </Link>
-
-          {/* <Link to="/signin">
-            Sign In
-          </Link>
-
-
-          <Link to="/signup">
-            Sign Up
-          </Link> */}
-                      <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a>
-  
-
+          <a href="/" onClick={() => Auth.logout()}>
+            Logout
+          </a>
         </div>
+
         <div
           className={`nav-toggle ${isOpen && "open"}`}
           onClick={() => setIsOpen(!isOpen)}
@@ -47,7 +34,8 @@ export default function NavTabs() {
       </div>
     );
   } else {
-    return(
+    //Navbar to display when user is not logged in
+    return (
       <div className="Navigation-bar">
         <span className="navs"></span>
         <div className={`nav-items ${isOpen && "open"}`}>
@@ -69,11 +57,9 @@ export default function NavTabs() {
             Sign In
           </Link>
 
-
           <Link to="/signup">
             Sign Up
           </Link>
-
 
         </div>
         <div
@@ -84,54 +70,5 @@ export default function NavTabs() {
         </div>
       </div>
     );
-    
   }
 };
-
-
-
-
-
-// return (
-
-// <ul className="nav nav-tabs">
-
-//   <div className="nav-item">
-//     <Link to="/AboutUs">
-//       About Us
-//     </Link>
-//   </div>
-
-//   <div className="nav-item">
-//     <Link to="/Toys">
-//       Toys
-//     </Link>
-//   </div>
-
-//   <div className="nav-item">
-//     <Link to="/Toys">
-//       Toys
-//     </Link>
-//   </div>
-
-//   <div className="nav-item">
-//     <Link to="/Cart">
-//       Cart
-//     </Link>
-//   </div>
-
-//   <button className='signin-btn'>
-//     <Link to="/SignIn">
-//       SignIn
-//     </Link>
-//   </button>
-
-//   <button className='signup-btn'>
-//     <Link to="/SignUp">
-//       SignUp
-//     </Link>
-//   </button>
-
-// </ul>
-// )
-// }

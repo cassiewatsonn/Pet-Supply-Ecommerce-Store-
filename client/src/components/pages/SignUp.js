@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
-// import { Link } from 'react-router-dom
+
 
 
 export default function SignUp(props) {
@@ -43,7 +43,6 @@ export default function SignUp(props) {
 
   return (
     <div className="container my-1">
-      {/* <Link to="/login">← Go to Login</Link> */}
 
       <h2>Signup</h2>
       <form onSubmit={handleFormSubmit}>

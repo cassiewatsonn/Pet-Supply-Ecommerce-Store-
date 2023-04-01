@@ -7,10 +7,6 @@ import Auth from '../../utils/auth';
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
-  // const [login, { error }] = useMutation(LOGIN, {
-  //   variables: { email: 'sam@abc.com', password: 'sam123' },
-  // });
-
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();

@@ -2,6 +2,7 @@ import { Card, Button, Form, Row, Col } from 'react-bootstrap';
 import { CartContext } from '../CartContext';
 import { useContext } from 'react';
 
+//Component to create Product Cards to display in the Store.js
 function ProductCard(props) {  //props.product
     const product = props.product;
     const cart = useContext(CartContext);
