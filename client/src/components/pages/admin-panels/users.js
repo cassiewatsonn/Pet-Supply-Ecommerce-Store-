@@ -27,7 +27,10 @@ export default function UsersAdmin() {
 }
 
 function EditBox({ userData }) {
-    const [formData, setFormData] = useState();    
+    const [formData, setFormData] = useState();
+    const handleSubmit = async (event) => {
+        event.preventDefault();  
+    }
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData({
@@ -36,7 +39,7 @@ function EditBox({ userData }) {
         });
       };
 
-    return userData ? (<Form>
+    return userData ? (<Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="editUser.ControlEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" name="email" placeholder="name@example.com" defaultValue={userData.email} onChange={handleChange}/>
@@ -46,6 +49,10 @@ function EditBox({ userData }) {
             <Form.Control type="text" name="firstName" defaultValue={userData.firstName} onChange={handleChange}/>
             <Form.Label>Last Name</Form.Label>
             <Form.Control type="text" name="lastName" defaultValue={userData.lastName} onChange={handleChange}/>
+        </Form.Group>
+        <Form.Group>
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control type="text" name="phone" defaultValue={userData.phone} onChange={handleChange}/>
         </Form.Group>
         <Button type="primary" value="submit">Submit</Button>
     </Form>
