@@ -1,54 +1,16 @@
-# Theo's Pet Supply ![](https://img.shields.io/badge/license-MIT-blue)
+# The Pupscale Barkery ![](https://img.shields.io/badge/license-MIT-blue)
 
 ## Description
+
+This Pet Supply Ecommerce website allows small business owners to showcase their products. It also includes an admin panel so that business owners can edit their products, stock and manage the users on the site.
+
+Users are able to make an account to purchase products and be able to edit their acccount.
+
+## User Story
 
 AS THE owner of pet supply co,
 I WANT to create an ecommerce site, for my small dog product business
 SO THAT I do not need a third party company to showcase/sell my products.
-
-## Acceptance Criteria
-
-GIVEN the homepage
-WHEN the page is rendered, the following nav tabs are presented  
-1 : About : Description of company
-2: Toys
-3: Treats
-Search bar
-Contact
-Sign In/ Out
-
-WHEN the user clicks on the sign in button,
-THEN they see their profile
-
-WHEN the user views their profile,
-THEN they can see their order history
-
-WHEN the user selects a product,
-THEN the product is added to the cart
-
-WHEN the product is add to cart,
-THEN the total is updated
-
-WHEN an item is deleted from cart,
-THEN the total is updated
-
-WHEN they view their profile,
-THEN they can update/delete profile: after mvp
-
-WHEN user checks
-THEN they receive notification that the order was a success if STRIPE processes payment
-
-WHEN (if) payment fails
-THEN user is notified that the order has not processed
-
-WHEN ADMIN logs in
-THEN they can see all users
-
-WHEN ADMIN select a user,
-THEN they can update or delete a user
-
-WHEN ADMIN views product list
-THEN they can update or delete product
 
 ## Table of Contents
 
@@ -61,13 +23,36 @@ THEN they can update or delete product
 
 ## Installation
 
-Navigate to the [Pet-Supply-Ecommerce-Store](https://)
+Navigate to the [Pet-Supply-Ecommerce-Store](https://theospetbakery.herokuapp.com/)
 
 ## Usage
 
-Here are some images displaying how to application works:
+Customers:
+When users view the home page, they are brought to a home page with a welcome message and navigations tabs that include: About Us, Products, Sign In and Sign Up.
 
-## ![Pet Supply](./)
+REDO THIS IMAGE When user isnt signed in, they cannot see products
+
+## ![Home Page](./client/public/images/readme/1Pupscale%20Barkery.png)
+
+When the user successfuly signs in or signs up, they are brought to the home page and now have access to view the product page.
+
+In the product page, when the user selects a product, then the product is added to the cart. When the product is add to cart, then the total is updated. When an item is deleted from cart, then the total is updated.
+
+## ![Pet Supply](./client/public/images/readme/2Pupscale%20Barkery.png)
+
+When the user views their profile, then they can update their email, first name, last name and phone number. Please note: managing addresses, orders and changing password coming soon!
+
+## ![Pet Supply](./client/public/images/readme/usersettings.png)
+
+ADMIN:
+
+When the admin logs in they are brought to the homepage and have access to the 'Admin' tab in the navigation bar. In the 'Admin' tab, they can manage users, and manage products. In manage users, they are able to view all users, edit the users, add a new user and grant a user admin access. Please Note: viewing orders is coming soon!
+
+## ![Pet Supply](./client/public/images/readme/manageusers.png)
+
+In the manage products, the admin can view all the products, update the products and delete products.
+
+## ![Pet Supply](./client/public/images/readme/manageproducts.png)
 
 ## License Description
 
@@ -104,7 +89,9 @@ N/A
 
 ## Credits
 
-Thank you to the University of Toronto for teaching us how to code!
+Thank you to our TA's Stephen Fudge & Mark Alfano for helping us work through various errors. Also to our tutors: Dominique Meeks Gombe, Jehyun Jung, Andres Jiminez and Geronimo Perez. Also to Cooper Codes for helping us with the cart portion of our project.
+
+Finally, a huge thank you to Sal Hobbi from the University of Toronto for teaching us how to code!
 
 ## Questions
 
