@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Edu+NSW+ACT+Foundation:wght@500&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dosis&family=Edu+NSW+ACT+Foundation:wght@500&family=Lobster&display=swap');
 /* FONTS: Lobster - TITLE 
-        EDNU - Subtitle 
+        Alkatra - Subtitle 
         Dosis - text */
 /* font-family: 'Dosis', sans-serif;
         font-family: 'Edu NSW ACT Foundation', cursive;
+        font-family: 'Alkatra', cursive;
         font-family: 'Lobster', cursive; */
 
 
@@ -40,15 +41,15 @@
 }
 
 .nav-item {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
 }
 
 .signin-btn {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
 }
 
 .signup-btn {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
 }
 
 
@@ -58,7 +59,7 @@
   justify-content: center;
   padding-bottom: 20%;
   margin-top: 10%;
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
   font-size: 20px;
 }
 
@@ -70,7 +71,7 @@
   margin-top: 6%;
 }
 .home-title {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
   margin: 15px;
   text-align: center;
 }
@@ -87,7 +88,7 @@
   background-color: #e6ebe0ff;
 } */
 .about-title{
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
   text-align: center;
   margin-top: 50px;
 }
@@ -183,7 +184,7 @@
 
 /* TODO LOGIN  */
 .login-title {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
   text-align: center;
   margin-top: 50px; 
 }
