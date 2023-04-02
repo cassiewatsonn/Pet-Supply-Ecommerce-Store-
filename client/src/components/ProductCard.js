@@ -22,14 +22,14 @@ function ProductCard(props) {  //props.product
                         <Form as={Row}>
                             <Form.Label column="true" sm="6">In Cart: {productQuantity} </Form.Label>
                             <Col sm="6">
-                                <Button variant="custom" sm="6" onClick={() => cart.addOneToCart(product.id)} className="mx-2">+</Button>
-                                <Button variant="custom" sm="6" onClick={() => cart.removeOneFromCart(product.id)} className="mx-2">-</Button>
+                                <Button variant="add" sm="6" onClick={() => cart.addOneToCart(product.id)} className="mx-2">+</Button>
+                                <Button variant="sub" sm="6" onClick={() => cart.removeOneFromCart(product.id)} className="mx-2">-</Button>
                             </Col>
                         </Form>
                         <Button variant="remove" onClick={() => cart.deleteFromCart(product.id)} className="my-2">Remove from Cart</Button>
                     </>
                     :
-                    <Button variant="primary" onClick={() => cart.addOneToCart(product.id)}>Add to Cart</Button>
+                    <Button variant="add-to-cart" onClick={() => cart.addOneToCart(product.id)}>Add to Cart</Button>
                 }
             </Card.Body>
         </Card>
