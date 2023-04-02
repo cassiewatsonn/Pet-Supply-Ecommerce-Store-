@@ -1,6 +1,6 @@
 [
     {
-        "productId": "jdjdjsksj",
+        "productId": "price_1Mqhv3IqV8JHGIHu4NXBgzSL",
         "name": "Peanut Butter Biscuits",
         "price": 8.99,
         "description": "Crunchy treats with all natural Peanut Butter!", 
@@ -9,7 +9,7 @@
     },
   
     {
-        "productId": "jdjdjsksj",
+        "productId": "price_1MqhubIqV8JHGIHukoEB7mPp",
         "name": "All In One",
         "price": 10.99,
         "description": "An assortment of all our dog biscuits in one bag!", 
@@ -17,7 +17,7 @@
         "stockCount": 150
     },
     {
-        "productId": "jdjdjsksj",
+        "productId": "price_1MrtR5IqV8JHGIHu2pw2ANUU",
         "name": "Banana Biscuits",
         "price": 8.99, 
         "description": "Crunchy treats with the delicious taste of bananas!",
@@ -25,7 +25,7 @@
         "stockCount": 15
     },
     {
-        "productId": "jdjdjsksj",
+        "productId": "price_1MrOePIqV8JHGIHuoKnknyof",
         "name": "Chicken & Beef Bones",
         "price": 10.99,
         "description": "Bone shaped treats flavoured with real chicken & beef.  Sure to be a favourite!",
@@ -33,7 +33,7 @@
         "stockCount": 300
     },
     {
-        "productId": "jdjdjsksj",
+        "productId": "price_1MrtVdIqV8JHGIHuSPRUatfi",
         "name": "Pumpkin Treats",
         "price": 12.99,
         "description": "Pumpkin flavoured bones drizzled with orange & white pumpkin icing!",
@@ -41,7 +41,7 @@
         "stockCount": 45
     },
     {
-        "productId": "jdjdjsksj",
+        "productId": "price_1MrtVdIqV8JHGIHuSPRUatfi",
         "name": "Cheese Bones",
         "price": 9.99,
         "description": "Bone shaped biscuits with real Canadian cheddar cheese baked in!",
@@ -49,7 +49,7 @@
         "stockCount": 18
     },
     {
-        "productId": "jdjdjsksj",
+        "productId": "price_1MrtAGIqV8JHGIHu8OmGxeBu",
         "name": "Raspberry Lollipup",
         "price": 6.99,
         "description": "A raspberry lollipup swirled with vanilla yogurt to make a sweet, crunchy treat for your pup!",
@@ -57,7 +57,7 @@
         "stockCount": 4
     },
     {
-        "productId": "jdjdjsksj",
+        "productId": "price_1MrtFLIqV8JHGIHux0m7LTcP",
         "name": "Peanut Butter Pupcakes",
         "price": 19.99,
         "description": "Six of our peanut butter cupcakes topped with one of our peanut butter biscuits in a matching icing!",
@@ -65,11 +65,11 @@
         "stockCount": 90
     },
     {
-        "productId": "jdjdjsksj",
+        "productId": "price_1MrOgIIqV8JHGIHuyBKXbNMu",
         "name": "Raspberry Pupcakes",
         "price": 19.99,
         "description": "Six of our pupcakes are baked with love and raspberry, topped with a raspberry cream cheese icing!",
         "image": "images/raspberry-pupcake.jpg",
-        "stockCount": 123
+        "stockCount": 15
     }
 ]
