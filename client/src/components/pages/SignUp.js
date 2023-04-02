@@ -36,7 +36,7 @@ export default function SignUp(props) {
   return (
     <div className="container my-1">
 
-      <h2>Signup</h2>
+      <h2 className='signup-title'>Signup</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
           <label htmlFor="firstName">First Name:</label>
