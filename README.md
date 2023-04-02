@@ -1,10 +1,10 @@
-# Theo's Pet Supply ![](https://img.shields.io/badge/license-MIT-blue)
+# The Pupscale Barkery ![](https://img.shields.io/badge/license-MIT-blue)
 
 ## Description
 
 This Pet Supply Ecommerce website allows small business owners to showcase their products. It also includes an admin panel so that business owners can edit their products, stock and manage the users on the site.
 
-Users are able to make an account to purchase products and be able to edit their acccount and see their order history.
+Users are able to make an account to purchase products and be able to edit their acccount.
 
 ## User Story
 
@@ -23,10 +23,11 @@ SO THAT I do not need a third party company to showcase/sell my products.
 
 ## Installation
 
-Navigate to the [Pet-Supply-Ecommerce-Store](https://)
+Navigate to the [Pet-Supply-Ecommerce-Store](https://theospetbakery.herokuapp.com/)
 
 ## Usage
 
+Customers:
 When users view the home page, they are brought to a home page with a welcome message and navigations tabs that include: About Us, Products, Sign In and Sign Up.
 
 REDO THIS IMAGE When user isnt signed in, they cannot see products
@@ -35,40 +36,23 @@ REDO THIS IMAGE When user isnt signed in, they cannot see products
 
 When the user successfuly signs in or signs up, they are brought to the home page and now have access to view the product page.
 
-## ![Pet Supply](./)
+In the product page, when the user selects a product, then the product is added to the cart. When the product is add to cart, then the total is updated. When an item is deleted from cart, then the total is updated.
 
-<!-- WHEN the user views their profile,
-THEN they can see their order history -->
+## ![Pet Supply](./client/public/images/readme/2Pupscale%20Barkery.png)
 
-In the product page, when the user selects a product, then the product is added to the cart.
+When the user views their profile, then they can update their email, first name, last name and phone number. Please note: managing addresses, orders and changing password coming soon!
 
-WHEN the product is add to cart,
-THEN the total is updated
+## ![Pet Supply](./client/public/images/readme/usersettings.png)
 
-WHEN an item is deleted from cart,
-THEN the total is updated
+ADMIN:
 
-WHEN they view their profile,
-THEN they can update/delete profile: after mvp
+When the admin logs in they are brought to the homepage and have access to the 'Admin' tab in the navigation bar. In the 'Admin' tab, they can manage users, and manage products. In manage users, they are able to view all users, edit the users, add a new user and grant a user admin access. Please Note: viewing orders is coming soon!
 
-WHEN user checks
-THEN they receive notification that the order was a success if STRIPE processes payment
+## ![Pet Supply](./client/public/images/readme/manageusers.png)
 
-WHEN (if) payment fails
-THEN user is notified that the order has not processed
+In the manage products, the admin can view all the products, update the products and delete products.
 
-WHEN ADMIN logs in
-THEN they can see all users
-
-WHEN ADMIN select a user,
-THEN they can update or delete a user
-
-WHEN ADMIN views product list
-THEN they can update or delete product
-
-Here are some images displaying how to application works:
-
-## ![Pet Supply](./)
+## ![Pet Supply](./client/public/images/readme/manageproducts.png)
 
 ## License Description
 
@@ -105,7 +89,9 @@ N/A
 
 ## Credits
 
-Thank you to the University of Toronto for teaching us how to code!
+Thank you to our TA's Stephen Fudge & Mark Alfano for helping us work through various errors. Also to our tutors: Dominique Meeks Gombe, Jehyun Jung, Andres Jiminez and Geronimo Perez. Also to Cooper Codes for helping us with the cart portion of our project.
+
+Finally, a huge thank you to Sal Hobbi from the University of Toronto for teaching us how to code!
 
 ## Questions
 
