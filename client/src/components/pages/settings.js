@@ -4,9 +4,6 @@ import Tab from 'react-bootstrap/Tab';
 import Profile from './settings-panels/profile';
 import Addresses from './settings-panels/addresses';
 import Orders from './settings-panels/orders';
-import { SINGLE_USER } from '../../utils/queries';
-import Auth from '../../utils/auth';
-import {useQuery} from '@apollo/client';
 
 export default function Settings() {
 

@@ -43,6 +43,9 @@ function EditBox({ formData, setFormData }) {
                 phone: formData.phone
             },
             })
+            if(mutationResponse) {
+                window.location.reload();
+            }
 
         }
     const handleChange = (event) => {
@@ -68,7 +71,7 @@ function EditBox({ formData, setFormData }) {
         </Form.Group>
         <Form.Group>
             <Form.Label>Phone Number</Form.Label>
-            <Form.Control type="text" name="phone" value={formData.phone} onChange={handleChange} />
+            <Form.Control type="text" name="phone" value={formData.phone ? formData.phone : "None"} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
             <Form.Check type="switch" name="accessLvl" id="accessLvl" label="Grant Admin access?" onChange={handleChange} defaultChecked={formData.accessLvl} />
