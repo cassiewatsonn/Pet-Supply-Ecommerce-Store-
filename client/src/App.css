@@ -21,13 +21,13 @@
 }
 
 .background{
-  background-color: var(--alabaster);
+  background-color: var(--cornsilk);
 }
 
 
 /* TODO: HEADER  */
 .header{
-  background-color: var(--bice-blue);
+  background-color: var(--beige);
 }
 .businessName{
 
@@ -134,10 +134,9 @@
     /* Button to purchase in Cart modal*/
 .btn.btn-purchase-btn {
   background-color: var(--moss-green);
-
 }
 .btn.btn-purchase-btn:hover {
-  background-color: var(--papaya-whip);
+  background-color: var(--buff);
 }
 
 
