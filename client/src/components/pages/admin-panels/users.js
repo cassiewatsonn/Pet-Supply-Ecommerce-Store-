@@ -7,7 +7,7 @@ import { UPDATE_USER } from '../../../utils/mutations';
 export default function UsersAdmin() {
     const [formData, setFormData] = useState();
     const { data: usersQuery } = useQuery(QUERY_USERS);
-    const [getUser] = useQuery(SINGLE_USER);
+    const [getUser] = useLazyQuery(SINGLE_USER);
     const users = usersQuery?.users || [];
 
     async function handleUserData(e) {
@@ -52,8 +52,9 @@ function EditBox({ formData, setFormData }) {
           [name]: value,
         });
       };
-
+      console.log(formData);
     return formData ? (
+
     <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="editUser.ControlEmail">
             <Form.Label>Email address</Form.Label>
@@ -67,10 +68,10 @@ function EditBox({ formData, setFormData }) {
         </Form.Group>
         <Form.Group>
             <Form.Label>Phone Number</Form.Label>
-            <Form.Control type="text" name="phone" defaultValue={formData.phone} onChange={handleChange} />
+            <Form.Control type="text" name="phone" value={formData.phone} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
-            <Form.Check type="switch" name="accessLvl" id="accessLvl" label="Grant Admin access?"/>
+            <Form.Check type="switch" name="accessLvl" id="accessLvl" label="Grant Admin access?" onChange={handleChange} defaultChecked={formData.accessLvl} />
         </Form.Group>
         <Button type="primary" value="submit">Submit</Button>
     </Form>

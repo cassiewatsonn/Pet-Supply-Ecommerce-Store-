@@ -11,7 +11,7 @@ const resolvers = {
             return User.find({});
         },
         // for user/admin access
-        user: async (parent, userId, context) => {
+        user: async (parent, userId) => {
             const id = new Types.ObjectId(userId);
             return await User.findById(id);
         },

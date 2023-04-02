@@ -7,29 +7,29 @@ import { UPDATE_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 
 export default function Profile() {
-        const [formData, setFormData] = useState();
-        const userId = "642859d17fa816ac9e911a37";
-        // const userId = Auth.getProfile().data._id;
-        console.log(userId)
-        const [getUser] = useQuery(SINGLE_USER);
-        // const [updateUser] = useMutation(UPDATE_USER);
-        // const { data } = getUser({ variables: { userId: userId } })
-        // console.log(data);
-
-        // const handleSubmit = async (event) => {
-        //     event.preventDefault();  
-        //     const mutationResponse = await updateUser({
-        //         variables: {
-        //             userId: formData._id,
-        //             accessLvl: formData.accessLvl,
-        //             firstName: formData.firstName,
-        //             lastName: formData.lastName,
-        //             email: formData.email,
-        //             password: formData.password,
-        //             phone: formData.phone
-        //         },
-        //         })
-        //     }
+        // const userId = "642859d17fa816ac9e911a37";
+        const userId = Auth.getProfile().data._id;
+        console.log(userId);
+        const { loading, data } = useQuery(SINGLE_USER, {
+            variables: { userId: userId },
+          });
+        const [updateUser] = useMutation(UPDATE_USER);
+        console.log(data);
+        const [formData, setFormData] = useState({data});
+        const handleSubmit = async (event) => {
+            event.preventDefault();  
+            const mutationResponse = await updateUser({
+                variables: {
+                    userId: formData._id,
+                    accessLvl: formData.accessLvl,
+                    firstName: formData.firstName,
+                    lastName: formData.lastName,
+                    email: formData.email,
+                    password: formData.password,
+                    phone: formData.phone
+                },
+                })
+            }
         const handleChange = (event) => {
             const { name, value } = event.target;
             setFormData({
@@ -39,8 +39,7 @@ export default function Profile() {
           };
     
         return (
-        // <Form onSubmit={handleSubmit}>
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="editUser.ControlEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" name="email" placeholder="name@example.com" value={formData.email} onChange={handleChange}/>
