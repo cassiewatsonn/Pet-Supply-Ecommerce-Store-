@@ -11,10 +11,11 @@
 /* CSS ROOT HEX COLOURS */
 :root {
   --tea-green: #CCD5AE;
-  --border-image: #E9EDC9;
+  --beige: #E9EDC9;
   --cornsilk: ##FEFAE0;
   --papaya-whip: #FAEDCD;
-  --buff: ##D4A373;
+  --buff: #D4A373;
+  --moss-green: #758e4f;
 }
 
 .background{
@@ -101,54 +102,46 @@
 }
 
 /*  Store.js */
-
-
 .cart-modal {
   padding-bottom: 10%;
 }
 
-/* CartComponent.js Odd naming structure is created by React-Bootstrap */
+/* CartComponent.js  */
 .cart-title.modal-header {
-  background-color: var(-o-border-image);
+  background-color: var(--beige);
 }
-
-/* Button to open Cart  */
+      /* Button to open Cart modal */
 .btn.btn-view-cart-btn {
-  background-image: linear-gradient(to right, var(-o-border-image) 0%, var(--papaya-whip) 100%);
-  /* background-color: var(--tea-green); */
+  background-image: linear-gradient(to right, var(--beige) 0%, var(--papaya-whip) 100%);
   color: black;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   cursor: pointer
 }
-
 .btn.btn-view-cart-btn:hover {
   background-color: var(--papaya-whip);
-  box-shadow: var(-o-border-image);
+  box-shadow: var(-o-beige);
   transform: translateY(-7px);
   color: black;
 }
 
+    /* Button to purchase in Cart modal*/
 .btn.btn-purchase-btn {
-  background-color: var(--buff);
-  color: var(--cornsilk)
-}
+  background-color: var(--moss-green);
 
+}
 .btn.btn-purchase-btn:hover {
   background-color: var(--papaya-whip);
-  color: var(--tea-green);
 }
 
-/*Cart Product*/
+
+/* CartProduct.js*/
 .btn.btn-cart-remove {
   background-color: var(--tea-green);
-  color: var(--cornsilk);
 }
-
 .btn.btn-cart-remove:hover {
-  background-color: var(-o-border-image);
-  color: var(var(--tea-green));
+  background-color: var(--);
 }
 
 
@@ -160,7 +153,7 @@
 }
 
 .card.productCard {
-  background-color: var(-o-border-image);
+  background-color: var(--beige);
 }
 
 .btn.btn.btn-custom {
