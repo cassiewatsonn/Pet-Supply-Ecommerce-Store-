@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Nav, Row, Col, ListGroup, Form, Button } from 'react-bootstrap';
 import { QUERY_USERS, SINGLE_USER } from '../../../utils/queries';
 import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
-import { ADD_USER, UPDATE_USER } from '../../../utils/mutations';
+import { ADD_USER, UPDATE_USER, REMOVE_USER } from '../../../utils/mutations';
 
 export default function UsersAdmin() {
     const [formData, setFormData] = useState();
@@ -10,6 +10,7 @@ export default function UsersAdmin() {
     const { data: usersQuery } = useQuery(QUERY_USERS);
     const [getUser] = useLazyQuery(SINGLE_USER);
     const users = usersQuery?.users || [];
+    const [deleteUser] = useMutation(REMOVE_USER);
 
     async function handleUserData(e, addNew) {
         if(addNew==='true') {
@@ -31,13 +32,23 @@ export default function UsersAdmin() {
         }
     }
     }
+    async function handleDeleteUser(userId) {
+
+        const { data } = await deleteUser({
+            variables: {
+                userId: userId,
+            },
+        });
+        window.location.reload();
+        console.log(userId);
+    }
 
     return (
         <>
         <Row className="row">
         <div className="col-5">
             <ListGroup>
-                {users.map((user) => (<ListGroup.Item key={user._id} action onClick={() => handleUserData(user._id, 'false')}>{user.firstName} {user.lastName}</ListGroup.Item>))}
+                {users.map((user) => (<div><ListGroup.Item key={user._id} action onClick={() => handleUserData(user._id, 'false')}>{user.firstName} {user.lastName}</ListGroup.Item><Button variant="danger" onClick={() => handleDeleteUser(user._id)}>Delete</Button></div>))}
             </ListGroup>
             <Button className="float-right" name="addNew" variant="primary" value="addNew" onClick={() => handleUserData('', 'true')}>Add New User</Button>
         </div>
