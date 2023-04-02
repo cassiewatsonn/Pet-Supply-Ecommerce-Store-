@@ -22,12 +22,13 @@ export default function ProductsAdmin() {
 
 
     async function handleDeleteProduct(productId) {
+
         const { data } = await deleteProduct({
             variables: {
                 productId: productId,
             },
         });
-        console.log(data);
+        console.log(productId);
     }
 
     //returns the the list of all products with their price & description.  Generates editable fields to update Product Name, Price, Description, Category & Stock
