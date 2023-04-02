@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { ListGroup, Form, Button } from 'react-bootstrap';
 import { QUERY_PRODUCT, QUERY_PRODUCTS } from '../../../utils/queries';
 import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
-import { UPDATE_PRODUCT } from '../../../utils/mutations';
+import { UPDATE_PRODUCT, REMOVE_PRODUCT } from '../../../utils/mutations';
 // import { productsArray } from '../../../productStore';
 
 export default function ProductsAdmin() {
     const [productData, setProductData] = useState();
     const { data: productsQuery } = useQuery(QUERY_PRODUCTS);
     const [getProduct] = useLazyQuery(QUERY_PRODUCT);
+    const [removeProduct] = useMutation(REMOVE_PRODUCT);
     const products = productsQuery?.products || [];
     async function handleProductData(e) {
         console.log(e);
@@ -17,11 +18,21 @@ export default function ProductsAdmin() {
             setProductData(data.product)
         }
     }
+
+    async function handleDeleteProduct(productId) {
+        const { data } = await removeProduct({
+            variables: {
+                productId,
+            },
+        });
+        console.log(data);
+    }
+
     return (
         <>
             <ListGroup>
 
-                {products.map((product) => (<ListGroup.Item key={product._id} action onClick={() => handleProductData(product._id)}>{product.name} {product.price} {product.description} {product.stockCount}</ListGroup.Item>))}
+                {products.map((product) => (<div><ListGroup.Item key={product._id} action onClick={() => handleProductData(product._id)}>{product.name} {product.price} {product.description} {product.stockCount}</ListGroup.Item><Button onClick={handleDeleteProduct}>Delete</Button></div>))}
 
             </ListGroup>
 
