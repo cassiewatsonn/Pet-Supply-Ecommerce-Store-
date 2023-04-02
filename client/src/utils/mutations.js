@@ -108,7 +108,7 @@ export const LOGIN = gql`
         user {
       accessLvl
       email
-      firstNameString
+      firstName
       lastName
     }
     }
