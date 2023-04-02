@@ -16,11 +16,20 @@
   --princeton-orange: #ff9914ff;
 }
 
+.background{
+  background-color: #e6ebe0ff;
+}
+
 
 /* TODO: HEADER  */
-.businessName {
+.header{
+  background-color: #006faaff;
+}
+.businessName{
+
   font-family: 'Lobster', cursive;
   margin-left: 5%;
+  padding-top: 3%;
 }
 
 .nav-tabs {
@@ -46,7 +55,8 @@
 .footer {
   display: flex;
   justify-content: center;
-  margin: 10%;
+  padding-bottom: 20%;
+  margin-top: 10%;
   font-family: 'Edu NSW ACT Foundation', cursive;
   font-size: 20px;
 }
@@ -66,7 +76,10 @@
 
 
 /* TODO ABOUT US  */
-.about-title {
+/* .about-us{
+  background-color: #e6ebe0ff;
+} */
+.about-title{
   font-family: 'Edu NSW ACT Foundation', cursive;
   text-align: center;
   margin-top: 50px;
