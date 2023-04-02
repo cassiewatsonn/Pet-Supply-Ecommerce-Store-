@@ -4,7 +4,9 @@ import Auth from "../utils/auth";
 
 export default function NavTabs() {
   const [isOpen, setIsOpen] = useState(false);
+  //checking to see if signed in user has admin access
   var accessLvl = localStorage.getItem('accessLvl');
+  //If Admin user is signed in, then they see the following navbar options 
   if (Auth.loggedIn()) {
 
     function UserControls() {
@@ -16,6 +18,7 @@ export default function NavTabs() {
           </Link>
         )
       } else {
+        //If signed in user is not an Admin level, then they are displayed the following nav bar 
         return (
         <Link to="/settings">
           Settings

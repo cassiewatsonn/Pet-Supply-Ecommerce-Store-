@@ -64,7 +64,7 @@ function EditBox({ formData, setFormData }) {
           [name]: value,
         });
       };
-      console.log(formData);
+      //Returns the list of all users. Generates editable fields to update First Name, Last Name, Phone Number & the ability to grant Admin Access
     return formData ? (
 
     <Form onSubmit={handleSubmit}>

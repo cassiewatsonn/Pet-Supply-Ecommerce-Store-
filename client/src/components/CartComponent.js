@@ -11,17 +11,20 @@ export default function CartComponent() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    //Setting productsCount variable to 0, reducing the values to a single value 
     const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
  
     return (
         <>
+        {/* Cart button that shows the number of items in the cart  */}
             <Button onClick={handleShow}>Cart ({productsCount} Items)</Button>
-
+            {/* Cart button modal, with ability for user to click to expand  */}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Shopping Cart</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+                    {/* Maps all items added to the cart & provides total cost */}
                     {productsCount > 0 ?
                         <>
                             <p> Cart Items:</p>
@@ -29,7 +32,7 @@ export default function CartComponent() {
                                 <CartProduct key={index} id={currentProduct.id} quantity={currentProduct.quantity}></CartProduct>
                             ))}
                             <h2>Total: ${cart.getTotalCost().toFixed(2)}</h2>
-                            {/* <Button variant="primary" onClick={checkout}> */}
+                            {/* This line is for the Stripe checkout function when complete <Button variant="primary" onClick={checkout}> */}
                             <Button variant="primary">
                                 Purchase!
                             </Button>

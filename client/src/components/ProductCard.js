@@ -8,6 +8,7 @@ function ProductCard(props) {  //props.product
     const cart = useContext(CartContext);
     const productQuantity = cart.getProductQuantity(product.id);
 
+    //Creates card for each product, User can click to add more or less or remove all from cart
     return (
         <Card>
             <Card.Img variant="top" className="treatImage" alt={product.name} src={`${process.env.PUBLIC_URL}/${product.image}`} />
