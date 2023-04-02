@@ -38,15 +38,12 @@ export const UPDATE_PASSWORD = gql`
   }
 `
 export const REMOVE_USER = gql`
-  mutation removeUser(
-    $userId: ID!
-  ) {
-    removeUser(
-      id: $userId
-    ) {
-      user
-    }
+  mutation removeUser($userId: ID!) {
+  removeUser(userId: $userId) {
+    firstName
+    lastName
   }
+}
 `
 export const ADD_PRODUCT = gql`
   mutation addProduct(
