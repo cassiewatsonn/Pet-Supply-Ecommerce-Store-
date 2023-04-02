@@ -8,7 +8,6 @@ const resolvers = {
     Query: {
         // for admin access
         users: async () => {
-            console.log("We're doing this");
             return User.find({});
         },
         // for user/admin access
@@ -63,7 +62,6 @@ const resolvers = {
                 )},
 
         addAddress: async(parent, args) => {
-            console.log(args);
             return User.findByIdAndUpdate({_id: args.userId},
                 {
                     $addToSet: {
@@ -121,7 +119,6 @@ const resolvers = {
             return Product.delete(productId = productId)
         },
         login: async (parent, args) => {
-           console.log( args.email )
             const user = await User.findOne({email: args.email});
             if(!user) throw new AuthenticationError("Incorrect email");
             const correctPw = await user.isCorrectPassword(args.password); 

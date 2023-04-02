@@ -7,7 +7,7 @@ import { UPDATE_USER } from '../../../utils/mutations';
 export default function UsersAdmin() {
     const [formData, setFormData] = useState();
     const { data: usersQuery } = useQuery(QUERY_USERS);
-    const [getUser] = useLazyQuery(SINGLE_USER);
+    const [getUser] = useQuery(SINGLE_USER);
     const users = usersQuery?.users || [];
 
     async function handleUserData(e) {
@@ -43,7 +43,7 @@ function EditBox({ formData, setFormData }) {
                 phone: formData.phone
             },
             })
-            console.log(mutationResponse);
+
         }
     const handleChange = (event) => {
         const { name, value } = event.target;
