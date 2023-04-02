@@ -5,7 +5,7 @@
     "email": "sam@abc.com",
     "password": "sam123",
     "accessLvl": true,
-    "phoneNumber": "555-555-1234"
+    "phone": "555-555-1234"
 
 },
 {
@@ -14,7 +14,7 @@
     "email": "mary@abc.com",
     "password": "mary123",
     "accessLvl": false,
-    "phoneNumber": "555-555-4321"
+    "phone": "555-555-4321"
 },
 {
     "firstName": "Lou",
@@ -22,6 +22,6 @@
     "email": "lou@abc.com",
     "password": "lou123",
     "accessLvl": false,
-    "phoneNumber": "555-555-5678"
+    "phone": "555-555-5678"
 }
 ]
