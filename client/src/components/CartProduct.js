@@ -9,6 +9,7 @@ function CartProduct(props) {
     const quantity = props.quantity;
     const productData = getProductData(id);
 
+    // Component to create each product item in cart, with the subtotal for the quantity of that product.  User can remove all from cart
     return (
         <>
         <h3>{productData.title}</h3>
