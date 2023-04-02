@@ -42,7 +42,7 @@ export default function UsersAdmin() {
         <ListGroup>
                 {users.map((user) => (<ListGroup.Item key={user._id} action onClick={() => handleUserData(user._id, 'false')}>{user.firstName} {user.lastName}</ListGroup.Item>))}
             </ListGroup>
-            <Button className="float-right" name="addNew" variant="primary" value="addNew" onClick={() => handleUserData('', 'true')}>Add New User >></Button>
+            <Button className="float-right" name="addNew" variant="primary" value="addNew" onClick={() => handleUserData('', 'true')}>Add New User</Button>
             </div>
             <div className="col-7">
             <EditBox formData={formData} setFormData={setFormData} addNew={addNew} />
