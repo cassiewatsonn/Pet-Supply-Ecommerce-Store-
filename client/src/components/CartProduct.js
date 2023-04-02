@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import { CartContext } from "../CartContext";
 import { useContext } from "react";
 import { getProductData } from "../productStore";
+import "../App.css";
 
 function CartProduct(props) {
     const cart = useContext(CartContext);
@@ -28,7 +29,7 @@ function CartProduct(props) {
            `}
             </style>
           </div>
-        <Button variant="cart-custom" size="sm" onClick={() => cart.deleteFromCart(id)}> Remove</Button>
+        <Button variant="cart-remove" size="sm" onClick={() => cart.deleteFromCart(id)}> Remove</Button>
         <hr></hr>
         </div>
     )

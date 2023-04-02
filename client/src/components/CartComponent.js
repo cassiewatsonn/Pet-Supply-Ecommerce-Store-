@@ -17,7 +17,7 @@ export default function CartComponent() {
     return (
         <>
             {/* Cart button that shows the number of items in the cart  */}
-            <Button variant="cart-btn" onClick={handleShow}>Cart ({productsCount} Items)</Button>
+            <Button variant="view-cart-btn" onClick={handleShow}>Cart ({productsCount} Items)</Button>
             {/* Cart button modal, with ability for user to click to expand  */}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className="cart-title" closeButton>
@@ -32,7 +32,7 @@ export default function CartComponent() {
                                 <CartProduct key={index} id={currentProduct.id} quantity={currentProduct.quantity}></CartProduct>
                             ))}
                             <h2>Total: ${cart.getTotalCost().toFixed(2)}</h2>
-                            <Button variant="purchase-custom">
+                            <Button variant="purchase-btn">
                                 Purchase
                             </Button>
                         </>

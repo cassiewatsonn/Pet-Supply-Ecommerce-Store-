@@ -2,18 +2,18 @@
 /* FONTS: Lobster - TITLE 
         EDNU - Subtitle 
         Dosis - text */
-        /* font-family: 'Dosis', sans-serif;
+/* font-family: 'Dosis', sans-serif;
         font-family: 'Edu NSW ACT Foundation', cursive;
         font-family: 'Lobster', cursive; */
 
 
 /* CSS ROOT HEX COLOURS */
 :root {
---bice-blue: #006faaff;
---ash-gray: #9bc1bcff;
---alabaster: #e6ebe0ff;
---robin-egg-blue: #36c9c6ff;
---princeton-orange: #ff9914ff;
+  --bice-blue: #006faaff;
+  --ash-gray: #9bc1bcff;
+  --alabaster: #e6ebe0ff;
+  --robin-egg-blue: #36c9c6ff;
+  --princeton-orange: #ff9914ff;
 }
 
 .background{
@@ -26,28 +26,33 @@
   background-color: #006faaff;
 }
 .businessName{
+
   font-family: 'Lobster', cursive;
   margin-left: 5%;
   padding-top: 3%;
 }
-.nav-tabs{
+
+.nav-tabs {
   display: flex;
   justify-content: space-between;
   margin: 15px;
 }
-.nav-item{
+
+.nav-item {
   font-family: 'Edu NSW ACT Foundation', cursive;
 }
-.signin-btn{
+
+.signin-btn {
   font-family: 'Edu NSW ACT Foundation', cursive;
 }
-.signup-btn{
+
+.signup-btn {
   font-family: 'Edu NSW ACT Foundation', cursive;
 }
 
 
 /* TODO: FOOTER  */
-.footer{
+.footer {
   display: flex;
   justify-content: center;
   padding-bottom: 20%;
@@ -57,12 +62,13 @@
 }
 
 /* TODO HOME  */
-.home-title{
+.home-title {
   font-family: 'Edu NSW ACT Foundation', cursive;
   margin: 15px;
   text-align: center;
 }
-.home-description{ 
+
+.home-description {
   font-family: 'Dosis', sans-serif;
   margin: 15px;
   text-align: center;
@@ -78,87 +84,125 @@
   text-align: center;
   margin-top: 50px;
 }
-.about-info{
+
+.about-info {
   margin-left: 10%;
   margin-right: 10%;
   font-family: 'Dosis', sans-serif;
   font-size: 18px;
 }
 
-/*  Store.js*/
-.cart-modal{
+/*  Store.js */
+.cart-modal {
   padding-bottom: 10%;
 }
 
 /* CartComponent.js Odd naming structure is created by React-Bootstrap */
-.cart-title.modal-header{
+.cart-title.modal-header {
   background-color: var(--ash-gray);
 }
-.btn.btn.btn-cart-btn{
-  background-color: var(--bice-blue);
-  color: var(--alabaster);
+
+/* Button to open Cart  */
+.btn.btn-view-cart-btn {
+  background-image: linear-gradient(to right, var(--ash-gray) 0%, var(--robin-egg-blue) 100%);
+  /* background-color: var(--bice-blue); */
+  color: var(--bice-blue);
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer
 }
-.btn.btn.btn-cart-btn:hover{
-  background-color: var(--alabaster);
+
+.btn.btn-view-cart-btn:hover {
+  background-image: linear-gradient(to right, #ffca85 0%, #ff9914 100%);
+  box-shadow: var(--ash-gray);
+  transform: translateY(-7px);
   color: var(--bice-blue);
 }
 
-.btn.btn-purchase-custom {
+.btn.btn-purchase-btn {
   background-color: var(--princeton-orange);
   color: var(--alabaster)
 }
-.btn.btn-purchase-custom:hover {
-  background-color: #36C9C6;
-  color: #006FAA;   
+
+.btn.btn-purchase-btn:hover {
+  background-color: var(--robin-egg-blue);
+  color: var(--bice-blue);
+}
+
+/*Cart Product*/
+.btn.btn-cart-remove {
+  background-color: var(--bice-blue);
+  color: var(--alabaster);
+}
+
+.btn.btn-cart-remove:hover {
+  background-color: var(--ash-gray);
+  color: var(var(--bice-blue));
 }
 
 
 /* ProductCard.js Odd naming structure is created by React-Bootstrap */
-.treatImage{
+.treatImage {
   height: auto;
   max-height: 225px;
   width: auto;
 }
-.card.productCard{
+
+.card.productCard {
   background-color: var(--ash-gray);
 }
-.btn.btn.btn-custom{
+
+.btn.btn.btn-custom {
   background-color: var(--bice-blue);
-  color: var(--alabaster);  
+  color: var(--alabaster);
 }
-.btn.btn.btn-custom:hover{
+
+.btn.btn.btn-custom:hover {
   background-color: var(--princeton-orange);
-  color: var(--alabaster);  
+  color: var(--alabaster);
 }
-.btn.btn.btn-remove{
+
+.btn.btn.btn-remove {
   background-color: var(--princeton-orange);
-  color: black;  
+  color: black;
+}
+
+.btn.btn.btn-remove:hover {
+  background-color: var(--princeton-orange);
+  color: black;
 }
 
 
 /* TODO LOGIN  */
-.login-title{
+.login-title {
   font-family: 'Edu NSW ACT Foundation', cursive;
   text-align: center;
   margin-top: 50px;
 }
-.login-card{
-display: flex;
-justify-content: center;
+
+.login-card {
+  display: flex;
+  justify-content: center;
 }
-.email-input{
+
+.email-input {
   margin: 15px;
 }
-.password-input{
+
+.password-input {
   margin: 15px;
 }
-.signup-instead{
+
+.signup-instead {
   margin: 15px;
 }
-.login-btn{
-  margin:15px 20px;
+
+.login-btn {
+  margin: 15px 20px;
 }
-.error-text{
+
+.error-text {
   background-color: yellow
 }
 
@@ -182,7 +226,7 @@ justify-content: center;
   color: #ffffff;
 } */
 
-.Navigation-bar > .nav-items > a {
+.Navigation-bar>.nav-items>a {
   color: var(--alabaster);
   font-size: 16px;
 
@@ -193,11 +237,11 @@ justify-content: center;
   opacity: 0.9;
 }
 
-.Navigation-bar > .nav-items > a:hover {
+.Navigation-bar>.nav-items>a:hover {
   opacity: 1;
 }
 
-.Navigation-bar > .nav-items > a::before {
+.Navigation-bar>.nav-items>a::before {
   content: "";
   position: absolute;
   left: 0;
@@ -208,16 +252,16 @@ justify-content: center;
   transition: all 0.45s;
 }
 
-.Navigation-bar > .nav-items > a:hover::before {
+.Navigation-bar>.nav-items>a:hover::before {
   width: 100%;
 }
 
-.Navigation-bar > .nav-toggle {
+.Navigation-bar>.nav-toggle {
   display: none;
 }
 
 @media (max-width: 700px) {
-  .Navigation-bar > .nav-items {
+  .Navigation-bar>.nav-items {
     position: absolute;
     top: 60px;
     display: flex;
@@ -229,18 +273,12 @@ justify-content: center;
     transform: translateX(-100%);
     /* transition: all .45s; */
   }
-/* This makes a moving line when hovering over nav items in small screen 
-cannot decide if i want it or not...  I SAY KEEP IT!!!*/
 
-  /* .Navigation-bar > .nav-items > a::before {
-      background: transparent;
-  } */
-
-  .Navigation-bar > .nav-items.open {
-      transform: translateX(0);
+  .Navigation-bar>.nav-items.open {
+    transform: translateX(0);
   }
 
-  .Navigation-bar > .nav-toggle {
+  .Navigation-bar>.nav-toggle {
     display: flex;
     width: 50px;
     height: 50px;
@@ -249,7 +287,7 @@ cannot decide if i want it or not...  I SAY KEEP IT!!!*/
     cursor: pointer;
   }
 
-  .nav-toggle > .bar {
+  .nav-toggle>.bar {
     position: relative;
     width: 32px;
     height: 2px;
@@ -257,8 +295,8 @@ cannot decide if i want it or not...  I SAY KEEP IT!!!*/
     transition: all 0.45s ease-in-out;
   }
 
-  .nav-toggle > .bar::before,
-  .nav-toggle > .bar::after {
+  .nav-toggle>.bar::before,
+  .nav-toggle>.bar::after {
     content: "";
     position: absolute;
     height: 2px;
@@ -267,28 +305,28 @@ cannot decide if i want it or not...  I SAY KEEP IT!!!*/
     transition: all 0.45s ease-in-out;
   }
 
-  .nav-toggle > .bar::before {
+  .nav-toggle>.bar::before {
     width: 25px;
     transform: translateY(-8px);
     right: 0;
   }
 
-  .nav-toggle > .bar::after {
+  .nav-toggle>.bar::after {
     width: 32px;
     transform: translateY(8px);
   }
 
-  .nav-toggle.open > .bar {
-      transform: translateX(-40px);
-      background: transparent;
+  .nav-toggle.open>.bar {
+    transform: translateX(-40px);
+    background: transparent;
   }
 
-  .nav-toggle.open > .bar::before {
-      width: 32px;
-      transform: rotate(45deg) translate(26px, -26px);
+  .nav-toggle.open>.bar::before {
+    width: 32px;
+    transform: rotate(45deg) translate(26px, -26px);
   }
 
-  .nav-toggle.open > .bar::after {
+  .nav-toggle.open>.bar::after {
     transform: rotate(-45deg) translate(26px, 26px);
   }
 
