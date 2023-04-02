@@ -1,6 +1,7 @@
 import { Card, Button, Form, Row, Col } from 'react-bootstrap';
 import { CartContext } from '../CartContext';
 import { useContext } from 'react';
+import "../App.css";
 
 //Component to create Product Cards to display in the Store.js
 function ProductCard(props) {  //props.product
@@ -10,7 +11,7 @@ function ProductCard(props) {  //props.product
 
     //Creates card for each product, User can click to add more or less or remove all from cart
     return (
-        <Card>
+        <Card className="productCard">
             <Card.Img variant="top" className="treatImage" alt={product.name} src={`${process.env.PUBLIC_URL}/${product.image}`} />
             <Card.Body>
                 <Card.Title> {product.title} </Card.Title>
@@ -21,11 +22,11 @@ function ProductCard(props) {  //props.product
                         <Form as={Row}>
                             <Form.Label column="true" sm="6">In Cart: {productQuantity} </Form.Label>
                             <Col sm="6">
-                                <Button sm="6" onClick={() => cart.addOneToCart(product.id)} className="mx-2">+</Button>
-                                <Button sm="6" onClick={() => cart.removeOneFromCart(product.id)} className="mx-2">-</Button>
+                                <Button variant="custom" sm="6" onClick={() => cart.addOneToCart(product.id)} className="mx-2">+</Button>
+                                <Button variant="custom" sm="6" onClick={() => cart.removeOneFromCart(product.id)} className="mx-2">-</Button>
                             </Col>
                         </Form>
-                        <Button variant="danger" onClick={() => cart.deleteFromCart(product.id)} className="my-2">Remove from Cart</Button>
+                        <Button variant="remove" onClick={() => cart.deleteFromCart(product.id)} className="my-2">Remove from Cart</Button>
                     </>
                     :
                     <Button variant="primary" onClick={() => cart.addOneToCart(product.id)}>Add to Cart</Button>

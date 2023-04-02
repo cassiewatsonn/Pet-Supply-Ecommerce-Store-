@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import { CartContext } from "../CartContext";
 import { useContext } from "react";
 import { getProductData } from "../productStore";
+import "../App.css";
 
 function CartProduct(props) {
     const cart = useContext(CartContext);
@@ -11,13 +12,26 @@ function CartProduct(props) {
 
     // Component to create each product item in cart, with the subtotal for the quantity of that product.  User can remove all from cart
     return (
-        <>
-        <h3>{productData.title}</h3>
-        <p>{quantity} total</p>
-        <p>${ (quantity * productData.price).toFixed(2) }</p>
-        <Button size="sm" onClick={() => cart.deleteFromCart(id)}> Remove</Button>
+        <div>
+        <h6>{productData.title}</h6>
+        <p>Ordered: {quantity}  Subtotal: ${ (quantity * productData.price).toFixed(2) }</p>
+        <div className='button'>
+            <style type="text/css">
+              {`
+            .btn-cart-custom {
+                background-color: #006FAA;
+                color: #E6EBE0; 
+             }
+             .btn-cart-custom:hover {
+                background-color: #FF9914;
+                color: #006FAA;   
+            }
+           `}
+            </style>
+          </div>
+        <Button variant="cart-remove" size="sm" onClick={() => cart.deleteFromCart(id)}> Remove</Button>
         <hr></hr>
-        </>
+        </div>
     )
 }
 
