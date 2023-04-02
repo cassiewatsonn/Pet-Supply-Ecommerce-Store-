@@ -115,8 +115,8 @@ const resolvers = {
                 { new: true }
                 )
         },
-        removeProduct: async(parent, {productId}) => {
-            return Product.findOneAndDelete(_id = productId)
+        removeProduct: async(parent, args) => {
+            return Product.findOneAndDelete({_id: args.productId})
         },
         login: async (parent, args) => {
             const user = await User.findOne({email: args.email});
