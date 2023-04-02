@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Edu+NSW+ACT+Foundation:wght@500&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dosis&family=Edu+NSW+ACT+Foundation:wght@500&family=Lobster&display=swap');
 /* FONTS: Lobster - TITLE 
-        EDNU - Subtitle 
+        Alkatra - Subtitle 
         Dosis - text */
 /* font-family: 'Dosis', sans-serif;
         font-family: 'Edu NSW ACT Foundation', cursive;
+        font-family: 'Alkatra', cursive;
         font-family: 'Lobster', cursive; */
 
 
@@ -19,6 +20,7 @@
 .background{
   background-color: #e6ebe0ff;
 }
+
 
 
 /* TODO: HEADER  */
@@ -39,15 +41,15 @@
 }
 
 .nav-item {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
 }
 
 .signin-btn {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
 }
 
 .signup-btn {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
 }
 
 
@@ -57,13 +59,19 @@
   justify-content: center;
   padding-bottom: 20%;
   margin-top: 10%;
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
   font-size: 20px;
 }
 
 /* TODO HOME  */
+.home-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+}
 .home-title {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
   margin: 15px;
   text-align: center;
 }
@@ -80,7 +88,7 @@
   background-color: #e6ebe0ff;
 } */
 .about-title{
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
   text-align: center;
   margin-top: 50px;
 }
@@ -176,14 +184,17 @@
 
 /* TODO LOGIN  */
 .login-title {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 50px; 
 }
 
 .login-card {
   display: flex;
   justify-content: center;
+  margin: 2% 30%;
+  background-color: #9bc1bcff !important;
+  align-items: center;
 }
 
 .email-input {
