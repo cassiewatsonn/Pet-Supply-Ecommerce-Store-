@@ -86,14 +86,14 @@ export const UPDATE_PRODUCT = gql`
 `
 
 export const REMOVE_PRODUCT = gql`
-    mutation removeProduct(
-      $productId:String
-    ) {
-      removeProduct(
-        productId: $productId
-      )
-    }
+mutation removeProduct($productId: String!) {
+  removeProduct(productId: $productId) {
+    productId
+    stockCount
+  }
+}
 `
+
 export const LOGIN = gql`
   mutation login(
     $email: String!,
