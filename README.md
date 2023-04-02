@@ -2,29 +2,45 @@
 
 ## Description
 
+This Pet Supply Ecommerce website allows small business owners to showcase their products. It also includes an admin panel so that business owners can edit their products, stock and manage the users on the site.
+
+Users are able to make an account to purchase products and be able to edit their acccount and see their order history.
+
+## User Story
+
 AS THE owner of pet supply co,
 I WANT to create an ecommerce site, for my small dog product business
 SO THAT I do not need a third party company to showcase/sell my products.
 
-## Acceptance Criteria
+## Table of Contents
 
-GIVEN the homepage
-WHEN the page is rendered, the following nav tabs are presented  
-1 : About : Description of company
-2: Toys
-3: Treats
-Search bar
-Contact
-Sign In/ Out
+- [Installation](#installation)
+- [Usage](#usage)
+- [How to Contribute](#contributions)
+- [Tests](#tests)
+- [Credits](#credits)
+- [Questions](#questions)
 
-WHEN the user clicks on the sign in button,
-THEN they see their profile
+## Installation
 
-WHEN the user views their profile,
-THEN they can see their order history
+Navigate to the [Pet-Supply-Ecommerce-Store](https://)
 
-WHEN the user selects a product,
-THEN the product is added to the cart
+## Usage
+
+When users view the home page, they are brought to a home page with a welcome message and navigations tabs that include: About Us, Products, Sign In and Sign Up.
+
+REDO THIS IMAGE When user isnt signed in, they cannot see products
+
+## ![Home Page](./client/public/images/readme/1Pupscale%20Barkery.png)
+
+When the user successfuly signs in or signs up, they are brought to the home page and now have access to view the product page.
+
+## ![Pet Supply](./)
+
+<!-- WHEN the user views their profile,
+THEN they can see their order history -->
+
+In the product page, when the user selects a product, then the product is added to the cart.
 
 WHEN the product is add to cart,
 THEN the total is updated
@@ -49,21 +65,6 @@ THEN they can update or delete a user
 
 WHEN ADMIN views product list
 THEN they can update or delete product
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [How to Contribute](#contributions)
-- [Tests](#tests)
-- [Credits](#credits)
-- [Questions](#questions)
-
-## Installation
-
-Navigate to the [Pet-Supply-Ecommerce-Store](https://)
-
-## Usage
 
 Here are some images displaying how to application works:
 
