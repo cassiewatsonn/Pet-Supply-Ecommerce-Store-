@@ -28,6 +28,7 @@ export default function ProductsAdmin() {
                 productId: productId,
             },
         });
+        window.location.reload();
         console.log(productId);
     }
 
