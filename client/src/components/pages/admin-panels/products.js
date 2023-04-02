@@ -24,7 +24,7 @@ export default function ProductsAdmin() {
     async function handleDeleteProduct(productId) {
         const { data } = await deleteProduct({
             variables: {
-                id: id,
+                productId: productId,
             },
         });
         console.log(data);
