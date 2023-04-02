@@ -78,7 +78,7 @@ type Mutation {
   removeAddress(id: ID!, addressId: Int!): User
   addProduct(productId: String!, name: String!, price: Float!, category: String, tags: [String], stockCount: Int!, image: String, description: String): Product
   updateProduct(productId: String!, name: String, price: Float, tags:[String], category: String, image: String, description: String, stockCount: Int): Product
-  removeProduct(id: ID!): Product
+  removeProduct(productId: String!): Product
   # addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
   # updateOrder(): Order
   # removeOrder(orderId: Int!): Order
