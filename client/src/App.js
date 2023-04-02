@@ -1,7 +1,5 @@
 import React from "react";
-// import EcomContainer from "./components/EcomContainer";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { Container } from "react-bootstrap";
 import "./App.css";
 import { setContext } from '@apollo/client/link/context';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,15 +15,7 @@ import Success from './components/pages/Success';
 import Store from './components/pages/Store';
 import Home from './components/pages/Home';
 import Settings from './components/pages/settings';
-
-// import NavBarComponent from './components/navbar';
 import Admin from './components/pages/Admin';
-
-
-// import Toys from './components/pages/Toys';
-// import Treats from './components/pages/Treats';
-// import Cart from './components/pages/Cart'
-
 import CartProvider from './CartContext';
 
 import {
@@ -34,11 +24,14 @@ import {
     ApolloProvider,
     createHttpLink,
 } from '@apollo/client';
+//Construction main GraphQL API endpoint 
 const httpLink = createHttpLink({
     uri: '/graphql',
 });
 
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
+      // get the authentication token from local storage if it exists
     const token = localStorage.getItem('id_token');
     return {
         headers: {
@@ -53,67 +46,57 @@ const client = new ApolloClient({
     cache: new InMemoryCache(),
 });
 
-
+//Setting the Routes 
 const App = () => {
     return (
         <ApolloProvider client={client}>
             <CartProvider>
-
-                {/* <Container> */}
-                {/* <NavBarComponent> </NavBarComponent> */}
-                    <Router>
-                        <>
-                            <Header />
-                            <NavTabs />
-                            <Routes>
-                                <Route
-                                    path="/"
-                                    element={<Home />}
-                                />
-                                <Route
-                                    path="/products"
-                                    element={<Store />}
-                                />
-                                <Route
-                                    path="/signin"
-                                    element={<SignIn />}
-                                />
-                                <Route
-                                    path="/signup"
-                                    element={<SignUp />}
-                                />
-                                <Route
-                                    path="/aboutus"
-                                    element={<AboutUs />}
-                                />
-                                <Route
-                                    path="/success"
-                                    element={<Success />}
-                                />
-                                <Route
-                                    path="/cancel"
-                                    element={<Cancel />}
-                                />
-                                <Route
-                                    path="/admin"
-                                    element={<Admin />}
-                                />
-                                <Route
-                                    path="/settings"
-                                    element={<Settings />}
-                                />                                    
-                                {/* <Route
-
-                            path="/Cart"
-                            element={<Cart />}
-                        /> */}
+                <Router>
+                    <>
+                        <Header />
+                        <NavTabs />
+                        <Routes>
+                            <Route
+                                path="/"
+                                element={<Home />}
+                            />
+                            <Route
+                                path="/products"
+                                element={<Store />}
+                            />
+                            <Route
+                                path="/signin"
+                                element={<SignIn />}
+                            />
+                            <Route
+                                path="/signup"
+                                element={<SignUp />}
+                            />
+                            <Route
+                                path="/aboutus"
+                                element={<AboutUs />}
+                            />
+                            <Route
+                                path="/success"
+                                element={<Success />}
+                            />
+                            <Route
+                                path="/cancel"
+                                element={<Cancel />}
+                            />
+                            <Route
+                                path="/admin"
+                                element={<Admin />}
+                            />
+                            <Route
+                                path="/settings"
+                                element={<Settings />}
+                            />
                         </Routes>
                         <Footer />
                     </>
                 </Router>
-
             </CartProvider>
-
         </ApolloProvider>
     )
 };

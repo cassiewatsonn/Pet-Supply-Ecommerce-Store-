@@ -18,14 +18,13 @@ export default function ProductsAdmin() {
             setProductData(data.product)
         }
     }
+
+    //returns the the list of all products with their price & description.  Generates editable fields to update Product Name, Price, Description, Category & Stock
     return (
         <>
             <ListGroup>
-
                 {products.map((product) => (<ListGroup.Item key={product._id} action onClick={() => handleProductData(product._id)}>{product.name} {product.price} {product.description} {product.stockCount}</ListGroup.Item>))}
-
             </ListGroup>
-
 
             <EditProductBox productData={productData} setProductData={setProductData} />
         </>

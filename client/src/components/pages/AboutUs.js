@@ -1,15 +1,15 @@
 import React from 'react'; 
 
+
 export default function AboutUs (){ 
     return (
-
         <div>
             <h2 className='about-title'>About Our Company</h2>
 
             <div className='about-info'> 
             
                 <div  className='animal-photo' >
-                    <img src={process.env.PUBLIC_URL+'/images/theo.png'} alt='Dog' width="40%" height="100%"/>
+                    <img src={process.env.PUBLIC_URL+'/images/theo.png'} alt='Theo the Golden Retriever with a Happy Birthday Bone Biscuit' width="40%" height="100%"/>
                 </div>
 
                 <p>Welcome to our dog supply small business! We are a team of dedicated animal lovers who believe that our furry friends deserve only the best. As passionate dog owners ourselves, we understand the importance of providing high-quality toys and treats that not only promote healthy living, but also bring joy to our pets' lives.</p>
@@ -24,6 +24,5 @@ export default function AboutUs (){
 
             </div>
         </div>
-
     )
 }

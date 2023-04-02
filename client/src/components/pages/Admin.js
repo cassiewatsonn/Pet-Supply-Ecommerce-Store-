@@ -5,9 +5,11 @@ import ProductsAdmin from './admin-panels/products.js';
 import UsersAdmin from './admin-panels/users.js'
 
 export default function Admin() {
+    //Confirming that the user has admin access
     let user = localStorage.getItem('accessLvl');
     return(
         <>
+        {/* If the user has admin access, then they can access the following menu options */}
         {user === 'true' ?(
             <Tab.Container defaultActiveKey="users" id="left-tabs">
                 <Row>
@@ -40,6 +42,7 @@ export default function Admin() {
                 </Row>
         </Tab.Container>
         ):(
+            /*If the user is not an Admin, then they cannot access the Admin tab */ 
             <div>
                 <h1> You are not an Admin User</h1>
             </div>
