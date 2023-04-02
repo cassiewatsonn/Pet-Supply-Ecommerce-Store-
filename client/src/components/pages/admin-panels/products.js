@@ -10,7 +10,6 @@ export default function ProductsAdmin() {
     const { data: productsQuery } = useQuery(QUERY_PRODUCTS);
     const [getProduct] = useLazyQuery(QUERY_PRODUCT);
     const products = productsQuery?.products || [];
-    console.log(products)
     async function handleProductData(e) {
         console.log(e);
         const { called, data } = await getProduct({ variables: { productId: e } })
@@ -48,7 +47,6 @@ function EditProductBox({ productData, setProductData }) {
                 description: productData.description
             },
             })
-            console.log(mutationResponse);
     }
     const handleChange = (event) => {
         const { name, value } = event.target;

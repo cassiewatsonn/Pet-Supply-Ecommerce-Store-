@@ -17,7 +17,7 @@ export default function NavTabs() {
         )
       } else {
         return (
-        <Link to="/user">
+        <Link to="/settings">
           Settings
         </Link>
         )

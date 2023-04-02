@@ -12,9 +12,10 @@ query getUsers {
 `;
 
 export const SINGLE_USER = gql`
-query getUser($userId: ID!) {
+query GetUser($userId: ID!) {
   user(id: $userId) {
     _id
+    accessLvl
     firstName
     lastName
     phone
