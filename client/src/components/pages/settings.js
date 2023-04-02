@@ -9,9 +9,9 @@ export default function Settings() {
 
     return(
         <>
-            <Tab.Container defaultActiveKey="users" id="left-tabs">
-                <Row>
-                    <Col sm={3}>
+            <Tab.Container className="col-3" defaultActiveKey="users" id="left-tabs">
+            <Row className="my-4">
+                <Col className="col-2">
                         <Nav variant="pills" className="flex-column">
                             <Nav.Item>
                                 <Nav.Link eventKey="profile">Manage Profile</Nav.Link>
@@ -22,9 +22,12 @@ export default function Settings() {
                             <Nav.Item>
                                 <Nav.Link eventKey="orders">Manage Orders</Nav.Link>
                             </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="password">Change Password</Nav.Link>
+                            </Nav.Item>
                         </Nav>
-                    </Col>
-                    <Col sm={9}>
+                </Col>
+                    <Col className="col-8">
                         <Tab.Content>
                         <Tab.Pane eventKey="profile">
                             <Profile />
@@ -34,6 +37,9 @@ export default function Settings() {
                         </Tab.Pane>
                         <Tab.Pane eventKey="orders">
                             <Orders />
+                        </Tab.Pane>
+                        <Tab.Pane eventKey="password">
+                            Coming soon.
                         </Tab.Pane>
                         </Tab.Content>
                     </Col>
