@@ -23,5 +23,13 @@
     "password": "lou123",
     "accessLvl": false,
     "phone": "555-555-5678"
+},
+{   
+    "firstName": "Steve",
+    "lastName": "Cardie",
+    "email": "das.shaggy@gmail.com",
+    "password": "password",
+    "accessLvl": false,
+    "phone": "555-123-1232"
 }
 ]

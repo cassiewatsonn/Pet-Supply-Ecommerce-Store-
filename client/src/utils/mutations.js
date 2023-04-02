@@ -54,7 +54,6 @@ export const ADD_PRODUCT = gql`
     $name: String!,
     $price: Float!,
     $category: String,
-    $tags: [String],
     $stockCount: Int!,
     $image: String,
     $description: String
@@ -64,12 +63,15 @@ export const ADD_PRODUCT = gql`
       name: $name
       price: $price
       category: $category
-      tags: $tags
       stockCount: $stockCount
       image: $image
       description: $description
-    )
+    ) {
+      name
+      price
+      stockCount
   }
+}
 `
 
 export const UPDATE_PRODUCT = gql`
