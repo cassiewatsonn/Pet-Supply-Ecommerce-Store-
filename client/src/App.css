@@ -10,21 +10,21 @@
 
 /* CSS ROOT HEX COLOURS */
 :root {
-  --tea-green: #CCD5AE;
-  --border-image: #E9EDC9;
-  --cornsilk: ##FEFAE0;
-  --papaya-whip: #FAEDCD;
-  --buff: ##D4A373;
+  --bice-blue: #CCD5AE;
+  --ash-gray: #EDEDC9;
+  --alabaster: #FEFAE0;
+  --robin-egg-blue: #FAEDCD;
+  --princeton-orange: #D4D373;
 }
 
 .background{
-  background-color: var(--cornsilk);
+  background-color: var(--alabaster);
 }
 
 
 /* TODO: HEADER  */
 .header{
-  background-color: var(--tea-green);
+  background-color: var(--bice-blue);
 }
 .businessName{
 
@@ -39,8 +39,11 @@
   margin: 15px;
 }
 
-.nav-item {
+.nav-item, .nav-items {
   font-family: 'Alkatra', cursive;
+}
+.navv{
+  color: black !important;
 }
 
 .signin-btn {
@@ -185,29 +188,21 @@
 
 
 /* TODO LOGIN  */
-.login-title {
+.login-title, .signup-title{
   font-family: 'Alkatra', cursive;
   text-align: center;
   margin-top: 50px; 
 }
 
-.login-card {
+.login-card, .signup-card {
   display: flex;
   justify-content: center;
   margin: 2% 30%;
-  background-color: #9bc1bcff !important;
+  background-color: var(--ash-gray) !important;
   align-items: center;
 }
 
-.email-input {
-  margin: 15px;
-}
-
-.password-input {
-  margin: 15px;
-}
-
-.signup-instead {
+.email-input, .password-input, .signup-instead {
   margin: 15px;
 }
 
@@ -232,12 +227,12 @@
   background: var(--tea-green);
 }
 
-/* .Navigation-bar > .navs {
+.Navigation-bar > .navs {
   font-weight: 700;
   font-size: 21px;
   margin: 15px;
   color: #ffffff;
-} */
+}
 
 .Navigation-bar>.nav-items>a {
   color: var(--cornsilk);
@@ -279,7 +274,7 @@
     top: 60px;
     display: flex;
     flex-direction: column;
-    background: #3b4da7;
+    background: var(--alabaster);
     left: 0;
     width: 100%;
     height: 100%;
@@ -304,7 +299,7 @@
     position: relative;
     width: 32px;
     height: 2px;
-    background: #ffffff;
+    background: #000000;
     transition: all 0.45s ease-in-out;
   }
 
@@ -313,7 +308,7 @@
     content: "";
     position: absolute;
     height: 2px;
-    background: #ffffff;
+    background: #000000;
     border-radius: 2px;
     transition: all 0.45s ease-in-out;
   }
