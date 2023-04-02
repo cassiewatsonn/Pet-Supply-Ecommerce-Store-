@@ -7,9 +7,17 @@
         font-family: 'Lobster', cursive; */
 
 
+/* CSS ROOT HEX COLOURS */
+:root {
+--bice-blue: #006faaff;
+--ash-gray: #9bc1bcff;
+--alabaster: #e6ebe0ff;
+--robin-egg-blue: #36c9c6ff;
+--princeton-orange: #ff9914ff;
+}
+
+
 /* TODO: HEADER  */
-
-
 .businessName{
   font-family: 'Lobster', cursive;
   margin-left: 5%;
@@ -65,56 +73,54 @@
   font-size: 18px;
 }
 
-TODO TOYS 
-.toys-title{
-  font-family: 'Edu NSW ACT Foundation', cursive;
-  text-align: center;
-  margin-top: 50px;
-}
-.toy-card{
-  width: 350px;
-  flex-wrap:wrap;
-  margin: 15px;
-  /* background-color: #bbddf9; */
-}
-.card-wrap{
-  display: flex; 
-  flex-wrap: wrap;
-  margin-right: 20%;
-  margin-left:20%;
-  width: 60%;
-  justify-content: center;
-}
-.content{
-  font-family: 'Dosis', sans-serif;
-}
-.card-title{
-  text-align: center;
-  margin-right: 30px;
-  margin-bottom: 15px;
-}
-.addtocart{
-  margin-top: 15px;
-}
-
-/* CASSIE!!  This one is to keep, it is part of the Store.js*/
+/*  Store.js*/
 .cart-modal{
   padding-bottom: 10%;
 }
 
-/*CASSIE!! This is to keep, it is part of the ProductCard.js */
+/* CartComponent.js Odd naming structure is created by React-Bootstrap */
+.cart-title.modal-header{
+  background-color: var(--ash-gray);
+}
+.btn.btn.btn-cart-btn{
+  background-color: var(--bice-blue);
+  color: var(--alabaster);
+}
+.btn.btn.btn-cart-btn:hover{
+  background-color: var(--alabaster);
+  color: var(--bice-blue);
+}
+
+.btn.btn-purchase-custom {
+  background-color: var(--princeton-orange);
+  color: var(--alabaster)
+}
+.btn.btn-purchase-custom:hover {
+  background-color: #36C9C6;
+  color: #006FAA;   
+}
+
+
+/* ProductCard.js Odd naming structure is created by React-Bootstrap */
 .treatImage{
   height: auto;
   max-height: 225px;
   width: auto;
 }
-
-
-/* TODO TREATS */
-.treats-title{
-  font-family: 'Edu NSW ACT Foundation', cursive;
-  text-align: center;
-  margin-top: 50px;
+.card.productCard{
+  background-color: var(--ash-gray);
+}
+.btn.btn.btn-custom{
+  background-color: var(--bice-blue);
+  color: var(--alabaster);  
+}
+.btn.btn.btn-custom:hover{
+  background-color: var(--princeton-orange);
+  color: var(--alabaster);  
+}
+.btn.btn.btn-remove{
+  background-color: var(--princeton-orange);
+  color: black;  
 }
 
 
@@ -154,7 +160,7 @@ justify-content: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #748bfe;
+  background: var(--bice-blue);
 }
 
 /* .Navigation-bar > .navs {
@@ -165,8 +171,10 @@ justify-content: center;
 } */
 
 .Navigation-bar > .nav-items > a {
-  color: #ffffff;
+  color: var(--alabaster);
   font-size: 16px;
+
+  font-weight: bold;
   text-decoration: none;
   margin: 15px;
   position: relative;
@@ -184,7 +192,7 @@ justify-content: center;
   bottom: 0;
   width: 0;
   height: 2px;
-  background: #ffffff;
+  background: var(--princeton-orange);
   transition: all 0.45s;
 }
 
