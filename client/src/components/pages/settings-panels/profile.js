@@ -1,6 +1,5 @@
 import React, { useState } from 'react'; 
 import { Nav, Row, Col, Form, Button} from 'react-bootstrap';
-import Tab from 'react-bootstrap/Tab';
 import { SINGLE_USER } from '../../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { UPDATE_USER } from '../../../utils/mutations';
@@ -14,54 +13,62 @@ export default function Profile() {
           });
         const [updateUser] = useMutation(UPDATE_USER);
         const userData = data?.user || [];
-
-        const [formData, setFormData] = useState({
+        const [formData, setFormData] = useState({formData: {
             userId: userData._id,
             accessLvl: userData.accessLvl,
             firstName: userData.firstName,
             lastName: userData.lastName,
             email: userData.email,
             phone: userData.phone
-        })
-
-        const handleSubmit = async (event) => {
-            event.preventDefault();  
-            const mutationResponse = await updateUser({
-                variables: {
-                    userId: userData._id,
-                    accessLvl: formData.accessLvl,
-                    firstName: formData.firstName,
-                    lastName: formData.lastName,
-                    email: formData.email,
-                    phone: formData.phone
-                },
-                })
             }
-        const handleChange = (event) => {
+            })
+
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            try {
+                const mutationResponse = await updateUser({
+                    variables: {
+                        userId: userData._id,
+                        accessLvl: formData.accessLvl,
+                        firstName: formData.firstName,
+                        lastName: formData.lastName,
+                        email: formData.email,
+                        phone: formData.phone
+                    },
+                })
+                if(mutationResponse){
+                    window.location.reload();
+                };
+            } catch { 
+                console.log("Error!"); }
+            }
+        
+        function handleChange(event) {
             const { name, value } = event.target;
             setFormData({
-              ...formData,
-              [name]: value,
+                ...formData,
+                [name]: value,
             });
-          };
+        }
     
         return (
         <Form onSubmit={handleSubmit} className="col-5">
             <Form.Group controlId="editUser.ControlEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" name="email" placeholder="name@example.com" defaultValue={formData.email} onChange={handleChange}/>
+                <Form.Control type="email" name="email" placeholder="name@example.com" value={formData.email} onChange={handleChange}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="editUser.ControlName">
                 <Form.Label>First Name</Form.Label>
-                <Form.Control type="text" name="firstName" defaultValue={formData.firstName} onChange={handleChange} />
+                <Form.Control type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
                 <Form.Label>Last Name</Form.Label>
-                <Form.Control type="text" name="lastName" defaultValue={formData.lastName} onChange={handleChange} />
+                <Form.Control type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Phone Number</Form.Label>
-                <Form.Control type="text" name="phone" defaultValue={formData.phone} onChange={handleChange} />
+                <Form.Control type="text" name="phone" value={formData.phone} onChange={handleChange} />
             </Form.Group>
-            <Button type="primary" name="submit" id="Submit-btn" value="submit">Submit</Button>
+            <Button type="primary" value="submit">Submit</Button>
         </Form>
         )
     
