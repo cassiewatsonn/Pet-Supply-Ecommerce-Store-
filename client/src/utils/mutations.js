@@ -87,8 +87,8 @@ export const UPDATE_PRODUCT = gql`
 
 export const REMOVE_PRODUCT = gql`
 
-mutation removeProduct($productId: String!) {
-  removeProduct(productId: $productId) {
+mutation removeProduct($productId: ID!) {
+  removeProduct(id: $productId) {
     productId
     stockCount
   }
