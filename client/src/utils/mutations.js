@@ -87,12 +87,17 @@ export const UPDATE_PRODUCT = gql`
 
 export const REMOVE_PRODUCT = gql`
     mutation removeProduct(
-      $productId:String
+      $id: ID!
     ) {
       removeProduct(
-        productId: $productId
-      )
-    }
+        id: $id
+      ) {
+        category
+        name
+        price
+  }
+}
+
 `
 export const LOGIN = gql`
   mutation login(
@@ -107,7 +112,7 @@ export const LOGIN = gql`
         user {
       accessLvl
       email
-      firstName
+      firstNameString
       lastName
     }
     }

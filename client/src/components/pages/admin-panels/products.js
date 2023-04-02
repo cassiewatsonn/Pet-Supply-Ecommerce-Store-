@@ -19,10 +19,10 @@ export default function ProductsAdmin() {
         }
     }
 
-    async function handleDeleteProduct(productId) {
+    async function handleDeleteProduct(id) {
         const { data } = await removeProduct({
             variables: {
-                productId,
+                id: id,
             },
         });
         console.log(data);
@@ -32,7 +32,7 @@ export default function ProductsAdmin() {
         <>
             <ListGroup>
 
-                {products.map((product) => (<div><ListGroup.Item key={product._id} action onClick={() => handleProductData(product._id)}>{product.name} {product.price} {product.description} {product.stockCount}</ListGroup.Item><Button onClick={handleDeleteProduct}>Delete</Button></div>))}
+                {products.map((product) => (<div><ListGroup.Item key={product._id} action onClick={() => handleProductData(product._id)}>{product.name} {product.price} {product.description} {product.stockCount}</ListGroup.Item><Button onClick={() => {handleDeleteProduct(product._id)}}>Delete</Button></div>))}
 
             </ListGroup>
 
