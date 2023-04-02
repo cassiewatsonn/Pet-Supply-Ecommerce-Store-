@@ -20,10 +20,11 @@ export default function ProductsAdmin() {
         }
     }
 
+
     async function handleDeleteProduct(productId) {
         const { data } = await deleteProduct({
             variables: {
-                productId,
+                id: id,
             },
         });
         console.log(data);
@@ -33,6 +34,7 @@ export default function ProductsAdmin() {
     return (
         <>
             <ListGroup>
+
                 {products.map((product) => (
                     <ListGroup.Item key={product._id}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -43,6 +45,7 @@ export default function ProductsAdmin() {
                         </div>
                     </ListGroup.Item>
                 ))}
+
             </ListGroup>
 
             <EditProductBox productData={productData} setProductData={setProductData} />
