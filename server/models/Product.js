@@ -19,7 +19,7 @@ const productSchema = new Schema({
         type: Number,
         required: true
     },
-    quantity: {
+    stockCount: {
         type: Number,
         min: 0,
         default: 0,

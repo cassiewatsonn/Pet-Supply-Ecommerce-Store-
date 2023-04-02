@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { ListGroup, Form, Button } from 'react-bootstrap';
 import { QUERY_PRODUCT, QUERY_PRODUCTS } from '../../../utils/queries';
 import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
-import { UPDATE_PRODUCT } from '../../../utils/mutations';
+import { UPDATE_PRODUCT, REMOVE_PRODUCT } from '../../../utils/mutations';
 // import { productsArray } from '../../../productStore';
 
 export default function ProductsAdmin() {
     const [productData, setProductData] = useState();
     const { data: productsQuery } = useQuery(QUERY_PRODUCTS);
     const [getProduct] = useLazyQuery(QUERY_PRODUCT);
+    const [removeProduct] = useMutation(REMOVE_PRODUCT);
     const products = productsQuery?.products || [];
-    console.log(products)
     async function handleProductData(e) {
         console.log(e);
         const { called, data } = await getProduct({ variables: { productId: e } })
@@ -19,11 +19,21 @@ export default function ProductsAdmin() {
         }
     }
 
+    async function handleDeleteProduct(productId) {
+        const { data } = await removeProduct({
+            variables: {
+                productId,
+            },
+        });
+        console.log(data);
+    }
     //returns the the list of all products with their price & description.  Generates editable fields to update Product Name, Price, Description, Category & Stock
     return (
         <>
             <ListGroup>
-                {products.map((product) => (<ListGroup.Item key={product._id} action onClick={() => handleProductData(product._id)}>{product.name} {product.price} {product.description} {product.stockCount}</ListGroup.Item>))}
+
+                {products.map((product) => (<div><ListGroup.Item key={product._id} action onClick={() => handleProductData(product._id)}>{product.name} {product.price} {product.description} {product.stockCount}</ListGroup.Item><Button onClick={handleDeleteProduct}>Delete</Button></div>))}
+
             </ListGroup>
 
             <EditProductBox productData={productData} setProductData={setProductData} />
@@ -47,7 +57,6 @@ function EditProductBox({ productData, setProductData }) {
                 description: productData.description
             },
             })
-            console.log(mutationResponse);
     }
     const handleChange = (event) => {
         const { name, value } = event.target;

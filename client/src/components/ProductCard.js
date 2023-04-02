@@ -7,7 +7,6 @@ function ProductCard(props) {  //props.product
     const product = props.product;
     const cart = useContext(CartContext);
     const productQuantity = cart.getProductQuantity(product.id);
-    console.log(cart.items);
 
     //Creates card for each product, User can click to add more or less or remove all from cart
     return (

@@ -20,7 +20,7 @@ export default function NavTabs() {
       } else {
         //If signed in user is not an Admin level, then they are displayed the following nav bar 
         return (
-        <Link to="/user">
+        <Link to="/settings">
           Settings
         </Link>
         )

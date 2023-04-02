@@ -19,11 +19,20 @@ export default function UsersAdmin() {
 
     return (
         <>
-            <ListGroup>
+        <Row className="row">
+        <div className="bg-primary"></div>
+        </Row>
+        <Row>
+        <div className="col-5">
+        <ListGroup>
                 {users.map((user) => (<ListGroup.Item key={user._id} action onClick={() => handleUserData(user._id)}>{user.firstName} {user.lastName}</ListGroup.Item>))}
             </ListGroup>
-
+            <Button className="float-right" variant="primary" value="addNew">Add New User</Button>
+            </div>
+            <div className="col-7">
             <EditBox formData={formData} setFormData={setFormData} />
+            </div>
+        </Row>
         </>
     )
 }
@@ -43,7 +52,10 @@ function EditBox({ formData, setFormData }) {
                 phone: formData.phone
             },
             })
-            console.log(mutationResponse);
+            if(mutationResponse) {
+                window.location.reload();
+            }
+
         }
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -52,11 +64,11 @@ function EditBox({ formData, setFormData }) {
           [name]: value,
         });
       };
-
       //Returns the list of all users. Generates editable fields to update First Name, Last Name, Phone Number & the ability to grant Admin Access
     return formData ? (
+
     <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="editUser.ControlEmail">
+        <Form.Group className="col-3" controlId="editUser.ControlEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" name="email" placeholder="name@example.com" value={formData.email} onChange={handleChange}/>
         </Form.Group>
@@ -68,10 +80,10 @@ function EditBox({ formData, setFormData }) {
         </Form.Group>
         <Form.Group>
             <Form.Label>Phone Number</Form.Label>
-            <Form.Control type="text" name="phone" defaultValue={formData.phone} onChange={handleChange} />
+            <Form.Control type="text" name="phone" value={formData.phone ? formData.phone : "None"} onChange={handleChange} />
         </Form.Group>
         <Form.Group>
-            <Form.Check type="switch" name="accessLvl" id="accessLvl" label="Grant Admin access?"/>
+            <Form.Check type="switch" name="accessLvl" id="accessLvl" label="Grant Admin access?" onChange={handleChange} defaultChecked={formData.accessLvl} />
         </Form.Group>
         <Button type="primary" value="submit">Submit</Button>
     </Form>

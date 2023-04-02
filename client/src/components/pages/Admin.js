@@ -12,8 +12,8 @@ export default function Admin() {
         {/* If the user has admin access, then they can access the following menu options */}
         {user === 'true' ?(
             <Tab.Container defaultActiveKey="users" id="left-tabs">
-                <Row>
-                    <Col sm={3}>
+                <Row className="my-4">
+                    <Col className="col-2">
                         <Nav variant="pills" className="flex-column">
                             <Nav.Item>
                                 <Nav.Link eventKey="products">Manage Products</Nav.Link>
@@ -26,7 +26,7 @@ export default function Admin() {
                             </Nav.Item>
                         </Nav>
                     </Col>
-                    <Col sm={9}>
+                    <Col className="col-8">
                         <Tab.Content>
                         <Tab.Pane eventKey="products">
                             <ProductsAdmin />
