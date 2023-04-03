@@ -10,15 +10,13 @@
 
 /* CSS ROOT HEX COLOURS */
 :root {
-
   --tea-green: #CCD5AE;
   --beige: #E9EDC9;
   --dark-beige: #F3D487;
-  --cornsilk: ##FEFAE0;
+  --cornsilk: #FEFAE0;
   --papaya-whip: #FAEDCD;
   --buff: #D4A373;
   --moss-green: #758e4f;
-
 }
 
 .background{
@@ -118,9 +116,9 @@
 }
       /* Button to open Cart modal - CardComponent.js */
 .btn.btn-view-cart-btn {
-  background-image: linear-gradient(to right, var(--beige) 0%, var(--papaya-whip) 100%);
+  background-image: linear-gradient(to right, var(--tea-green) 0%, var(--moss-green) 100%);
   border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease 0s;
   cursor: pointer
 }
@@ -160,6 +158,7 @@
     /* Add & Subtract buttons to add products to the cart in the Product Card */
 .btn.btn-add, .btn.btn-sub {
   background-color: var(--moss-green);
+  font-weight: bold;
 }
 .btn.btn-add:hover, .btn.btn-sub:hover  {
   background-color: var(--tea-green);
@@ -168,7 +167,7 @@
 .btn.btn-remove {
   background-image: linear-gradient(to left, var(--dark-beige) 0%, var(--buff) 100%);
   border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease 0s;
   cursor: pointer
 }
@@ -179,7 +178,7 @@
 .btn.btn-add-to-cart {
   background-image: linear-gradient(to right, var(--dark-beige) 0%, var(--buff) 100%);
   border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease 0s;
   cursor: pointer
 }
