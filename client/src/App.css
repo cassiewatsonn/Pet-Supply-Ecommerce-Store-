@@ -219,12 +219,20 @@
     /*Side Nav Bar links */
 #left-tabs-tab-users.nav-link,
 #left-tabs-tab-orders.nav-link,
-#left-tabs-tab-products.nav-link {
+#left-tabs-tab-products.nav-link,
+#left-tabs-tab-profile.nav-link,
+#left-tabs-tab-addresses.nav-link,
+#left-tabs-tab-password.nav-link
+ {
   color: var(--moss-green);
 }
 #left-tabs-tab-users.nav-link.active, 
 #left-tabs-tab-orders.nav-link.active,
-#left-tabs-tab-products.nav-link.active  {
+#left-tabs-tab-products.nav-link.active,
+#left-tabs-tab-profile.nav-link.active,
+#left-tabs-tab-addresses.nav-link.active,
+#left-tabs-tab-password.nav-link.active
+  {
   background-color: var(--moss-green);
   color: black;
 }
@@ -233,7 +241,9 @@
 .float-right.btn.btn-add-new-user, 
 .btn.btn-user-submit,
 .btn.btn-update-product,
-.btn.btn-add-new-product {
+.btn.btn-add-new-product,
+.btn.btn-user-update,
+.btn.btn-password-btn {
   background-image: linear-gradient(to right, var(--tea-green) 0%, var(--moss-green) 100%);
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
@@ -243,7 +253,8 @@
 .float-right.btn.btn-add-new-user:hover,
 .btn.btn-user-submit:hover,
 .btn.btn-update-product:hover,
-.btn.btn-add-new-product:hover
+.btn.btn-add-new-product:hover,
+.btn.btn-password-btn:hover
 {
   background-color: var(--papaya-whip);
   box-shadow: var(--moss-green);
@@ -267,7 +278,9 @@
 .user-field {
   margin-bottom: 3%;
 }
-.userSubmit {
+.userSubmit,
+.userUpdate,
+.changePassword {
   margin-top: 3%;
 }
 .product-name,
@@ -279,10 +292,20 @@
 .price-input,
 .description-input,
 .category-input,
-.stock-input {
+.stock-input,
+.email-input,
+.first-name-input,
+.last-name-input,
+.phone-number-input,
+.old-password,
+.new-password,
+.confirm-password {
   color: var(--moss-green);
   font-weight: bold;
 }
+
+
+
 
 
 /* TODO LOGIN  */
