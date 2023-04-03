@@ -97,4 +97,4 @@ Finally, a huge thank you to Sal Hobbi from the University of Toronto for teachi
 
 [Rebecca Lawrences's GitHub Profile](https://github.com/rkml14)
 
-For any additional questions, please contact me by email at cassiewatsonn@gmail.com !
+For any additional questions, please contact me by email at cassiewatsonn@gmail.com!
