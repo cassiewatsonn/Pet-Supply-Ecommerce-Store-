@@ -13,6 +13,7 @@
 
   --tea-green: #CCD5AE;
   --beige: #E9EDC9;
+  --dark-beige: #F3D487;
   --cornsilk: ##FEFAE0;
   --papaya-whip: #FAEDCD;
   --buff: #D4A373;
@@ -115,10 +116,9 @@
 .cart-title.modal-header {
   background-color: var(--beige);
 }
-      /* Button to open Cart modal */
+      /* Button to open Cart modal - CardComponent.js */
 .btn.btn-view-cart-btn {
   background-image: linear-gradient(to right, var(--beige) 0%, var(--papaya-whip) 100%);
-  color: black;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
@@ -126,12 +126,10 @@
 }
 .btn.btn-view-cart-btn:hover {
   background-color: var(--papaya-whip);
-  box-shadow: var(-o-beige);
+  box-shadow: var(--moss-green);
   transform: translateY(-7px);
-  color: black;
 }
-
-    /* Button to purchase in Cart modal*/
+    /* Button to purchase in Cart modal - CardComponent.js */
 .btn.btn-purchase-btn {
   background-color: var(--moss-green);
 }
@@ -140,45 +138,58 @@
 }
 
 
-/* CartProduct.js*/
+/* CartProduct.js */
+  /* Remove cart item button in the modal */
 .btn.btn-cart-remove {
   background-color: var(--tea-green);
 }
 .btn.btn-cart-remove:hover {
-  background-color: var(--);
+  background-color: var(--papaya-whip);
 }
 
 
-/* ProductCard.js Odd naming structure is created by React-Bootstrap */
+/* ProductCard.js */
 .treatImage {
   height: auto;
   max-height: 225px;
   width: auto;
 }
-
 .card.productCard {
   background-color: var(--beige);
+} 
+    /* Add & Subtract buttons to add products to the cart in the Product Card */
+.btn.btn-add, .btn.btn-sub {
+  background-color: var(--moss-green);
 }
-
-.btn.btn.btn-custom {
+.btn.btn-add:hover, .btn.btn-sub:hover  {
   background-color: var(--tea-green);
-  color: var(--cornsilk);
+}
+    /* Button to remove all of 1 item from the cart  in the Product Card*/
+.btn.btn-remove {
+  background-image: linear-gradient(to left, var(--dark-beige) 0%, var(--buff) 100%);
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer
+}
+.btn.btn-remove:hover {
+  background-color: var(--moss-green);
+}
+    /*Butto  to add product item to cart in Product Card*/
+.btn.btn-add-to-cart {
+  background-image: linear-gradient(to right, var(--dark-beige) 0%, var(--buff) 100%);
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer
+}
+.btn.btn-add-to-cart:hover {
+  background-color: var(--papaya-whip);
+  box-shadow: var(--moss-green);
+  transform: translateY(-7px);
 }
 
-.btn.btn.btn-custom:hover {
-  background-color: var(--buff);
-  color: var(--cornsilk);
-}
 
-.btn.btn.btn-remove {
-  background-color: var(--buff);
-  color: black;
-}
-
-.btn.btn.btn-remove:hover {
-  background-color: var(--buff);
-  color: black;
-}
 
 
 /* TODO LOGIN  */
@@ -268,7 +279,7 @@
     top: 60px;
     display: flex;
     flex-direction: column;
-    background: var(--alabaster);
+    background: var(--tea-green);
     left: 0;
     width: 100%;
     height: 100%;
