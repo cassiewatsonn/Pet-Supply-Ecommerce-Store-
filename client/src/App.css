@@ -225,7 +225,7 @@
 }
 
 /* ADMIN-PANELS -> USERS.JS */ 
-.float-right.btn.btn-add-new-user {
+.float-right.btn.btn-add-new-user, .btn-user-submit {
   background-image: linear-gradient(to right, var(--tea-green) 0%, var(--moss-green) 100%);
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
@@ -254,6 +254,9 @@
 }
 .user-field {
   margin-bottom: 3%;
+}
+.userSubmit {
+  margin-top: 3%;
 }
 
 

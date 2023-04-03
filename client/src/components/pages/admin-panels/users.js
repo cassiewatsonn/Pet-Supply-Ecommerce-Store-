@@ -135,7 +135,7 @@ function EditBox({ formData, setFormData, addNew }) {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" name="password" id="password" label="Create password" onChange={handleChange} />
             </Form.Group> : ''}
-            <Button type="primary" value="submit">Submit</Button>
+            <Button className="userSubmit" variant="user-submit" value="submit">Submit</Button>
         </Form>
     ) : (<></>)
 
