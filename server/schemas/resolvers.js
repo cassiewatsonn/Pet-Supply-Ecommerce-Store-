@@ -58,6 +58,7 @@ const resolvers = {
         },
         updatePassword: async(parent, {userId, password}) => {
             return User.findOneAndUpdate({ _id: userId},
+                
                 {password: password}
                 )},
 

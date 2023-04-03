@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Nav, Row, Col, ListGroup, Form, Button } from 'react-bootstrap';
+import { Row, ListGroup, Form, Button } from 'react-bootstrap';
 import { QUERY_USERS, SINGLE_USER } from '../../../utils/queries';
 import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
 import { ADD_USER, UPDATE_USER, REMOVE_USER } from '../../../utils/mutations';
@@ -72,6 +72,7 @@ function EditBox({ formData, setFormData, addNew }) {
     const [updateUser] = useMutation(UPDATE_USER);
     const [addUser] = useMutation(ADD_USER);
     console.log(addNew)
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (addNew == 'true') {

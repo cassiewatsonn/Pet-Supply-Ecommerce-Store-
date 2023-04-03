@@ -41,6 +41,10 @@ class AuthService {
     // this will reload the page and reset the state of the application
     window.location.assign('/');
   }
+  
+  comparePass() {
+
+  }
 }
 
 export default new AuthService();
