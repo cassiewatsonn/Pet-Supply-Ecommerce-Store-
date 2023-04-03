@@ -40,7 +40,7 @@ export default function SignUp(props) {
       <h2 className='signup-title'>Signup</h2>
       <div className="card signup-card">
       <form onSubmit={handleFormSubmit}>
-        <div>
+        <div className="log-input">
           <label htmlFor="firstName">First Name:</label>
           <input
             placeholder="First"
@@ -50,7 +50,7 @@ export default function SignUp(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="lastname">
+        <div className="log-input">
           <label htmlFor="lastName">Last Name:</label>
           <input
             placeholder="Last"
@@ -60,7 +60,7 @@ export default function SignUp(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="email">
+        <div className="log-input">
           <label htmlFor="email">Email:</label>
           <input
             placeholder="example@domain.com"
@@ -70,7 +70,7 @@ export default function SignUp(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="password">
+        <div className="log-input">
           <label htmlFor="pwd">Password:</label>
           <input
             placeholder="*******"
