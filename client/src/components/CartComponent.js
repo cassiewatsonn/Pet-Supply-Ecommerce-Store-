@@ -21,7 +21,7 @@ export default function CartComponent() {
             {/* Cart button modal, with ability for user to click to expand  */}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className="cart-title" closeButton>
-                    <Modal.Title> <img src='images/logo-mossgreen-xsm.png' alt='walking-dog-logo'/>  Shopping Cart  </Modal.Title> 
+                    <Modal.Title> <img src='images/logo-xsmall.png' alt='walking-dog-logo'/>  Shopping Cart  </Modal.Title> 
                     
                 </Modal.Header>
                 <Modal.Body>

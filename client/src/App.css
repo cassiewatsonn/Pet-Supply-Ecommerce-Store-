@@ -33,6 +33,13 @@
 .header{
   background-color: var(--beige);
 }
+.header img {
+  float: left;
+}
+
+.header h1 {
+  position: relative;
+}
 .businessName{
 
   font-family: 'Lobster', cursive;
@@ -237,13 +244,16 @@
   color: black;
 }
 
-/* ADMIN-PANELS -> USERS.JS & PRODUCTS.JS*/ 
+/* ADMIN-PANELS -> USERS.JS, PRODUCTS.JS, LOGIN.JS, SINGNUP.JS*/ 
 .float-right.btn.btn-add-new-user, 
 .btn.btn-user-submit,
 .btn.btn-update-product,
 .btn.btn-add-new-product,
 .btn.btn-user-update,
-.btn.btn-password-btn {
+.btn.btn-password-btn,
+.login-btn-submit,
+.signup-btn-submit
+{
   background-image: linear-gradient(to right, var(--tea-green) 0%, var(--moss-green) 100%);
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
@@ -260,6 +270,13 @@
   box-shadow: var(--moss-green);
   transform: translateY(-7px);
 }
+.login-btn,
+.submit-btn {
+  padding-top: 3%;
+  display: flex;
+  justify-content: center;
+}
+
 .btn.btn-user-delete, .btn.btn-delete-product {
   background-image: linear-gradient(to right, var(--dark-beige) 0%, var(--buff) 100%);
   border-radius: 45px;
@@ -297,12 +314,19 @@
 .first-name-input,
 .last-name-input,
 .phone-number-input,
+.password-login,
 .old-password,
 .new-password,
-.confirm-password {
+.confirm-password,
+.first-name-signup,
+.last-name-signup,
+.email-signup,
+.password-signup
+ {
   color: var(--moss-green);
   font-weight: bold;
 }
+
 
 
 
@@ -326,10 +350,17 @@
   margin-top: 5%;
 }
 
-.email-input, .password-input, .signup-instead {
+.email-input, 
+.password-input,
+.signin-instead,
+.signup-instead {
   margin: 15px;
+  text-align: center;
 }
-
+.signin-link,
+.signup-link {
+  color: var(--moss-green)
+}
 .login-btn {
   margin: 15px 20px;
 }
