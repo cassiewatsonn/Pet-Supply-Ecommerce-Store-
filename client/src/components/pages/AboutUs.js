@@ -15,7 +15,7 @@ export default function AboutUs (){
             <div className='about-info'> 
 
                 <div  className='animal-photo' >
-                        <img src={process.env.PUBLIC_URL+'/images/theo.png'} alt='Theo the Golden Retriever with a Happy Birthday Bone Biscuit' width="90%" height="100%"/>
+                        <img className='animal-photo-theo' src={process.env.PUBLIC_URL+'/images/theo.png'} alt='Theo the Golden Retriever with a Happy Birthday Bone Biscuit' width="90%" height="100%"/>
                 </div>
                 <div className='about-txt'>
                     <p>Welcome to The Pupscale Barkery, your destination for the most delectable dog treats! Our team of passionate animal lovers understands the importance of providing your furry friends with only the best. As dog owners ourselves, we believe in promoting healthy living and bringing joy to our pets' lives through our treats.</p>
