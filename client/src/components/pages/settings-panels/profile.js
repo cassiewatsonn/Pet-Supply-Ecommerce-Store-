@@ -56,21 +56,22 @@ export default function Profile() {
         return (
         <Form onSubmit={handleSubmit} className="col-5">
             <Form.Group controlId="editUser.ControlEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label className='email-input'>Email address</Form.Label>
                 <Form.Control type="email" name="email" placeholder="name@example.com" value={formData.email} onChange={handleChange}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="editUser.ControlName">
-                <Form.Label>First Name</Form.Label>
+                <Form.Label className='first-name-input'>First Name</Form.Label>
                 <Form.Control type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
-                <Form.Label>Last Name</Form.Label>
+                <Form.Label className='last-name-input'>Last Name</Form.Label>
                 <Form.Control type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
             </Form.Group>
             <Form.Group>
-                <Form.Label>Phone Number</Form.Label>
+                <Form.Label className='phone-number-input'>Phone Number</Form.Label>
                 <Form.Control type="text" name="phone" value={formData.phone} onChange={handleChange} />
             </Form.Group>
-
-            <Button type="primary" value="submit">Submit</Button>
+            <div className='userUpdate'>
+            <Button variant="user-update" value="submit">Update</Button>
+            </div>
         </Form>
         )
     

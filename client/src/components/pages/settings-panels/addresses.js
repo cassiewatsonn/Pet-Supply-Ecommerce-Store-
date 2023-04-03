@@ -6,7 +6,7 @@ import "../../../App.css";
 
 
 export default function Address() {
-    const address = "This is coming";
+    const address = "Coming Soon";
     
     return address;
 

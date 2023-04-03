@@ -5,7 +5,7 @@ import Tab from 'react-bootstrap/Tab';
 import "../../../App.css";
 
 export default function Orders() {
-    const orders = "This is coming";
+    const orders = "Order history coming soon!";
     
     return orders;
 
