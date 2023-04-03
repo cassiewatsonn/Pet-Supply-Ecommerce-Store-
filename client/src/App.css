@@ -229,20 +229,27 @@
   color: black;
 }
 
-/* ADMIN-PANELS -> USERS.JS */ 
-.float-right.btn.btn-add-new-user, .btn-user-submit {
+/* ADMIN-PANELS -> USERS.JS & PRODUCTS.JS*/ 
+.float-right.btn.btn-add-new-user, 
+.btn.btn-user-submit,
+.btn.btn-update-product,
+.btn.btn-add-new-product {
   background-image: linear-gradient(to right, var(--tea-green) 0%, var(--moss-green) 100%);
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease 0s;
   cursor: pointer
 }
-.float-right.btn.btn-add-new-user:hover {
+.float-right.btn.btn-add-new-user:hover,
+.btn.btn-user-submit:hover,
+.btn.btn-update-product:hover,
+.btn.btn-add-new-product:hover
+{
   background-color: var(--papaya-whip);
   box-shadow: var(--moss-green);
   transform: translateY(-7px);
 }
-.btn.btn-user-delete {
+.btn.btn-user-delete, .btn.btn-delete-product {
   background-image: linear-gradient(to right, var(--dark-beige) 0%, var(--buff) 100%);
   border-radius: 45px;
   transition: all 0.3s ease 0s;
@@ -263,8 +270,19 @@
 .userSubmit {
   margin-top: 3%;
 }
-
-
+.product-name,
+.product-price,
+.product-stock-count {
+  font-weight: bold;
+}
+.product-input,
+.price-input,
+.description-input,
+.category-input,
+.stock-input {
+  color: var(--moss-green);
+  font-weight: bold;
+}
 
 
 /* TODO LOGIN  */

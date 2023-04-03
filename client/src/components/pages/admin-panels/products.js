@@ -58,13 +58,17 @@ export default function ProductsAdmin() {
                     <ListGroup.Item key={product._id}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <div onClick={() => handleProductData(product._id,'false')}>
-                                <span>{product.name}</span> - {product.price} <br /> {product.description} <br /> Stock Count: {product.stockCount}
+                                <div>
+                                <span className='product-name'>{product.name}</span> <span className='product-price'>- {product.price} </span>
+                                <p /> {product.description} <br /> 
+                                <span className="product-stock-count">Stock Count: </span> {product.stockCount}
+                                </div>
                             </div>
-                            <Button variant="danger" onClick={() => handleDeleteProduct(product._id)}>Delete</Button>
+                            <Button variant="delete-product" onClick={() => handleDeleteProduct(product._id)}>Delete</Button>
                         </div>
                     </ListGroup.Item>
                 ))}
-                <Button className="float-right col-3" name="addNew" variant="primary" value="addNew" onClick={() => handleProductData('', 'true')}>Add New Product</Button>
+                <Button className="float-right col-3" name="addNew" variant="add-new-product" value="addNew" onClick={() => handleProductData('', 'true')}>Add New Product</Button>
             </ListGroup>
         </div>
         <div className="col-7">
@@ -122,25 +126,25 @@ function EditProductBox({ productData, setProductData,addNew }) {
     };
 
     return productData ? (<Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="editProduct.ControlProduct">
-            <Form.Label>Product</Form.Label>
+        <Form.Group controlId="editProduct.ControlProduct">
+            <Form.Label className='product-input'>Product</Form.Label>
             <Form.Control type="product" name="name" placeholder="Product Name here" value={productData.name} onChange={handleChange} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="editProduct.ControlProductData">
-            <Form.Label>Price</Form.Label>
+            <Form.Label className="price-input">Price</Form.Label>
             <Form.Control type="text" name="price" value={productData.price} onChange={handleChange} />
-            <Form.Label>Description</Form.Label>
+            <Form.Label className='description-input'>Description</Form.Label>
             <Form.Control type="text" name="description" value={productData.description} onChange={handleChange} />
-            <Form.Label>Choose category</Form.Label>
+            <Form.Label className='category-input'>Choose category</Form.Label>
             <Form.Select aria-label="Default select example">
                 <option value="toys">Toys</option>
                 <option value="treats">Treats</option>
                 <option value="products">Assorted</option>
             </Form.Select>
-            <Form.Label>Stock</Form.Label>
+            <Form.Label className='stock-input'>Stock</Form.Label>
             <Form.Control type="text" name="stockCount" value={productData.stockCount} onChange={handleChange} />
         </Form.Group>
-        <Button type="primary" value="submit">Submit</Button>
+        <Button variant="update-product" value="submit">Submit</Button>
     </Form>
     ) : (<></>)
 
