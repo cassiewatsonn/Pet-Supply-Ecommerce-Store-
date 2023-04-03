@@ -2,9 +2,7 @@
 
 ## Description
 
-This Pet Supply Ecommerce website allows small business owners to showcase their products. It also includes an admin panel so that business owners can edit their products, stock and manage the users on the site.
-
-Users are able to make an account to purchase products and be able to edit their acccount.
+This Pet Supply Ecommerce website allows small business owners to showcase their products. It also includes an admin panel so that business owners can edit their products, stock and manage the users on the site. Users are able to make an account to purchase products and be able to edit their acccount.
 
 ## User Story
 
@@ -30,15 +28,13 @@ Navigate to the [Pet-Supply-Ecommerce-Store](https://theospetbakery.herokuapp.co
 Customers:
 When users view the home page, they are brought to a home page with a welcome message and navigations tabs that include: About Us, Products, Sign In and Sign Up.
 
-REDO THIS IMAGE When user isnt signed in, they cannot see products
-
-## ![Home Page](./client/public/images/readme/1Pupscale%20Barkery.png)
+## ![Home Page](./client/public/images/readme/home.png)
 
 When the user successfuly signs in or signs up, they are brought to the home page and now have access to view the product page.
 
 In the product page, when the user selects a product, then the product is added to the cart. When the product is add to cart, then the total is updated. When an item is deleted from cart, then the total is updated.
 
-## ![Pet Supply](./client/public/images/readme/2Pupscale%20Barkery.png)
+## ![Pet Supply](./client/public/images/readme/products.png)
 
 When the user views their profile, then they can update their email, first name, last name and phone number. Please note: managing addresses, orders and changing password coming soon!
 
@@ -48,7 +44,7 @@ ADMIN:
 
 When the admin logs in they are brought to the homepage and have access to the 'Admin' tab in the navigation bar. In the 'Admin' tab, they can manage users, and manage products. In manage users, they are able to view all users, edit the users, add a new user and grant a user admin access. Please Note: viewing orders is coming soon!
 
-## ![Pet Supply](./client/public/images/readme/manageusers.png)
+## ![Manage Users](./client/public/images/readme/usermanage.png)
 
 In the manage products, the admin can view all the products, update the products and delete products.
 
