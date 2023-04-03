@@ -21,7 +21,8 @@ export default function CartComponent() {
             {/* Cart button modal, with ability for user to click to expand  */}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className="cart-title" closeButton>
-                    <Modal.Title>Shopping Cart</Modal.Title>
+                    <Modal.Title> <img src='images/logo-mossgreen-xsm.png' alt='walking-dog-logo'/>  Shopping Cart  </Modal.Title> 
+                    
                 </Modal.Header>
                 <Modal.Body>
                     {/* Maps all items added to the cart & provides total cost */}

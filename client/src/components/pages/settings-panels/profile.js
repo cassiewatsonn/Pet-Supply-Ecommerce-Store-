@@ -5,6 +5,7 @@ import { SINGLE_USER } from '../../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { UPDATE_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
+import "../../../App.css";
 
 export default function Profile() {
     // const userId = "642859d17fa816ac9e911a37";
