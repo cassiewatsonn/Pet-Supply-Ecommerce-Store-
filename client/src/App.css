@@ -97,7 +97,7 @@
   text-align: center;
   margin-top: 50px;
 }
-
+@media screen and (min-width: 850px){
 .about-info {
   margin-left: 10%;
   margin-right: 10%;
@@ -109,13 +109,23 @@
   column-gap: 5px;
   margin: 3% 5%;
 }
-/* .title-photo{
-  display: grid;
-  align-items: center;
-  grid-template-columns: 5fr 4fr 1fr;
-  column-gap: 5px;
-  margin: 5%;
-} */
+}
+
+@media screen and (max-width: 850px){
+  .about-info{
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+  }
+  .about-txt{
+    margin-top: 5%;
+  }
+  .animal-photo{
+    width: 80%;
+    margin-left: 12%;
+  }
+}
 
 /*  Store.js */
 .cart-modal {
