@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../../utils/mutations';
 import Auth from '../../utils/auth';
+import "../../App.css";
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -54,7 +55,7 @@ function Login(props) {
               onChange={handleChange}
             />
           </div>
-          <div className="password-input">
+          <div className="password-login">
             <label htmlFor="pwd">Password: </label>
             <input
               placeholder="Enter your password"
@@ -69,12 +70,15 @@ function Login(props) {
               <p className="error-text">Your email or password is incorrect!</p>
             </div>
           ) : null}
-          <div className='signup-instead'>
-            <Link to="/signup">Sign Up Instead</Link>
-          </div>
+         
           <div className="login-btn">
-            <button type="submit">Login</button>
+            <button className="login-btn-submit" variant="primary" type="submit">Login</button>
           </div>
+
+          <div className='signup-instead'>
+            <Link className="signup-link" to="/signup">Sign Up Instead</Link>
+          </div>
+
         </form>
       </div>
     </div>
