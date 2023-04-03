@@ -7,6 +7,7 @@
         font-family: 'Alkatra', cursive;
         font-family: 'Lobster', cursive; */
 
+      
 
 /* CSS ROOT HEX COLOURS */
 :root {
@@ -21,6 +22,10 @@
 
 .background{
   background-color: var(--cornsilk);
+}
+
+.home-img, .animal-photo-theo {
+  border-radius: 15%;
 }
 
 
