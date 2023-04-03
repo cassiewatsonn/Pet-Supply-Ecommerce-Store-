@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-import { Nav, Row, Col, Form, Button} from 'react-bootstrap';
+import { Form, Button} from 'react-bootstrap';
 import { SINGLE_USER } from '../../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { UPDATE_USER } from '../../../utils/mutations';
@@ -68,6 +68,7 @@ export default function Profile() {
                 <Form.Label>Phone Number</Form.Label>
                 <Form.Control type="text" name="phone" value={formData.phone} onChange={handleChange} />
             </Form.Group>
+
             <Button type="primary" value="submit">Submit</Button>
         </Form>
         )
