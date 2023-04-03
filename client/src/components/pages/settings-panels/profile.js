@@ -66,7 +66,7 @@ export default function Profile() {
                 <Form.Control type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
             </Form.Group>
             <Form.Group>
-                <Form.Label className='phone-number-input'>Phone Number</Form.Label>
+                <Form.Label className='phone-number-input'>Phone Number - required</Form.Label>
                 <Form.Control type="text" name="phone" value={formData.phone} onChange={handleChange} />
             </Form.Group>
             <div className='userUpdate'>

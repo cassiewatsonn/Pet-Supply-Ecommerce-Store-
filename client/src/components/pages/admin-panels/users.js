@@ -128,7 +128,7 @@ function EditBox({ formData, setFormData, addNew }) {
                 <Form.Control type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
             </Form.Group>
             <Form.Group>
-                <Form.Label>Phone Number</Form.Label>
+                <Form.Label>Phone Number - required </Form.Label>
                 <Form.Control type="text" name="phone" value={formData.phone ? formData.phone : "None"} onChange={handleChange} />
             </Form.Group>
             {addNew == 'true' ? <Form.Group>
