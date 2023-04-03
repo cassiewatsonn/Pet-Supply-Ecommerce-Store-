@@ -48,7 +48,8 @@ export default function Settings() {
                             <Orders />
                         </Tab.Pane>
                         <Tab.Pane eventKey="password">
-                            <Password userData={userData} userId={userId} />
+                            <p> This is coming soon!</p>
+                            {/* <Password userData={userData} userId={userId} /> */}
                         </Tab.Pane>
                         </Tab.Content>
                     </Col>
