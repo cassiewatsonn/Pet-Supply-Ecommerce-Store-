@@ -70,7 +70,7 @@ export default function Profile() {
                 <Form.Control type="text" name="phone" value={formData.phone} onChange={handleChange} />
             </Form.Group>
             <div className='userUpdate'>
-            <Button variant="user-update" value="submit">Update</Button>
+            <Button type="submit" variant="user-update" value="submit">Update</Button>
             </div>
         </Form>
         )

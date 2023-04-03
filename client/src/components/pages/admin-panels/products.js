@@ -144,7 +144,7 @@ function EditProductBox({ productData, setProductData,addNew }) {
             <Form.Label className='stock-input'>Stock</Form.Label>
             <Form.Control type="text" name="stockCount" value={productData.stockCount} onChange={handleChange} />
         </Form.Group>
-        <Button variant="update-product" value="submit">Submit</Button>
+        <Button type="submit" variant="update-product" value="submit">Submit</Button>
     </Form>
     ) : (<></>)
 
