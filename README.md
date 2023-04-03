@@ -34,11 +34,11 @@ When the user successfuly signs in or signs up, they are brought to the home pag
 
 In the product page, when the user selects a product, then the product is added to the cart. When the product is add to cart, then the total is updated. When an item is deleted from cart, then the total is updated.
 
-## ![Pet Supply](./client/public/images/readme/products.png)
+## ![Product Page](./client/public/images/readme/products.png)
 
 When the user views their profile, then they can update their email, first name, last name and phone number. Please note: managing addresses, orders and changing password coming soon!
 
-## ![Pet Supply](./client/public/images/readme/usersettings.png)
+## ![User Settings](./client/public/images/readme/settingsuser.png)
 
 ADMIN:
 
@@ -48,7 +48,7 @@ When the admin logs in they are brought to the homepage and have access to the '
 
 In the manage products, the admin can view all the products, update the products and delete products.
 
-## ![Pet Supply](./client/public/images/readme/manageproducts.png)
+## ![Edit Products](./client/public/images/readme/editproducts.png)
 
 ## License Description
 
