@@ -220,12 +220,15 @@
   margin-top: 50px; 
 }
 
-.login-card, .signup-card {
+.login-card, .signup-card, .signup-card {
   display: flex;
   justify-content: center;
-  margin: 2% 30%;
+  margin: 3% 30%;
   background-color: var(--ash-gray) !important;
   align-items: center;
+}
+.log-input{
+  margin-top: 5%;
 }
 
 .email-input, .password-input, .signup-instead {
