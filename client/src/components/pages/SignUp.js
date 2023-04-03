@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
 
@@ -34,11 +35,12 @@ export default function SignUp(props) {
   };
 
   return (
-    <div className="container my-1">
+    <div className="signup-cards">
 
-      <h2>Signup</h2>
+      <h2 className='signup-title'>Signup</h2>
+      <div className="card signup-card">
       <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
+        <div className="log-input">
           <label htmlFor="firstName">First Name:</label>
           <input
             placeholder="First"
@@ -48,7 +50,7 @@ export default function SignUp(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <div className="log-input">
           <label htmlFor="lastName">Last Name:</label>
           <input
             placeholder="Last"
@@ -58,7 +60,7 @@ export default function SignUp(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <div className="log-input">
           <label htmlFor="email">Email:</label>
           <input
             placeholder="example@domain.com"
@@ -68,7 +70,7 @@ export default function SignUp(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <div className="log-input">
           <label htmlFor="pwd">Password:</label>
           <input
             placeholder="*******"
@@ -78,10 +80,15 @@ export default function SignUp(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row flex-end">
+        <div className='signup-instead'>
+            <Link to="/signin">Sign In Instead</Link>
+          </div>
+        <div className="submit-btn">
           <button type="submit">Submit</button>
         </div>
+        
       </form>
+      </div>
     </div>
   );
 }

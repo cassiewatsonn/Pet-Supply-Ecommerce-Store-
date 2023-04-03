@@ -3,7 +3,7 @@ import { ListGroup, Form, Button, Row } from 'react-bootstrap';
 import { QUERY_PRODUCT, QUERY_PRODUCTS } from '../../../utils/queries';
 import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
 import { UPDATE_PRODUCT, REMOVE_PRODUCT, ADD_PRODUCT } from '../../../utils/mutations';
-
+import "../../../App.css";
 
 export default function ProductsAdmin() {
     const [productData, setProductData] = useState();

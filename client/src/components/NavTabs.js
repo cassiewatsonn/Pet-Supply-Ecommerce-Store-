@@ -30,15 +30,15 @@ export default function NavTabs() {
         <span className="navs"></span>
         <div className={`nav-items ${isOpen && "open"}`}>
 
-          <Link to="/aboutus">
+          <Link className='navv' to="/aboutus">
             About Us
           </Link>
 
-          <Link to="/products">
+          <Link className='navv' to="/products">
             Products
           </Link>
 
-          <Link to="/" onClick={() => Auth.logout()}>
+          <Link className='navv' to="/" onClick={() => Auth.logout()}>
             Logout
           </Link>
 

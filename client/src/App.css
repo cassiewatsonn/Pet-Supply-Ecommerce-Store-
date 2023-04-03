@@ -1,29 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Edu+NSW+ACT+Foundation:wght@500&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Dosis&family=Edu+NSW+ACT+Foundation:wght@500&family=Lobster&display=swap');
 /* FONTS: Lobster - TITLE 
-        EDNU - Subtitle 
+        Alkatra - Subtitle 
         Dosis - text */
 /* font-family: 'Dosis', sans-serif;
         font-family: 'Edu NSW ACT Foundation', cursive;
+        font-family: 'Alkatra', cursive;
         font-family: 'Lobster', cursive; */
 
 
 /* CSS ROOT HEX COLOURS */
 :root {
-  --bice-blue: #006faaff;
-  --ash-gray: #9bc1bcff;
-  --alabaster: #e6ebe0ff;
-  --robin-egg-blue: #36c9c6ff;
-  --princeton-orange: #ff9914ff;
+  --tea-green: #CCD5AE;
+  --beige: #E9EDC9;
+  --dark-beige: #F3D487;
+  --cornsilk: #FEFAE0;
+  --papaya-whip: #FAEDCD;
+  --buff: #D4A373;
+  --moss-green: #758e4f;
 }
 
 .background{
-  background-color: #e6ebe0ff;
+  background-color: var(--cornsilk);
 }
 
 
 /* TODO: HEADER  */
 .header{
-  background-color: #006faaff;
+  background-color: var(--beige);
 }
 .businessName{
 
@@ -38,16 +41,19 @@
   margin: 15px;
 }
 
-.nav-item {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+.nav-item, .nav-items {
+  font-family: 'Alkatra', cursive;
+}
+.navv{
+  color: black !important;
 }
 
 .signin-btn {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
 }
 
 .signup-btn {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
 }
 
 
@@ -57,15 +63,22 @@
   justify-content: center;
   padding-bottom: 20%;
   margin-top: 10%;
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
   font-size: 20px;
 }
 
 /* TODO HOME  */
-.home-title {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+.home-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+}
+.home-title, .store-title, .signup-title {
+  font-family: 'Alkatra', cursive;
   margin: 15px;
   text-align: center;
+  padding-top: 3%;
 }
 
 .home-description {
@@ -80,121 +93,191 @@
   background-color: #e6ebe0ff;
 } */
 .about-title{
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: 'Alkatra', cursive;
   text-align: center;
   margin-top: 50px;
 }
-
+@media screen and (min-width: 850px){
 .about-info {
   margin-left: 10%;
   margin-right: 10%;
   font-family: 'Dosis', sans-serif;
   font-size: 18px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2fr 3fr ;
+  column-gap: 5px;
+  margin: 3% 5%;
+}
 }
 
-/*  Store.js */
+@media screen and (max-width: 850px){
+  .about-info{
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+  }
+  .about-txt{
+    margin-top: 5%;
+  }
+  .animal-photo{
+    width: 80%;
+    margin-left: 12%;
+  }
+}
+
+/*  STORE.JS */
 .cart-modal {
   padding-bottom: 10%;
 }
 
-/* CartComponent.js Odd naming structure is created by React-Bootstrap */
+/* CARTCOMPONENT.JS  */
 .cart-title.modal-header {
-  background-color: var(--ash-gray);
+  background-color: var(--beige);
 }
-
-/* Button to open Cart  */
+      /* Button to open Cart modal - CardComponent.js */
 .btn.btn-view-cart-btn {
-  background-image: linear-gradient(to right, var(--ash-gray) 0%, var(--robin-egg-blue) 100%);
-  /* background-color: var(--bice-blue); */
-  color: var(--bice-blue);
+  background-image: linear-gradient(to right, var(--tea-green) 0%, var(--moss-green) 100%);
   border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease 0s;
   cursor: pointer
 }
-
 .btn.btn-view-cart-btn:hover {
-  background-image: linear-gradient(to right, #ffca85 0%, #ff9914 100%);
-  box-shadow: var(--ash-gray);
+  background-color: var(--papaya-whip);
+  box-shadow: var(--moss-green);
   transform: translateY(-7px);
-  color: var(--bice-blue);
 }
-
+    /* Button to purchase in Cart modal - CardComponent.js */
 .btn.btn-purchase-btn {
-  background-color: var(--princeton-orange);
-  color: var(--alabaster)
+  background-color: var(--moss-green);
 }
-
 .btn.btn-purchase-btn:hover {
-  background-color: var(--robin-egg-blue);
-  color: var(--bice-blue);
+  background-color: var(--buff);
 }
 
-/*Cart Product*/
+
+/* CARTPRODUCT.JS */
+  /* Remove cart item button in the modal */
 .btn.btn-cart-remove {
-  background-color: var(--bice-blue);
-  color: var(--alabaster);
+  background-color: var(--tea-green);
 }
-
 .btn.btn-cart-remove:hover {
-  background-color: var(--ash-gray);
-  color: var(var(--bice-blue));
+  background-color: var(--papaya-whip);
 }
 
 
-/* ProductCard.js Odd naming structure is created by React-Bootstrap */
+/* PRODUCTCARD.JS */
 .treatImage {
   height: auto;
   max-height: 225px;
   width: auto;
 }
-
 .card.productCard {
-  background-color: var(--ash-gray);
+  background-color: var(--beige);
+} 
+    /* Add & Subtract buttons to add products to the cart in the Product Card */
+.btn.btn-add, .btn.btn-sub {
+  background-color: var(--moss-green);
+  font-weight: bold;
+}
+.btn.btn-add:hover, .btn.btn-sub:hover  {
+  background-color: var(--tea-green);
+}
+    /* Button to remove all of 1 item from the cart  in the Product Card*/
+.btn.btn-remove {
+  background-image: linear-gradient(to left, var(--dark-beige) 0%, var(--buff) 100%);
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease 0s;
+  cursor: pointer
+}
+.btn.btn-remove:hover {
+  background-color: var(--moss-green);
+}
+    /*Button  to add product item to cart in Product Card*/
+.btn.btn-add-to-cart {
+  background-image: linear-gradient(to right, var(--dark-beige) 0%, var(--buff) 100%);
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease 0s;
+  cursor: pointer
+}
+.btn.btn-add-to-cart:hover {
+  background-color: var(--papaya-whip);
+  box-shadow: var(--moss-green);
+  transform: translateY(-7px);
 }
 
-.btn.btn.btn-custom {
-  background-color: var(--bice-blue);
-  color: var(--alabaster);
+/* ADMIN.JS*/ 
+    /*Side Nav Bar links */
+#left-tabs-tab-users.nav-link,
+#left-tabs-tab-orders.nav-link,
+#left-tabs-tab-products.nav-link {
+  color: var(--moss-green);
 }
-
-.btn.btn.btn-custom:hover {
-  background-color: var(--princeton-orange);
-  color: var(--alabaster);
-}
-
-.btn.btn.btn-remove {
-  background-color: var(--princeton-orange);
+#left-tabs-tab-users.nav-link.active, 
+#left-tabs-tab-orders.nav-link.active,
+#left-tabs-tab-products.nav-link.active  {
+  background-color: var(--moss-green);
   color: black;
 }
 
-.btn.btn.btn-remove:hover {
-  background-color: var(--princeton-orange);
-  color: black;
+/* ADMIN-PANELS -> USERS.JS */ 
+.float-right.btn.btn-add-new-user {
+  background-image: linear-gradient(to right, var(--tea-green) 0%, var(--moss-green) 100%);
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  cursor: pointer
 }
+.float-right.btn.btn-add-new-user:hover {
+  background-color: var(--papaya-whip);
+  box-shadow: var(--moss-green);
+  transform: translateY(-7px);
+}
+.btn.btn-user-delete {
+  background-image: linear-gradient(to right, var(--dark-beige) 0%, var(--buff) 100%);
+  border-radius: 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer
+}
+.btn.btn-user-delete:hover {
+  background-color: var(--papaya-whip);
+  box-shadow: var(--moss-green);
+  transform: translateY(-4px);
+}
+.user-list {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.user-field {
+  margin-bottom: 3%;
+}
+
+
 
 
 /* TODO LOGIN  */
-.login-title {
-  font-family: 'Edu NSW ACT Foundation', cursive;
+.login-title, .signup-title{
+  font-family: 'Alkatra', cursive;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 50px; 
 }
 
-.login-card {
+.login-card, .signup-card, .signup-card {
   display: flex;
   justify-content: center;
+  margin: 3% 30%;
+  background-color: var(--ash-gray) !important;
+  align-items: center;
+}
+.log-input{
+  margin-top: 5%;
 }
 
-.email-input {
-  margin: 15px;
-}
-
-.password-input {
-  margin: 15px;
-}
-
-.signup-instead {
+.email-input, .password-input, .signup-instead {
   margin: 15px;
 }
 
@@ -216,19 +299,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--bice-blue);
+  background: var(--tea-green);
 }
 
-/* .Navigation-bar > .navs {
+.Navigation-bar > .navs {
   font-weight: 700;
   font-size: 21px;
   margin: 15px;
   color: #ffffff;
-} */
+}
 
 .Navigation-bar>.nav-items>a {
-  color: var(--alabaster);
-  font-size: 16px;
+  color: black;
+  font-size: 20px;
 
   font-weight: bold;
   text-decoration: none;
@@ -248,7 +331,7 @@
   bottom: 0;
   width: 0;
   height: 2px;
-  background: var(--princeton-orange);
+  background: var(--buff);
   transition: all 0.45s;
 }
 
@@ -266,7 +349,7 @@
     top: 60px;
     display: flex;
     flex-direction: column;
-    background: #3b4da7;
+    background: var(--tea-green);
     left: 0;
     width: 100%;
     height: 100%;
@@ -291,7 +374,7 @@
     position: relative;
     width: 32px;
     height: 2px;
-    background: #ffffff;
+    background: #000000;
     transition: all 0.45s ease-in-out;
   }
 
@@ -300,7 +383,7 @@
     content: "";
     position: absolute;
     height: 2px;
-    background: #ffffff;
+    background: #000000;
     border-radius: 2px;
     transition: all 0.45s ease-in-out;
   }

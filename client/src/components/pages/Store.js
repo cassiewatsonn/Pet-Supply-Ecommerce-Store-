@@ -2,6 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { productsArray } from '../../productStore';
 import ProductCard from '../ProductCard';
 import CartComponent from '../CartComponent';
+import "../../App.css";
 
 //Store to map Product Cards 
 export default function Store() {
@@ -9,7 +10,7 @@ export default function Store() {
     return (
         <>
             <Container>
-                <h3 align="center" className='p-3'>The Pupscale Barkery is full of yummy treats for your pup!</h3>
+                <h3 align="center"  className='store-title'>The Pupscale Barkery is full of yummy treats for your pup!</h3>
                 {/* Cart modal React component*/}
                 <CartComponent className='cart-modal'></CartComponent>
                 <><p></p></>

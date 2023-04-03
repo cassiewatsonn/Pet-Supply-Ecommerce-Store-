@@ -25,7 +25,7 @@ export default function Footer() {
 
 
                 <div className="copyright">
-                    {`Copyright @ ${year} Theo's Pet Supply`}
+                    {`Copyright @ ${year} The Pupscale Barkery`}
                 </div>
             
         </footer>
