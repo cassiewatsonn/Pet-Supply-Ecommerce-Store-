@@ -127,12 +127,12 @@
   }
 }
 
-/*  Store.js */
+/*  STORE.JS */
 .cart-modal {
   padding-bottom: 10%;
 }
 
-/* CartComponent.js  */
+/* CARTCOMPONENT.JS  */
 .cart-title.modal-header {
   background-color: var(--beige);
 }
@@ -158,7 +158,7 @@
 }
 
 
-/* CartProduct.js */
+/* CARTPRODUCT.JS */
   /* Remove cart item button in the modal */
 .btn.btn-cart-remove {
   background-color: var(--tea-green);
@@ -168,7 +168,7 @@
 }
 
 
-/* ProductCard.js */
+/* PRODUCTCARD.JS */
 .treatImage {
   height: auto;
   max-height: 225px;
@@ -196,7 +196,7 @@
 .btn.btn-remove:hover {
   background-color: var(--moss-green);
 }
-    /*Butto  to add product item to cart in Product Card*/
+    /*Button  to add product item to cart in Product Card*/
 .btn.btn-add-to-cart {
   background-image: linear-gradient(to right, var(--dark-beige) 0%, var(--buff) 100%);
   border-radius: 45px;
@@ -208,6 +208,52 @@
   background-color: var(--papaya-whip);
   box-shadow: var(--moss-green);
   transform: translateY(-7px);
+}
+
+/* ADMIN.JS*/ 
+    /*Side Nav Bar links */
+#left-tabs-tab-users.nav-link,
+#left-tabs-tab-orders.nav-link,
+#left-tabs-tab-products.nav-link {
+  color: var(--moss-green);
+}
+#left-tabs-tab-users.nav-link.active, 
+#left-tabs-tab-orders.nav-link.active,
+#left-tabs-tab-products.nav-link.active  {
+  background-color: var(--moss-green);
+  color: black;
+}
+
+/* ADMIN-PANELS -> USERS.JS */ 
+.float-right.btn.btn-add-new-user {
+  background-image: linear-gradient(to right, var(--tea-green) 0%, var(--moss-green) 100%);
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  cursor: pointer
+}
+.float-right.btn.btn-add-new-user:hover {
+  background-color: var(--papaya-whip);
+  box-shadow: var(--moss-green);
+  transform: translateY(-7px);
+}
+.btn.btn-user-delete {
+  background-image: linear-gradient(to right, var(--dark-beige) 0%, var(--buff) 100%);
+  border-radius: 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer
+}
+.btn.btn-user-delete:hover {
+  background-color: var(--papaya-whip);
+  box-shadow: var(--moss-green);
+  transform: translateY(-4px);
+}
+.user-list {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.user-field {
+  margin-bottom: 3%;
 }
 
 

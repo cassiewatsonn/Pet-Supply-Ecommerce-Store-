@@ -2,7 +2,8 @@ import React from 'react';
 import { Nav, Row, Col} from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import ProductsAdmin from './admin-panels/products.js';
-import UsersAdmin from './admin-panels/users.js'
+import UsersAdmin from './admin-panels/users.js';
+import "../../App.css";
 
 export default function Admin() {
     //Confirming that the user has admin access
@@ -16,13 +17,13 @@ export default function Admin() {
                     <Col className="col-2">
                         <Nav variant="pills" className="flex-column">
                             <Nav.Item>
-                                <Nav.Link eventKey="products">Manage Products</Nav.Link>
+                                <Nav.Link className="admin-nav-link" eventKey="products">Manage Products</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="users">Manage Users</Nav.Link>
+                                <Nav.Link className="admin-nav-link" eventKey="users">Manage Users</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="orders">View Orders</Nav.Link>
+                                <Nav.Link className="admin-nav-link" eventKey="orders">View Orders</Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </Col>
@@ -35,7 +36,7 @@ export default function Admin() {
                             <UsersAdmin />
                         </Tab.Pane>
                         <Tab.Pane eventKey="orders">
-                            This is some orders
+                            Coming Soon!
                         </Tab.Pane>
                         </Tab.Content>
                     </Col>
