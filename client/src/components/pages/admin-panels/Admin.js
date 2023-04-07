@@ -1,9 +1,9 @@
 import React from 'react'; 
 import { Nav, Row, Col} from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
-import ProductsAdmin from './admin-panels/products.js';
-import UsersAdmin from './admin-panels/users.js';
-import "../../App.css";
+import ProductsAdmin from './products.js';
+import UsersAdmin from './users.js';
+import "../../../App.css";
 
 export default function Admin() {
     //Confirming that the user has admin access

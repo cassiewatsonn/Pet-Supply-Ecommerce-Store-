@@ -75,7 +75,7 @@ function EditBox({ formData, setFormData, addNew }) {
     
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (addNew == 'true') {
+        if (addNew === 'true') {
             const mutationResponse = await addUser({
                 variables: {
                     accessLvl: false,
@@ -89,7 +89,7 @@ function EditBox({ formData, setFormData, addNew }) {
             if (mutationResponse) {
                 window.location.reload();
             }
-        } else if (addNew == 'false') {
+        } else if (addNew === 'false') {
             const mutationResponse = await updateUser({
                 variables: {
                     userId: formData._id,
@@ -131,7 +131,7 @@ function EditBox({ formData, setFormData, addNew }) {
                 <Form.Label>Phone Number - required </Form.Label>
                 <Form.Control type="text" name="phone" value={formData.phone ? formData.phone : "None"} onChange={handleChange} />
             </Form.Group>
-            {addNew == 'true' ? <Form.Group>
+            {addNew === 'true' ? <Form.Group>
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" name="password" id="password" label="Create password" onChange={handleChange} />
             </Form.Group> : ''}

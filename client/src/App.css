@@ -312,6 +312,7 @@
 .category-input,
 .stock-input,
 .email-input,
+.password-input,
 .first-name-input,
 .last-name-input,
 .phone-number-input,
@@ -356,7 +357,6 @@
 .signin-instead,
 .signup-instead {
   margin: 15px;
-  text-align: center;
 }
 .signin-link,
 .signup-link {
