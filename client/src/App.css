@@ -343,10 +343,10 @@
 
 .login-card, .signup-card, .signup-card {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   margin: 3% 30%;
   background-color: var(--ash-gray) !important;
-  align-items: center;
+  align-items: left;
 }
 .log-input{
   margin-top: 5%;

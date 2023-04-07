@@ -37,13 +37,12 @@ export default function SignUp(props) {
 
   return (
     <div className="signup-cards">
-
       <h2 className='signup-title'>Signup</h2>
       <div className="card signup-card">
         <Form onSubmit={handleFormSubmit}>
           <Form.Group className="log-input">
             <FloatingLabel className='first-name-signup' controlId="FirstName" label="First Name">
-              <Form.Control name="firstName" type="firstName" onChange={handleChange} />
+              <Form.Control name="firstName" type="firstName" placeholder="First Name" onChange={handleChange} />
             </FloatingLabel>
           </Form.Group>
           <Form.Group className="log-input">
@@ -51,6 +50,7 @@ export default function SignUp(props) {
             <Form.Control
               name="lastName"
               type="lastName"
+              placeholder="Last Name"
               onChange={handleChange}
             />
           </FloatingLabel>
@@ -60,6 +60,7 @@ export default function SignUp(props) {
             <Form.Control
               name="email"
               type="email"
+              placeholder="email"
               onChange={handleChange}
             />
             </FloatingLabel>
@@ -69,6 +70,7 @@ export default function SignUp(props) {
               <Form.Control
                 name="password"
                 type="password"
+                placeholder="email"
                 onChange={handleChange}
               />
             </FloatingLabel>
