@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Nav, Row, Col} from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Profile from './profile';
-import Addresses from './addresses';
+import Address from './addresses';
 import Orders from './orders';
 import Password from './password'
 import Auth from '../../../utils/auth';
@@ -15,7 +15,7 @@ export default function Settings() {
         variables: { userId: userId },
       });
       const userData = data?.user || [];
-
+      console.log("users-settings UserData", userData);
     return(
         <>
             <Tab.Container className="col-3" defaultActiveKey="users" id="left-tabs">
@@ -39,10 +39,10 @@ export default function Settings() {
                     <Col className="col-8">
                         <Tab.Content>
                         <Tab.Pane eventKey="profile">
-                            <Profile />
+                            <Profile userData={userData} />
                         </Tab.Pane>
                         <Tab.Pane eventKey="addresses">
-                            <Addresses />
+                            <Address userData={userData} />
                         </Tab.Pane>
                         <Tab.Pane eventKey="orders">
                             <Orders />

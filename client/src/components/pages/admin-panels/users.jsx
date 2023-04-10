@@ -71,7 +71,6 @@ export default function UsersAdmin() {
 function EditBox({ formData, setFormData, addNew }) {
     const [updateUser] = useMutation(UPDATE_USER);
     const [addUser] = useMutation(ADD_USER);
-    console.log(addNew)
     
     const handleSubmit = async (event) => {
         event.preventDefault();
