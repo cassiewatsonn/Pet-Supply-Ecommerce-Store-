@@ -80,7 +80,7 @@ const resolvers = {
                 },
                 { new: true })
         },
-        updateAddress: async(parent, { userId, addressId, number, streetName, province, country, postalCode, deliveryNotes,primary }) => {
+        updateAddress: async(parent, { userId, addressId, number, streetName, province, country, postalCode, deliveryNotes, primary }) => {
             return User.findByIdAndUpdate({userId},
                 { filter: {addressId: addressId}},
                 {

@@ -1,12 +1,12 @@
 import React, {useState} from 'react'; 
 import { Nav, Row, Col} from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
-import Profile from './settings-panels/profile';
-import Addresses from './settings-panels/addresses';
-import Orders from './settings-panels/orders';
-import Password from './settings-panels/password'
-import Auth from '../../utils/auth';
-import { SINGLE_USER } from '../../utils/queries';
+import Profile from './profile';
+import Address from './addresses';
+import Orders from './orders';
+import Password from './password'
+import Auth from '../../../utils/auth';
+import { SINGLE_USER } from '../../../utils/queries';
 import { useQuery} from '@apollo/client';
 
 export default function Settings() {
@@ -15,7 +15,7 @@ export default function Settings() {
         variables: { userId: userId },
       });
       const userData = data?.user || [];
-
+      console.log("users-settings UserData", userData);
     return(
         <>
             <Tab.Container className="col-3" defaultActiveKey="users" id="left-tabs">
@@ -39,17 +39,16 @@ export default function Settings() {
                     <Col className="col-8">
                         <Tab.Content>
                         <Tab.Pane eventKey="profile">
-                            <Profile />
+                            <Profile userData={userData} />
                         </Tab.Pane>
                         <Tab.Pane eventKey="addresses">
-                            <Addresses />
+                            <Address userData={userData} />
                         </Tab.Pane>
                         <Tab.Pane eventKey="orders">
                             <Orders />
                         </Tab.Pane>
                         <Tab.Pane eventKey="password">
-                            <p> This is coming soon!</p>
-                            {/* <Password userData={userData} userId={userId} /> */}
+                            <Password userData={userData} userId={userId} />
                         </Tab.Pane>
                         </Tab.Content>
                     </Col>

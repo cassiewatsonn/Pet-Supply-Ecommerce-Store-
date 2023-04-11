@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
 import "../../App.css";
+import { Form, Button, FloatingLabel } from 'react-bootstrap';
 
 
 export default function SignUp(props) {
@@ -36,59 +37,49 @@ export default function SignUp(props) {
 
   return (
     <div className="signup-cards">
-
       <h2 className='signup-title'>Signup</h2>
       <div className="card signup-card">
-        <form onSubmit={handleFormSubmit}>
-          <div className="log-input">
-            <label className='first-name-signup' htmlFor="firstName">First Name:</label>
-            <input
-              placeholder="First"
-              name="firstName"
-              type="firstName"
-              id="firstName"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="log-input">
-            <label className='last-name-signup' htmlFor="lastName">Last Name:</label>
-            <input
-              placeholder="Last"
+        <Form onSubmit={handleFormSubmit}>
+          <Form.Group className="log-input">
+            <FloatingLabel className='first-name-signup' controlId="FirstName" label="First Name">
+              <Form.Control name="firstName" type="firstName" placeholder="First Name" onChange={handleChange} />
+            </FloatingLabel>
+          </Form.Group>
+          <Form.Group className="log-input">
+          <FloatingLabel className='last-name-signup' controlId="LastName" label="Last Name">
+            <Form.Control
               name="lastName"
               type="lastName"
-              id="lastName"
+              placeholder="Last Name"
               onChange={handleChange}
             />
-          </div>
-          <div className="log-input">
-            <label className='email-signup' htmlFor="email">Email:</label>
-            <input
-              placeholder="example@domain.com"
+          </FloatingLabel>
+          </Form.Group>
+          <Form.Group className="log-input">
+            <FloatingLabel className='email-signup' controlId="email" label="Email Address">
+            <Form.Control
               name="email"
               type="email"
-              id="email"
+              placeholder="email"
               onChange={handleChange}
             />
-          </div>
-          <div className="log-input">
-            <label className='password-signup' htmlFor="pwd">Password:</label>
-            <input
-              placeholder="*******"
-              name="password"
-              type="password"
-              id="pwd"
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="submit-btn">
-            <button className="signup-btn-submit" type="submit">Submit</button>
-          </div>
-
+            </FloatingLabel>
+          </Form.Group>
+          <Form.Group className="log-input">
+            <FloatingLabel className='password-signup' controlId="password" label="Password">
+              <Form.Control
+                name="password"
+                type="password"
+                placeholder="email"
+                onChange={handleChange}
+              />
+            </FloatingLabel>
+          </Form.Group>
+          <Button className="signup-btn-submit" type="submit">Submit</Button>
           <div className='signin-instead'>
             <Link className="signin-link" to="/signin">Sign In Instead</Link>
           </div>
-        </form>
+        </Form>
       </div>
     </div>
   );

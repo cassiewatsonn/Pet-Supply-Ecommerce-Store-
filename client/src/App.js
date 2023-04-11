@@ -15,7 +15,7 @@ import Success from './components/pages/Success';
 import Store from './components/pages/Store';
 import Home from './components/pages/Home';
 import Settings from './components/pages/settings';
-import Admin from './components/pages/Admin';
+import Admin from './components/pages/admin-panels/admin';
 import CartProvider from './CartContext';
 
 import {

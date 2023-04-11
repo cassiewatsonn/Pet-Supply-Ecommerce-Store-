@@ -25,7 +25,6 @@ export default function Password(props) {
             [name]: value,
         })
     }
-    console.log(passCompare);
 
     const handleNewPassword = (event) => {
         const { loading, error, data } = updatePassword({
