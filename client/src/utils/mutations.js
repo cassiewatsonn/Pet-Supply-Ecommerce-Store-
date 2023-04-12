@@ -25,6 +25,22 @@ export const UPDATE_USER = gql`
   }
 }`;
 
+export const ADD_ADDRESS = gql`
+  mutation AddAddress($userId: ID!, $number: String!, $address1: String, $address2: String, $province: String!, $country: String!, $postalCode: String!, $primary: Boolean!, $addressId: Int!) {
+    addAddress(userId: $userId, number: $number, address1: $address1, address2: $address2, province: $province, country: $country, postalCode: $postalCode, primary: $primary, addressId: $addressId) {
+      address {
+        number
+        address1
+        address2
+        city
+        province
+        country
+        postalCode
+      }
+    }
+  }
+`;
+
 export const UPDATE_PASSWORD = gql`
   mutation updatePassword(
     $userId: ID!,

@@ -11,11 +11,12 @@ import { useQuery} from '@apollo/client';
 
 export default function Settings() {
     const userId = Auth.getProfile().data._id;
+    console.log(userId)
     const { loading, data } = useQuery(SINGLE_USER, {
         variables: { userId: userId },
       });
       const userData = data?.user || [];
-      console.log("users-settings UserData", userData);
+      console.log(userData)
     return(
         <>
             <Tab.Container className="col-3" defaultActiveKey="users" id="left-tabs">

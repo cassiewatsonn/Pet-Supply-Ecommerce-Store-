@@ -23,10 +23,13 @@ query GetUser($userId: ID!) {
     password
     address {
       number
-      streetName
+      address1
+      address2
+      city
       province
       postalCode
       country
+      primary
     }
  }
 }
