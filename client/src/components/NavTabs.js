@@ -12,8 +12,8 @@ export default function NavTabs() {
     function UserControls() {
       if (accessLvl === 'true') {
         return (
-          <Link to="/admin">
-            Admin
+          <Link to="/settings">
+            Admin/Settings
           </Link>
         )
       } else {

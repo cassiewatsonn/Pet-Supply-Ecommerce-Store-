@@ -312,6 +312,7 @@
 .category-input,
 .stock-input,
 .email-input,
+.password-input,
 .first-name-input,
 .last-name-input,
 .phone-number-input,
@@ -342,10 +343,10 @@
 
 .login-card, .signup-card, .signup-card {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   margin: 3% 30%;
   background-color: var(--ash-gray) !important;
-  align-items: center;
+  align-items: left;
 }
 .log-input{
   margin-top: 5%;
@@ -356,7 +357,6 @@
 .signin-instead,
 .signup-instead {
   margin: 15px;
-  text-align: center;
 }
 .signin-link,
 .signup-link {

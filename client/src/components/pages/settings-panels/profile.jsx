@@ -6,14 +6,16 @@ import { UPDATE_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 import "../../../App.css";
 
-export default function Profile() {
+export default function Profile(props) {
     // const userId = "642859d17fa816ac9e911a37";
-        const userId = Auth.getProfile().data._id;
-        const { loading, data } = useQuery(SINGLE_USER, {
-            variables: { userId: userId },
-          });
+        // const userId = Auth.getProfile().data._id;
+        // const { loading, data } = useQuery(SINGLE_USER, {
+        //     variables: { userId: userId },
+        //   });
         const [updateUser] = useMutation(UPDATE_USER);
-        const userData = data?.user || [];
+        // const userData = data?.user || [];
+        const userData = props.userData;
+        console.log("User data Profile", props.userData);
         const [formData, setFormData] = useState({formData: {
             userId: userData._id,
             accessLvl: userData.accessLvl,
@@ -23,7 +25,7 @@ export default function Profile() {
             phone: userData.phone
             }
             })
-
+            console.log("FormData Profile", formData);
 
         async function handleSubmit(event) {
             event.preventDefault();
