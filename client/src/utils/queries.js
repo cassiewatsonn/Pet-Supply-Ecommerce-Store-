@@ -22,6 +22,7 @@ query GetUser($userId: ID!) {
     email
     password
     address {
+      addressId
       number
       address1
       address2

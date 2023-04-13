@@ -9,7 +9,7 @@ type User {
     lastName: String!
     password: String!
     phone: String
-    address: [Address]!
+    address: [Address]
     accessLvl: Boolean!
     orders: [Order]
 }

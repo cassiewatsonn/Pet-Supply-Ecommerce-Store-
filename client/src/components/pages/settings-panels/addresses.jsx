@@ -1,17 +1,106 @@
 import React, {useState} from 'react'; 
-import { Nav, Row, Col, Tab, ListGroup, Form, Button} from 'react-bootstrap';
+import { Row, ListGroup, Form, Button} from 'react-bootstrap';
 import "../../../App.css";
-import { ADD_ADDRESS } from '../../../utils/mutations';
-import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
+import { ADD_ADDRESS, REMOVE_ADDRESS, UPDATE_ADDRESS } from '../../../utils/mutations';
+import { useMutation } from '@apollo/client';
 
 export default function Address(props) {
     const [addressData, setAddressData] = useState({});
+    const [addNew, setAddNew] = useState();
     const addresses = props.userData?.address || [];
-    const [addAddress] = useMutation(ADD_ADDRESS);
-    const addressNum = addresses.length + 1;
+    const [deleteAddress] = useMutation(REMOVE_ADDRESS)
+    const addressNum = addresses.length;
 
-    // Function to add the new address
-    const addNewAddress = async (event) => {
+    // if(addressNum === 0) {
+    //     setAddNew(true);
+    // }
+
+    const handleAddressData = async(addressId, addNew) => {
+        if (!addressId) {
+            setAddressData({
+                userId: props.userData._id,
+                number: '',
+                address1: '',
+                address2: '',
+                city: '',
+                province: '',
+                country: '',
+                postalCode: '',
+                deliveryNotes: '',
+                primary: '',
+                addressId: addressId
+            })
+            setAddNew(true)
+
+        } else {
+            const addData= ''
+            console.log(addressId);
+            setAddressData({
+                userId: props.userData._id,
+                address1: addData.address1,
+                address2: addData.address2,
+                city: addData.city,
+                province: addData.province,
+                country: addData.country,
+                postalCode: addData.postalCode,
+                deliveryNotes: addData.deliveryNotes,
+                primary: addData.primary,
+                addressId: addressId
+            });
+            setAddNew(false);
+            console.log(addressData)
+        }
+    };
+
+    const handleDeleteAddress = async (addressId) => {
+
+        const { data } = await deleteAddress({
+            variables: {
+                userId: props.userData._id,
+                addressId: addressId
+            },
+        });
+        window.location.reload();
+    }
+    
+    return (
+        <>
+        {addresses.length === 0 ?(
+            <EditAddressBox addressData={addressData} setAddressData={setAddressData} addNew={addNew} />
+
+        ) : (
+            <Row className="row">
+            <div className="col-5">
+                <ListGroup>
+                    {addresses.map((address) => (
+                        <ListGroup.Item key={address.addressId} onClick={() => handleAddressData(address.addressId, 'false')}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <div>
+                                    <div>
+                                    <span className='product-name'>{address.number}</span> <span className='product-price'>{address.address1} {address.address2 ? address.address2 : null}</span>
+                                    <p />
+                                    {address.city}. {address.province}, {address.postalCode}
+                                    </div>
+                                </div>
+                                <Button variant="delete-product" onClick={() => deleteAddress(address.addressId, 'false')}>Delete</Button>
+                            </div>
+                        </ListGroup.Item>
+                    ))}
+                    <Button className="float-right col-3" name="addNew" variant="add-new-product" value="addNew" onClick={() => handleAddressData('', 'false')}>Add New Product</Button>
+                </ListGroup>
+            </div>
+            <div className="col-7">
+                <EditAddressBox addressData={addressData} setAddressData={setAddressData} addNew={addNew} />
+            </div>
+            </Row>
+        )}
+        </>
+    )
+}
+
+function EditAddressBox({addressData, setAddressData, addNew}) {
+        const [addAddress] = useMutation(ADD_ADDRESS);
+       const addNewAddress = async (event) => {
         var primaryToggle = false;
         if (addressData.primary === "on") {
             let primaryToggle = true;
@@ -19,19 +108,19 @@ export default function Address(props) {
             let primaryToggle = false;
         };
 
-        event.preventDefault();
         const mutationResponse = await addAddress({
             variables: {
-                userId: props.userData._id,
+                userId: addressData.userData._id,
                 number: addressData.number,
                 address1: addressData.address1,
                 address2: addressData.address2,
+                city: addressData.city,
                 province: addressData.province,
                 country: addressData.country,
                 postalCode: addressData.postalCode,
                 deliveryNotes: addressData.deliveryNotes,
                 primary: primaryToggle,
-                addressId: addressNum
+                addressId: addressData.addressNum
 
             }
         })
@@ -44,11 +133,8 @@ export default function Address(props) {
             [name]: value,
         });
     }
-    console.log("addressData", addressData);
-    return (
-        <>
-        {addresses.length === 0 ?(
-            <Form onSubmit={addNewAddress}>
+    return(
+    <Form onSubmit={addNewAddress}>
                 <Form.Group>
                     <Form.Label>Street Number</Form.Label>
                     <Form.Control onChange={handleChange} name="number" required></Form.Control>
@@ -105,32 +191,5 @@ export default function Address(props) {
                 </Form.Group>
                 <Button variant="primary" type="submit" value="submit">Submit Address</Button>
             </Form>
-        ) : (
-            <Row className="row">
-            <div className="col-5">
-                <ListGroup>
-                    {addresses.map((address) => (
-                        <ListGroup.Item key={address.addressId}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <div>
-                                    <div>
-                                    <span className='product-name'>{address.number}</span> <span className='product-price'>{address.address1} {address.address2 ? address.address2 : null}</span>
-                                    <p />
-                                    {address.city}. {address.province}, {address.postalCode}
-                                    </div>
-                                </div>
-                                <Button variant="delete-product">Delete</Button>
-                            </div>
-                        </ListGroup.Item>
-                    ))}
-                    <Button className="float-right col-3" name="addNew" variant="add-new-product" value="addNew">Add New Product</Button>
-                </ListGroup>
-            </div>
-            {/* <div className="col-7">
-                <EditProductBox productData={productData} setProductData={setProductData} addNew={addNew} />
-            </div> */}
-            </Row>
-        )}
-        </>
     )
 }
