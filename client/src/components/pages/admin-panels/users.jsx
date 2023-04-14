@@ -62,11 +62,9 @@ export default function UsersAdmin() {
                         <Button className="float-right" name="addNew" variant="add-new-user" value="addNew" onClick={() => handleUserData('', 'true')}>Add New User</Button>
                     </div>
                 </div>
-                <Fade in={open}>
                 <div className="col-7">
                     <EditBox formData={formData} setFormData={setFormData} addNew={addNew} />
                 </div>
-                </Fade>
             </Row>
         </>
     )

@@ -34,7 +34,6 @@ export default function Address(props) {
     }
 
     async function handleAddressData(e, addNew) {
-            console.log(e);
             setAddressData({
                 userId: props.userData._id,
                 number: e.number,
@@ -64,29 +63,30 @@ export default function Address(props) {
     
     return (
         <>
-        {addresses.length === 0 ?(
-            <EditAddressBox addressData={addressData} setAddressData={setAddressData} addNew={addNew} />
-
-        ) : (
             <Row className="row">
             <div className="col-5">
-                <ListGroup>
-                    {addresses.map((address) => (
-                        <ListGroup.Item key={address.addressId} onClick={() => handleAddressData(address, 'false')}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <div>
+                {addresses.length === 0 ?(
+                <p>You do not have any addresses configured! Please add one</p>
+
+                    ) : (
+                    <ListGroup>
+                        {addresses.map((address) => (
+                            <ListGroup.Item key={address.addressId} onClick={() => handleAddressData(address, 'false')}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                     <div>
-                                    <span className='product-name'>{address.number}</span> <span className='product-price'>{address.address1} {address.address2 ? address.address2 : null}</span>
-                                    <p />
-                                    {address.city}. {address.province}, {address.postalCode}
+                                        <div>
+                                        <span className='product-name'>{address.number}</span> <span className='product-price'>{address.address1} {address.address2 ? address.address2 : null}</span>
+                                        <p />
+                                        {address.city}. {address.province}, {address.postalCode}
+                                        </div>
                                     </div>
+                                    <Button variant="delete-product" onClick={() => deleteAddress(address, 'false')}>Delete</Button>
                                 </div>
-                                <Button variant="delete-product" onClick={() => deleteAddress(address, 'false')}>Delete</Button>
-                            </div>
-                        </ListGroup.Item>
-                    ))}
+                            </ListGroup.Item>
+                        ))}
+                    </ListGroup>
+                    )}
                     <Button className="float-right col-3" name="addNew" variant="add-new-product" value="addNew" onClick={handleNewAddress} aria-controls="edit-bow" aria-expanded={open}>Add New Product</Button>
-                </ListGroup>
             </div>
             {/* <Fade in={open}> */}
             <div className="col-7" id="edit-box">
@@ -94,49 +94,79 @@ export default function Address(props) {
             </div>
             {/* </Fade> */}
             </Row>
-        )}
         </>
     )
 }
 
 function EditAddressBox({addressData, setAddressData, addNew}) {
         const [addAddress] = useMutation(ADD_ADDRESS);
-console.log(addressData);
-        const addNewAddress = async (event) => {
-            var primaryToggle = false;
-            if (addressData.primary === "on") {
-                let primaryToggle = true;
-            } else {
-                let primaryToggle = false;
-            };
-            console.log(addressData);
-            const mutationResponse = await addAddress({
-                variables: {
-                    userId: addressData.userData._id,
-                    number: addressData.number,
-                    address1: addressData.address1,
-                    address2: addressData.address2,
-                    city: addressData.city,
-                    province: addressData.province,
-                    country: addressData.country,
-                    postalCode: addressData.postalCode,
-                    deliveryNotes: addressData.deliveryNotes,
-                    primary: primaryToggle,
-                    addressId: addressData.addressNum
-
+        const [updateAddress] = useMutation(UPDATE_ADDRESS);
+        const [checked, setChecked] = useState(); 
+        const changeAddress = async (event) => {
+            event.preventDefault();
+            if(addNew === false) {
+                console.log("Update existing address");
+                const mutationResponse = await updateAddress({
+                    variables: {
+                        userId: addressData.userId,
+                        number: addressData.number,
+                        address1: addressData.address1,
+                        address2: addressData.address2,
+                        city: addressData.city,
+                        province: addressData.province,
+                        country: addressData.country,
+                        postalCode: addressData.postalCode,
+                        deliveryNotes: addressData.deliveryNotes,
+                        primary: '',
+                        addressId: addressData.addressId
+                    }
+                })
+                if (mutationResponse) {
+                    window.location.reload();
                 }
-            })
+            }
+            if (addNew === true) {    
+                const mutationResponse = await addAddress({
+                    variables: {
+                        userId: addressData.userId,
+                        number: addressData.number,
+                        address1: addressData.address1,
+                        address2: addressData.address2,
+                        city: addressData.city,
+                        province: addressData.province,
+                        country: addressData.country,
+                        postalCode: addressData.postalCode,
+                        deliveryNotes: addressData.deliveryNotes,
+                        primary: '',
+                        addressId: addressData.addressId
+    
+                    }
+                })
+                if (mutationResponse) {
+                    window.location.reload();
+                }
+            }
         }
 
+    const handleCheckChange = async (event) => {
+          setChecked(!checked); 
+            console.log(checked);
+            handleChange({primary: checked});
+        }
+
+
     const handleChange = async (event) => {
+        console.log(event.target)
         const { name, value } = event.target;
+        console.log({[name]: value});
         setAddressData({
             ...addressData,
             [name]: value,
         });
+        console.log(addressData)
     }
     return addressData ? (
-    <Form onSubmit={addNewAddress}>
+    <Form onSubmit={changeAddress}>
                 <Form.Group controlId="controlAddress.number">
                     <Form.Label>Street Number</Form.Label>
                     <Form.Control onChange={handleChange} name="number" placeholder="" value={addressData.number} required></Form.Control>
@@ -189,7 +219,7 @@ console.log(addressData);
                     <Form.Control as="textarea" onChange={handleChange} name="deliveryNotes" placeholder="" value={addressData.deliveryNotes}></Form.Control>
                 </Form.Group>
                 <Form.Group controlId="controlAddress.primary">
-                    <Form.Check type="checkbox" id="primary" name="primary" label="Primary Address" onChange={handleChange}  placeholder="" value={addressData.primary}/>
+                    <Form.Check type="checkbox" id="primary" name="primary" label="Primary Address" onChange={handleCheckChange} value={addressData.primary} />
                 </Form.Group>
                 <Button variant="primary" type="submit" value="submit">Submit Address</Button>
             </Form>
