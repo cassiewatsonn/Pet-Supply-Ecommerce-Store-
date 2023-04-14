@@ -1,4 +1,4 @@
-import React, {useState} from 'react'; 
+import React from 'react'; 
 import { Nav, Row, Col} from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Profile from './profile';
@@ -11,11 +11,11 @@ import { useQuery} from '@apollo/client';
 
 export default function Settings() {
     const userId = Auth.getProfile().data._id;
-    const { loading, data } = useQuery(SINGLE_USER, {
+    console.log(userId);
+    const { data } = useQuery(SINGLE_USER, {
         variables: { userId: userId },
       });
       const userData = data?.user || [];
-      console.log("users-settings UserData", userData);
     return(
         <>
             <Tab.Container className="col-3" defaultActiveKey="users" id="left-tabs">
