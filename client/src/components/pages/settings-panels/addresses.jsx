@@ -80,7 +80,7 @@ export default function Address(props) {
                                         {address.city}. {address.province}, {address.postalCode}
                                         </div>
                                     </div>
-                                    <Button variant="delete-product" onClick={() => deleteAddress(address, 'false')}>Delete</Button>
+                                    <Button variant="delete-product" onClick={() => handleDeleteAddress(address.addressId, 'false')}>Delete</Button>
                                 </div>
                             </ListGroup.Item>
                         ))}

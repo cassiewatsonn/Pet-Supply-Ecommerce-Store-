@@ -103,10 +103,10 @@ const resolvers = {
                 { new: true }
             )
         },
-        removeAddress: async(parent, { userId, addressId }) => {
+        removeAddress: async(parent, args) => {
             return User.findOneAndUpdate(
-                {_id: userId},
-                { $pull: {address: {addressId: addressId}}
+                {_id: args.userId},
+                { $pull: {address: {addressId: args.addressId}}
                 },
                 { new: true }
                 )

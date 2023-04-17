@@ -74,13 +74,23 @@ export const UPDATE_ADDRESS = gql`
 export const REMOVE_ADDRESS = gql`
   mutation removeAddress( 
     $userId: ID!,
-    $addressId: String!,
+    $addressId: Int!,
   ) {
     removeAddress(
       userId: $userId
+      addressId: $addressId
     )
     {
-      user
+      address {
+        number
+        address1
+        address2
+        city
+        province
+        country
+        postalCode
+        addressId
+      }
     }
   }
 `;
