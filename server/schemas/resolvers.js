@@ -3,6 +3,7 @@ const { User, Product, Order, Address } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 const {Types} = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const resolvers = {
     Query: {
@@ -133,7 +134,7 @@ const resolvers = {
                 return{user, token} 
 
                 
-            }
+        }
         // addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
         // updateOrder(): Order
         // removeOrder(orderId: Int!): Order

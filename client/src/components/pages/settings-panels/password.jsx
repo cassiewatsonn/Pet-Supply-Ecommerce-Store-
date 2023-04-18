@@ -3,15 +3,17 @@ import { Form, Button } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
 import { UPDATE_PASSWORD } from '../../../utils/mutations';
 import "../../../App.css";
+import Auth from '../../../utils/auth';
 
 
 export default function Password(props) {
+    console.log(props);
     let userData = props.userData;
-    const userId = props.userId
+    const userId = props.userId;
     const [updatePassword] = useMutation(UPDATE_PASSWORD);
 
     const [passCompare, setPassCompare] = useState({
-        pass: userData.password,
+        oldPass: '',
         userId: userId,
         pass0: '',
         pass1: '',
@@ -24,6 +26,11 @@ export default function Password(props) {
             ...passCompare,
             [name]: value,
         })
+    }
+    const handlePassCompare = (event) => {
+        let hashPass = props.userData.password;
+        let oldPass = event.target.value;
+        Auth.comparePass(oldPass, hashPass);
     }
 
     const handleNewPassword = (event) => {
@@ -39,7 +46,7 @@ export default function Password(props) {
         <Form onSubmit={handleNewPassword}>
             <Form.Group controlId="editPassword.oldPassword">
                 <Form.Label className='old-password'>Old Password</Form.Label>
-                <Form.Control type="password" name="pass0" value={passCompare.pass0} onChange={handlePassEnter} />
+                <Form.Control type="password" name="oldPass" value={passCompare.oldPass} onBlur={handlePassCompare} onChange={handlePassEnter} />
             </Form.Group>
             <Form.Group>
                 <Form.Label className='new-password'>New Password</Form.Label>
