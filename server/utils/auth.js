@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-
+const bcrypt = require ('bcrypt');
 const secret = 'mysecretsshhhhh';
 const expiration = '2h';
 
@@ -30,5 +30,8 @@ module.exports = {
     const payload = { email, _id, accessLvl };
 
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+  },
+  comparePasswords: function ({userId, oldPass}) {
+    
   }
 };

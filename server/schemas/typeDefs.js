@@ -9,7 +9,7 @@ type User {
     lastName: String!
     password: String!
     phone: String
-    address: [Address]!
+    address: [Address]
     accessLvl: Boolean!
     orders: [Order]
 }
@@ -40,11 +40,13 @@ type Order {
 
 type Address {
     number: String! # Street number (could include apt. number/letter)
-    streetName: String! 
+    address1: String 
+    address2: String
+    city: String
     province: String!
     country: String!
     postalCode: String!
-    deliveryNotes: String! # I.e. "Ring doorbell" or "phone when arrived"
+    deliveryNotes: String! # i.e. "Ring doorbell" or "phone when arrived"
     primary: Boolean!
     addressId: Int! # will be array indicator for update/delete
 }
@@ -73,8 +75,8 @@ type Mutation {
   removeUser(userId: ID!): User
   login(email: String!, password: String!): Auth
   updatePassword(userId: ID!, password:String!): User
-  addAddress(userId: ID!, number: String!, streetName: String!, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressId: Int!): User
-  updateAddress(id: ID!, number: String, streetName: String, province: String, country: String, postalCode: String, deliveryNotes: String, primary: Boolean!, addressNo:Int!): User
+  addAddress(userId: ID!, number: String!, address1: String, address2: String, city: String, province: String!, country: String!, postalCode: String!, deliveryNotes: String, primary: Boolean!, addressId: Int!): User
+  updateAddress(userId: ID!, number: String, address1: String, address2: String, city: String, province: String, country: String, postalCode: String, deliveryNotes: String, primary: Boolean!, addressId:Int!): User
   removeAddress(id: ID!, addressId: Int!): User
   addProduct(productId: String!, name: String!, price: Float!, category: String, tags: [String], stockCount: Int!, image: String, description: String): Product
   updateProduct(productId: String!, name: String, price: Float, tags:[String], category: String, image: String, description: String, stockCount: Int): Product

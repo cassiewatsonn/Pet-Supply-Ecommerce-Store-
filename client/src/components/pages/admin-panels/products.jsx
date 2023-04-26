@@ -136,7 +136,7 @@ function EditProductBox({ productData, setProductData,addNew }) {
             <Form.Label className='description-input'>Description</Form.Label>
             <Form.Control type="text" name="description" value={productData.description} onChange={handleChange} />
             <Form.Label className='category-input'>Choose category</Form.Label>
-            <Form.Select aria-label="Default select example">
+            <Form.Select aria-label="Default select example" name="category">
                 <option value="toys">Toys</option>
                 <option value="treats">Treats</option>
                 <option value="products">Assorted</option>

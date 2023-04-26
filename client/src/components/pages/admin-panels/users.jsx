@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, ListGroup, Form, Button } from 'react-bootstrap';
+import { Row, ListGroup, Form, Button, Fade } from 'react-bootstrap';
 import { QUERY_USERS, SINGLE_USER } from '../../../utils/queries';
 import { useQuery, useLazyQuery, useMutation } from '@apollo/client';
 import { ADD_USER, UPDATE_USER, REMOVE_USER } from '../../../utils/mutations';
@@ -12,6 +12,7 @@ export default function UsersAdmin() {
     const [getUser] = useLazyQuery(SINGLE_USER);
     const users = usersQuery?.users || [];
     const [deleteUser] = useMutation(REMOVE_USER);
+    const [open, setOpen] = useState(false);
 
     async function handleUserData(e, addNew) {
         if (addNew === 'true') {
@@ -32,6 +33,7 @@ export default function UsersAdmin() {
                 setAddNew('false');
             }
         }
+
     }
     async function handleDeleteUser(userId) {
 
@@ -50,7 +52,7 @@ export default function UsersAdmin() {
                 <div className="col-5">
                     <ListGroup>
                         {users.map((user) => (
-                            <div className='user-list'>
+                            <div className='user-list' key={user._id}>
                                 <ListGroup.Item className='user-field' key={user._id} action onClick={() => handleUserData(user._id, 'false')}>{user.firstName} {user.lastName}
                                 </ListGroup.Item>
                                 <Button variant="user-delete" onClick={() => handleDeleteUser(user._id)}>Delete</Button>

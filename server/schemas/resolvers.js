@@ -3,6 +3,7 @@ const { User, Product, Order, Address } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 const {Types} = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const resolvers = {
     Query: {
@@ -68,7 +69,9 @@ const resolvers = {
                     $addToSet: {
                         address: {
                             number: args.number,
-                            streetName: args.streetName,
+                            address1: args.address1,
+                            address2: args.address2,
+                            city: args.city,
                             province: args.province,
                             country: args.country,
                             postalCode: args.postalCode,
@@ -80,19 +83,21 @@ const resolvers = {
                 },
                 { new: true })
         },
-        updateAddress: async(parent, { userId, addressId, number, streetName, province, country, postalCode, deliveryNotes, primary }) => {
-            return User.findByIdAndUpdate({userId},
-                { filter: {addressId: addressId}},
+        updateAddress: async(parent, args) => {
+            return User.findByIdAndUpdate({_id: args.userId},
+                { filter: {addressId: args.addressId}},
                 {
                     $addToSet: {
                         address: {
-                            number: number,
-                            streetName: streetName,
-                            province: province,
-                            country: country,
-                            postalCode: postalCode,
-                            deliveryNotes: deliveryNotes,
-                            primary: primary,
+                            number: args.number,
+                            address1: args.address1,
+                            address2: args.address2,
+                            city: args.city,
+                            province: args.province,
+                            country: args.country,
+                            postalCode: args.postalCode,
+                            deliveryNotes: args.deliveryNotes,
+                            primary: args.primary,
                         }  
                     }
                 },
@@ -129,7 +134,7 @@ const resolvers = {
                 return{user, token} 
 
                 
-            }
+        }
         // addOrder(products: [Product], orderDate: Date, orderPrice: Float!): Order
         // updateOrder(): Order
         // removeOrder(orderId: Int!): Order
